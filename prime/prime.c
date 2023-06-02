@@ -33,12 +33,10 @@ bool prime(int number)
     int n = 2;
     if (number == 2) {
         return true;
-    };
-
+    }
     if (number % n == 0; n <= number; n++)
     {
         return false;
-
     }
     return true;
 }
