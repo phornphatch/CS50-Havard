@@ -34,10 +34,12 @@ bool prime(int number)
     if (number == 2) {
         return true;
     }
-    for (number % n == 0; n <= number; n++)
+    for (int j = number; n <= number; n++)
     {
-        if ()
+        if (number % n == 0)
+        {
         return false;
+        }
     }
     return true;
 }
