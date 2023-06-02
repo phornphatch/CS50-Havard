@@ -34,8 +34,9 @@ bool prime(int number)
     if (number == 2) {
         return true;
     }
-    if (number % n == 0; n <= number; n++)
+    for (number % n == 0; n <= number; n++)
     {
+        if ()
         return false;
     }
     return true;
