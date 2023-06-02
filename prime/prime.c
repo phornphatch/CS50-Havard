@@ -30,6 +30,7 @@ int main(void)
 
 bool prime(int number)
 {
-    int i, j
+    int n = 3;
+    if (number % n = 0)
     return true;
 }
