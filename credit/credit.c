@@ -8,14 +8,15 @@ int main(void)
 
     // calculate checksum
     int i = 10;
-    while ()
+    while (number % i < number)
     {
-    long last_number = number % 10;
+    long last_number = number % i;
     if (last_number < 10) {
-        printf("last number is, %li", last_number);
-        number = number / 10;
+        printf("last number is, %li\n", last_number);
+        number = number / i;
     }
-    printf("remaining number is, %li", number);
+    printf("remaining number is, %li\n", number);
+    
     }
 
     // check card length
