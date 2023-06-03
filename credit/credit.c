@@ -73,7 +73,7 @@ int main(void)
     else if (loop_count == 15 && (two_first_number == 34 || two_first_number == 37) ) {
         printf("AMEX\n");
     }
-     else if (loop_count == 16 && (two_first_number >= 51 && two_first_number <= 55)) {
+     else if (loop_count == 16 && (two_first_number > 50 && two_first_number < 56)) {
         printf("MASTERCARD\n");
     }
     else if (loop_count == 16 && first_number == 4) {
