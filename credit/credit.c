@@ -16,7 +16,8 @@ int main(void)
     {
 
         printf("%c ", str[i]);
-        int a = atoi(str[i]);
+        string x = str[i]
+        int a = atoi(x);
         sum1 += a;
     }
     printf("sum1: %i", sum1);
