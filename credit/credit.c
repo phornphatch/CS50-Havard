@@ -5,7 +5,7 @@ int main(void)
 {
     // get credit cardnumber
     long number = get_long("Number: ");
-    stri card_number = number;
+    string card_number = number;
 
     // calculate checksum
     int i = 10;
@@ -60,15 +60,16 @@ int main(void)
     }
 
     // find first number
-    int firstDigit(int n)
+    int firstDigit(int card_number)
     {
     // Remove last digit from number
     // till only one digit is left
-    while (n >= 10)
-        n /= 10;
+    while (card_number >= 10)
+        card_number /= 10;
 
     // return the first digit
-    return n;
+    return card_number;
+    printf("firstdigit: %i", card_number);
     }
 
 
