@@ -3,8 +3,14 @@
 
 int main(void)
 {
+    // get credit cardnumber
     long number = get_long("Number: ");
-    // find the first number
+
+    // calculate checksum
+
+    // check card length
+
+    // check starting number
     int first_number;
     if (first_number == 4)
     {
