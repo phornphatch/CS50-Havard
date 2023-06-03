@@ -15,8 +15,14 @@ int main(void)
     int i;
     int j;
     int k;
+    int s;
     for (i = 1; i <= height; i++)
     {
+         for (s = height; s == height - 1; s--)
+        {
+            printf("*");
+        }
+        
         for (j = 1; j <= i; j++)
         {
             printf("#");
