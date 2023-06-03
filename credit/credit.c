@@ -54,8 +54,21 @@ int main(void)
 
     if (loop_count % 2 == 0)
     {
-        sum = sum + number * 2;
-        
+        int product_last_number = number * 2;
+         if (product_last_number > 10)
+                {
+                    int last_digit_of_product_last_number = product_last_number % 10;
+                    int first_digit_of_product_last_number = (product_last_number - last_digit_of_product_last_number)/10;
+                    sum = sum + last_digit_of_product_last_number + first_digit_of_product_last_number;
+
+                }
+                else if (product_last_number == 10) {
+                    sum += 1;
+                }
+                else
+                {
+                sum = sum + number * 2;
+                }
     }
     else
     {
