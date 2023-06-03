@@ -14,11 +14,11 @@ int main(void)
     {
             long last_number = number % i;
             if (last_number < i) {
-                printf("last number is, %li\n", last_number);
+                // printf("last number is, %li\n", last_number);
                 number = number / i;
             }
-            printf("remaining number is, %li\n", number);
-            printf("---\n");
+            // printf("remaining number is, %li\n", number);
+            // printf("---\n");
             if (loop_count % 2 == 0) {
                 int product_last_number = last_number * 2;
                 if (product_last_number >= 10)
@@ -36,7 +36,7 @@ int main(void)
             {
                 sum += last_number;
             }
-            printf("this is sum %i\n", sum);
+            // printf("this is sum %i\n", sum);
         loop_count++;
     }
 
@@ -49,11 +49,11 @@ int main(void)
         sum += number;
     }
 
-    printf("Super sum: %i", sum);
+    printf("Super sum: %i\n", sum);
 
     if (sum % 10 != 0)
     {
-        printf("INVALID");
+        printf("INVALID\n");
     }
 
 
