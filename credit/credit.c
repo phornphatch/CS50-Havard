@@ -4,14 +4,13 @@
 
 int main(void)
 {
-    string str;
     // get credit cardnumber
     long number = get_long("Number: ");
-    char str[number];
+    char str[20];
     sprintf(str, "%ld", number);
 
     // calculate checksum
-    for (int i=1; i < strlen(str); i++)
+    for (int i=1; i <= strlen(str); i++)
     {
 
         printf("string: %c", str[i]);
