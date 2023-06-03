@@ -19,7 +19,7 @@ int main(void)
         int a = atoi(str[i]);
         sum1 += a;
     }
-    printf("sum1: %i)
+    printf("sum1: %i", sum1);
 
     // check card length
 
