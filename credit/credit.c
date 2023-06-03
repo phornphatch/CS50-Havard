@@ -59,8 +59,18 @@ int main(void)
 
     // check card length
     if (loop_count == 15) {
-        printf()
+        printf("AMEX\n");
     }
+
+     if (loop_count == 16) {
+        printf("MASTERCARD\n");
+    }
+
+  if (loop_count == 13 || number == 4) {
+        printf("VISA\n");
+    }
+
+
 
     // check starting number
 }
