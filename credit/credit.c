@@ -11,16 +11,13 @@ int main(void)
     int loop_count = 1;
     while (number % i < number)
     {
-        if (loop_count > 1)
-        {
-        long last_number = number % i;
-        if (last_number < i) {
-            printf("last number is, %li\n", last_number);
-            number = number / i;
-        }
-        printf("remaining number is, %li\n", number);
-        printf("---\n");
-        }
+            long last_number = number % i;
+            if (last_number < i) {
+                printf("last number is, %li\n", last_number);
+                number = number / i;
+            }
+            printf("remaining number is, %li\n", number);
+            printf("---\n");
         loop_count++;
     }
 
