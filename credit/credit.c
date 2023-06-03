@@ -8,7 +8,7 @@ int main(void)
     sprintf(str, "%ld", number);
 
     // calculate checksum
-    for (int i=1; i++)
+    for (int i=1; i < str.lenght; i++)
     {
 
     }
