@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <math.h>
 
 int main(void)
 {
@@ -57,7 +58,7 @@ int main(void)
     }
 
     // find 2 first digit
-    if (credit_card_number % pow(10, loop_count - 1) > 0) {
+    if (credit_card_number % (long pow(10, loop_count - 1)) > 0) {
         two_first_number = number;
         printf("this is two first number %i\n", two_first_number);
         return false;
