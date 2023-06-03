@@ -59,7 +59,7 @@ int main(void)
 
     // find 2 first digit
 
-        two_first_number = credit_card_number % (long) pow(10, loop_count - 1);
+        two_first_number = (credit_card_number - (credit_card_number % (long) pow(10, loop_count - 2)))/ (pow(10, loop_count - 2));
         printf("this is two first number %i\n", two_first_number);
 
     // printf("Super sum: %i\n", sum);
