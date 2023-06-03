@@ -18,21 +18,26 @@ int main(void)
     int s;
     for (i = 1; i <= height; i++)
     {
-         for (s = height; s == height - 1; s--)
+        // add space befork brick equal to height - number of each layer
+        for (s = 1; s <= height - i; s++)
         {
-            printf("*");
+           printf(" ");
         }
-        
+
+        // add brick (amount of brick equal to number of each layer)
         for (j = 1; j <= i; j++)
         {
             printf("#");
         }
+        // add middle space
         printf(" ");
 
+        // add brick (amount of brick equal to number of layer)
          for (k = 1; k <= i; k++)
         {
             printf("#");
         }
+        // enter to new line
         printf("\n");
     }
 }
