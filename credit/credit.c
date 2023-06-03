@@ -3,8 +3,8 @@
 
 int main(void)
 {
-    longe number = get_long("Number: ");
+    long number = get_long("Number: ");
     // find the first number
-    
-    if ()
+    int first_number;
+    if (first_number == 4)
 }
