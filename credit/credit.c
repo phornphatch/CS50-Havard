@@ -22,7 +22,8 @@ int main(void)
             // printf("remaining number is, %li\n", number);
             // printf("---\n");
             if (number % 100 > 0) {
-                two_first_number =
+                two_first_number = number;
+                printf("wthh %i\n", two_first_number);
             }
 
 
