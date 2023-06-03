@@ -15,8 +15,8 @@ int main(void)
         printf("last number is, %li\n", last_number);
         number = number / i;
     }
-    printf("---\n");
     printf("remaining number is, %li\n", number);
+        printf("---\n");
     }
 
     // check card length
