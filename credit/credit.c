@@ -11,7 +11,7 @@ int main(void)
     int i = 0;
     if (last_number < 10) {
         printf("hello, %li", last_number);
-        number = number - (last_number * (10 ^ i));
+        number = number - (last_number * (pow(10, i)));
         printf("hello, %li", number);
         i++;
     }
