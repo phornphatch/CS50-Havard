@@ -28,7 +28,8 @@ int main(void)
             }
         loop_count++;
     }
-    
+    sum_even += number;
+
 
     printf("sum: %i", sum_even);
 
