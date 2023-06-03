@@ -69,9 +69,6 @@ int main(void)
     {
         printf("INVALID\n");
     }
-
-
-
     // check card length and first number
     else if (loop_count == 15) {
         if (two_first_number == 34 || two_first_number == 37)
