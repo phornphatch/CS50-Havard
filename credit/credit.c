@@ -21,12 +21,6 @@ int main(void)
             }
             // printf("remaining number is, %li\n", number);
             // printf("---\n");
-            if (number % 100 > 0) {
-                two_first_number = number;
-                printf("this is two first number %i\n", two_first_number);
-                return false;
-            }
-
 
             if (loop_count % 2 == 0) {
                 int product_last_number = last_number * 2;
@@ -60,6 +54,13 @@ int main(void)
     {
         sum += number;
     }
+
+    // find 2 first digit
+    if (number % 100 > 0) {
+        two_first_number = number;
+        printf("this is two first number %i\n", two_first_number);
+        return false;
+   }
 
     // printf("Super sum: %i\n", sum);
     //  printf("Number of loop: %i\n", loop_count);
