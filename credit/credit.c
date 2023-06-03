@@ -8,12 +8,10 @@ int main(void)
 
     // calculate checksum
     long last_number = number % 10;
+    if (last_number < 10) {
+        printf("hello, %li", last_number);
+    }
     // check card length
 
     // check starting number
-    int first_number;
-    if (first_number == 4)
-    {
-        printf("VISA\n");
-    }
 }
