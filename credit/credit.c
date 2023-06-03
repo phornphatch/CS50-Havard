@@ -46,7 +46,7 @@ int main(void)
         first_number = number;
     }
 
-    printf("firstnumber is %i\n", first_number);
+    // printf("firstnumber is %i\n", first_number);
 
     if (loop_count % 2 == 0)
     {
