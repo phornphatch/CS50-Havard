@@ -31,6 +31,7 @@ int main(void)
                     int last_digit_of_product_last_number = product_last_number % 10;
                     int first_digit_of_product_last_number = (product_last_number - last_digit_of_product_last_number)/10;
                     sum = sum + last_digit_of_product_last_number + first_digit_of_product_last_number;
+
                 }
                 else if (product_last_number == 10) {
                     sum += 1;
@@ -39,6 +40,7 @@ int main(void)
                 {
                 sum = sum + last_number * 2;
                 }
+                  printf("productlastnumber: %i\n", product_last_number);
             }
             else
             {
