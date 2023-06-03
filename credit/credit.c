@@ -40,7 +40,6 @@ int main(void)
                 {
                 sum = sum + last_number * 2;
                 }
-                  printf("productlastnumber: %i\n", product_last_number);
             }
             else
             {
@@ -56,6 +55,7 @@ int main(void)
     if (loop_count % 2 == 0)
     {
         sum = sum + number * 2;
+        
     }
     else
     {
