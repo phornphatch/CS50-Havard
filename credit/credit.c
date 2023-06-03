@@ -50,6 +50,7 @@ int main(void)
     }
 
     printf("Super sum: %i\n", sum);
+     printf("Number of loop: %i\n", loop_count);
 
     if (sum % 10 != 0)
     {
@@ -57,6 +58,9 @@ int main(void)
     }
 
     // check card length
+    if (loop_count == 15) {
+        printf()
+    }
 
     // check starting number
 }
