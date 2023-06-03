@@ -14,6 +14,7 @@ int main(void)
         number = number / 10;
     }
     printf("first number is, %li", number);
+
     // check card length
 
     // check starting number
