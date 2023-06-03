@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -9,12 +10,14 @@ int main(void)
     char str[20];
     sprintf(str, "%ld", number);
 
+
     // calculate checksum
     for (int i=strlen(str); i >= 0; i-=2)
     {
 
         printf("%c ", str[i]);
-        a = str[i];
+        int a = atoi(str[i]);
+
     }
 
     // check card length
