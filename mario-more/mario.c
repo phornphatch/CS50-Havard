@@ -14,12 +14,16 @@ int main(void)
     // create pyramid
     int i;
     int j;
+    int k;
     for (i = 1; i <= height; i++)
     {
         for (j = 1; j <= i; j++)
         {
-        printf("#");
+            for (k = 1; k <= i; k++)
+            {
+                 printf("#");
+            }
+        printf(" #");
         }
-        printf("\n");
     }
 }
