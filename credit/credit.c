@@ -1,26 +1,19 @@
 #include <cs50.h>
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
 int main(void)
 {
     // get credit cardnumber
     long number = get_long("Number: ");
-    char str[20];
-    sprintf(str, "%ld", number);
 
-    int sum1 = 0;
     // calculate checksum
-    for (int i=strlen(str); i >= 0; i-=2)
-    {
-
-        printf("%c ", str[i]);
-        const char* num = str[i];
-        int a = atoi(num);
-        sum1 += a;
+    long last_number = number % 10;
+    int i = 0;
+    if (last_number < 10) {
+        printf("last number is, %li", last_number);
+        number = number / 10;
     }
-    printf("sum1: %i", sum1);
+    printf("remaining number is, %li", number);
 
     // check card length
 
