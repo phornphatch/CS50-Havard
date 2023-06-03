@@ -12,8 +12,8 @@ int main(void)
     // calculate checksum
     for (int i=1; i < strlen(str); i++)
     {
-        
-        printf("string: ")
+
+        printf("string: %c", str[i]);
     }
 
     // check card length
