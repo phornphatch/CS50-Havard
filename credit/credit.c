@@ -5,8 +5,8 @@ int main(void)
 {
     // get credit cardnumber
     long number = get_long("Number: ");
-    int first_number;
-    int two_first_number;
+    int first_number = 0;
+    int two_first_number = 0;
 
     // calculate checksum
     int i = 10;
