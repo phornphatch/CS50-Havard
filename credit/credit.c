@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
@@ -8,7 +9,7 @@ int main(void)
     sprintf(str, "%ld", number);
 
     // calculate checksum
-    for (int i=1; i < str.lenght; i++)
+    for (int i=1; i < strlen(str); i++)
     {
 
     }
