@@ -20,14 +20,15 @@ int main(void)
             printf("remaining number is, %li\n", number);
             printf("---\n");
             if (loop_count % 2 == 0) {
-                sum_even = sum_even + last_number * 2
+                sum_even = sum_even + last_number * 2;
             }
             else
             {
-                
+                sum_even += last_number;
             }
         loop_count++;
     }
+    printf("sum: %i", sum_even);
 
     // check card length
 
