@@ -72,11 +72,17 @@ int main(void)
 
 
     // check card length and first number
-    if (loop_count == 15 && (two_first_number == 34 || two_first_number == 37)) {
+    if (loop_count == 15) {
+        if (two_first_number == 34 || two_first_number == 37)
+        {
         printf("AMEX\n");
+        }
     }
-     if (loop_count == 16 && (two_first_number == 51 || two_first_number == 52 || two_first_number == 53 || two_first_number == 54 || two_first_number == 55)) {
+     if (loop_count == 16) {
+        if (two_first_number >= 51 && two_first_number <= 55)
+        {
         printf("MASTERCARD\n");
+        }
     }
     if (loop_count == 16 && first_number == 4) {
             printf("VISA\n");
