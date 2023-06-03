@@ -51,9 +51,9 @@ int main(void)
 
     printf("Super sum: %i", sum);
 
-    if (sum % 10 == 0)
+    if (sum % 10 != 0)
     {
-        printf(")
+        printf("INVALID");
     }
 
 
