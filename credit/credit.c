@@ -4,8 +4,8 @@
 int main(void)
 {
     // get credit cardnumber
-    long number = get_long("Number: ");
-    lond number = credit_
+    long credit_card_number = get_long("Number: ");
+    long number = credit_card_number;
     int first_number = 0;
     int two_first_number = 0;
 
@@ -57,7 +57,7 @@ int main(void)
     }
 
     // find 2 first digit
-    if (number % pow(10, loop_count) > 0) {
+    if (credit_card_number % pow(10, loop_count - 1) > 0) {
         two_first_number = number;
         printf("this is two first number %i\n", two_first_number);
         return false;
