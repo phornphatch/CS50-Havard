@@ -13,6 +13,7 @@ int main(void)
     for (int i=1; i < strlen(str); i++)
     {
         
+        printf("string: ")
     }
 
     // check card length
