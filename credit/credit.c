@@ -11,8 +11,8 @@ int main(void)
     int i = 0;
     if (last_number < 10) {
         printf("hello, %li", last_number);
-        double double = 
-        number = number - (last_number * double);
+        double x = pow (10, i);
+        number = number - (last_number * x);
         printf("hello, %li", number);
         i++;
     }
