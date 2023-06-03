@@ -5,6 +5,7 @@ int main(void)
 {
     // get credit cardnumber
     long number = get_long("Number: ");
+    sprintf(str, "%ld", number);
 
     // calculate checksum
     long last_number = number % 10;
