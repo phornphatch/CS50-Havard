@@ -10,6 +10,7 @@ int main(void)
     long last_number = number % 10;
     if (last_number < 10) {
         printf("hello, %li", last_number);
+        number = number - last_number
     }
     // check card length
 
