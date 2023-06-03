@@ -18,6 +18,7 @@ int main(void)
             }
             printf("remaining number is, %li\n", number);
             printf("---\n");
+            
         loop_count++;
     }
 
