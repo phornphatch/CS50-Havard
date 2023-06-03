@@ -62,7 +62,7 @@ int main(void)
         two_first_number = (credit_card_number - (credit_card_number % (long) pow(10, loop_count - 2)))/ (pow(10, loop_count - 2));
         // printf("this is two first number %i\n", two_first_number);
 
-    // printf("Super sum: %i\n", sum);
+    printf("Super sum: %i\n", sum);
     //  printf("Number of loop: %i\n", loop_count);
 
     if (sum % 10 != 0)
