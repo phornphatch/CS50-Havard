@@ -6,6 +6,7 @@ int main(void)
     // get credit cardnumber
     long number = get_long("Number: ");
     int first_number;
+    int 
 
     // calculate checksum
     int i = 10;
@@ -20,6 +21,11 @@ int main(void)
             }
             // printf("remaining number is, %li\n", number);
             // printf("---\n");
+            if (number % 100) {
+
+            }
+
+
             if (loop_count % 2 == 0) {
                 int product_last_number = last_number * 2;
                 if (product_last_number >= 10)
