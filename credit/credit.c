@@ -22,8 +22,13 @@ int main(void)
             if (loop_count % 2 == 0) {
                 int product_last_number = last_number * 2;
                 if (product_last_number >= 10)
+                {
+                    
+                }
+                else
+                {
                 sum_even = sum_even + last_number * 2;
-
+                }
             }
             else
             {
