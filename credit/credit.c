@@ -23,7 +23,7 @@ int main(void)
                 int product_last_number = last_number * 2;
                 if (product_last_number >= 10)
                 {
-                    
+                    int first_of_product_last_number = product_last_number % 10
                 }
                 else
                 {
