@@ -56,8 +56,6 @@ int main(void)
         printf("INVALID\n");
     }
 
-
-
     // check card length
 
     // check starting number
