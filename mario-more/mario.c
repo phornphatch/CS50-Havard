@@ -18,7 +18,7 @@ int main(void)
     int s;
     for (i = 1; i <= height; i++)
     {
-        // add space befork brick equal to height - number of each layer
+        // add space before brick equal to height - number of each layer
         for (s = 1; s <= height - i; s++)
         {
             printf(" ");
