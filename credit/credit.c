@@ -73,7 +73,7 @@ int main(void)
 
 
     // check card length and first number
-    if (loop_count == 15) {
+    else if (loop_count == 15) {
         if (two_first_number == 34 || two_first_number == 37)
         {
         printf("AMEX\n");
@@ -91,8 +91,9 @@ int main(void)
     else if (loop_count == 13 && first_number == 4) {
         printf("VISA\n");
     }
-
+else {
 printf("INVALID\n");
+}
 
     // check starting number
 }
