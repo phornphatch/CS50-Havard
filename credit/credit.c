@@ -7,4 +7,7 @@ int main(void)
     // find the first number
     int first_number;
     if (first_number == 4)
+    {
+        printf("VISA\n");
+    }
 }
