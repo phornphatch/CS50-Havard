@@ -23,7 +23,8 @@ int main(void)
             // printf("---\n");
             if (number % 100 > 0) {
                 two_first_number = number;
-                printf("wthh %i\n", two_first_number);
+                printf("this is two first number %i\n", two_first_number);
+                return false;
             }
 
 
@@ -71,7 +72,7 @@ int main(void)
 
 
     // check card length and first number
-    if (loop_count == 15 && first_number == 3) {
+    if (loop_count == 15 && two_first_number == 34 || two_first_number == 37) {
         printf("AMEX\n");
     }
      if (loop_count == 16 && first_number == 5) {
