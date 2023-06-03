@@ -11,12 +11,12 @@ int main(void)
     while (number % i < number)
     {
     long last_number = number % i;
-    if (last_number < 10) {
+    if (last_number < i) {
         printf("last number is, %li\n", last_number);
         number = number / i;
     }
+    printf("---\n");
     printf("remaining number is, %li\n", number);
-    
     }
 
     // check card length
