@@ -63,13 +63,13 @@ int main(void)
     }
 
      if (loop_count == 16) {
-        if (number == 4) {
+        if (loop_count == 16 && number == 4) {
             printf("VISA\n");
         }
         printf("MASTERCARD\n");
     }
 
-    if (loop_count == 13 || number == 4) {
+    if (loop_count == 13) {
         printf("VISA\n");
     }
 
