@@ -35,7 +35,7 @@ int main(void)
     }
     else
     {
-        sum_even += last_number;
+        sum_even += number;
     }
 
     printf("sum: %i", sum_even);
