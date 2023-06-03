@@ -28,6 +28,8 @@ int main(void)
             }
         loop_count++;
     }
+    
+
     printf("sum: %i", sum_even);
 
     // check card length
