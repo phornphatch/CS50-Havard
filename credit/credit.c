@@ -14,6 +14,7 @@ int main(void)
     {
 
         printf("%c ", str[i]);
+        a = 
     }
 
     // check card length
