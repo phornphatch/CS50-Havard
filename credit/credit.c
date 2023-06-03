@@ -9,6 +9,7 @@ int main(void)
     // calculate checksum
     int i = 10;
     int loop_count = 1;
+    int sum_even = 0;
     while (number % i < number)
     {
             long last_number = number % i;
@@ -18,7 +19,13 @@ int main(void)
             }
             printf("remaining number is, %li\n", number);
             printf("---\n");
-            
+            if (loop_count % 2 == 0) {
+                sum_even = sum_even + last_number * 2
+            }
+            else
+            {
+                
+            }
         loop_count++;
     }
 
