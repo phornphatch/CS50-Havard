@@ -5,6 +5,7 @@ int main(void)
 {
     // get credit cardnumber
     long number = get_long("Number: ");
+    stri card_number = number;
 
     // calculate checksum
     int i = 10;
