@@ -13,8 +13,12 @@ int main(void)
 
     // create pyramid
     int i;
+    int j;
     for (i = 1; i <= height; i++)
     {
-        printf("#\n");
+        for (j = 1; j < i; j++)
+        {
+        printf("#");
+        }
     }
 }
