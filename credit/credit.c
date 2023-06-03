@@ -36,7 +36,6 @@ int main(void)
             else
             {
                 sum += last_number;
-                
             }
             // printf("this is sum %i\n", sum);
         loop_count++;
