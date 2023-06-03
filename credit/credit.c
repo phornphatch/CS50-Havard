@@ -28,8 +28,15 @@ int main(void)
             }
         loop_count++;
     }
-    sum_even += number;
 
+    if (loop_count % 2 == 0)
+    {
+        sum_even = sum_even + number * 2;
+    }
+    else
+    {
+        sum_even += last_number;
+    }
 
     printf("sum: %i", sum_even);
 
