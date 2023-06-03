@@ -26,7 +26,7 @@ int main(void)
 
             if (loop_count % 2 == 0) {
                 int product_last_number = last_number * 2;
-                if (product_last_number >= 10)
+                if (product_last_number > 9)
                 {
                     int last_digit_of_product_last_number = product_last_number % 10;
                     int first_digit_of_product_last_number = (product_last_number - last_digit_of_product_last_number)/10;
@@ -62,7 +62,7 @@ int main(void)
         two_first_number = (credit_card_number - (credit_card_number % (long) pow(10, loop_count - 2)))/ (pow(10, loop_count - 2));
         // printf("this is two first number %i\n", two_first_number);
 
-   
+    printf("Super sum: %i\n", sum);
     //  printf("Number of loop: %i\n", loop_count);
 
     if (sum % 10 != 0)
