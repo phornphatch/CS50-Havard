@@ -23,8 +23,9 @@ int main(void)
                 int product_last_number = last_number * 2;
                 if (product_last_number >= 10)
                 {
-                    int last_digit_of_product_last_number = product_last_number % 10
-                    int first_digit_of_product_last_number = (product_last_number - last_digit_of_product_last_number)/10
+                    int last_digit_of_product_last_number = product_last_number % 10;
+                    int first_digit_of_product_last_number = (product_last_number - last_digit_of_product_last_number)/10;
+                    sum_even = sum_even + last_digit_of_product_last_number + first_digit_of_product_last_number;
                 }
                 else
                 {
