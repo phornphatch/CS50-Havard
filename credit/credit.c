@@ -10,7 +10,7 @@ int main(void)
     sprintf(str, "%ld", number);
 
     // calculate checksum
-    for (int i=1; i <= strlen(str); i++)
+    for (int i=0; i <= strlen(str); i++)
     {
 
         printf("string: %c", str[i]);
