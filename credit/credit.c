@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    string str;
+    char str[20];
     // get credit cardnumber
     long number = get_long("Number: ");
     sprintf(str, "%ld", number);
