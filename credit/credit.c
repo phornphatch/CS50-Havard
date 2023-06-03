@@ -7,7 +7,7 @@ int main(void)
     long number = get_long("Number: ");
 
     // calculate checksum
-
+    long last_number = number % 10;
     // check card length
 
     // check starting number
