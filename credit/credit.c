@@ -49,8 +49,8 @@ int main(void)
         sum += number;
     }
 
-    printf("Super sum: %i\n", sum);
-     printf("Number of loop: %i\n", loop_count);
+    // printf("Super sum: %i\n", sum);
+    //  printf("Number of loop: %i\n", loop_count);
 
     if (sum % 10 != 0)
     {
