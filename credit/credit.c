@@ -4,9 +4,10 @@
 
 int main(void)
 {
-    char str[20];
+    string str;
     // get credit cardnumber
     long number = get_long("Number: ");
+    char str[number];
     sprintf(str, "%ld", number);
 
     // calculate checksum
