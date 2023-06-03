@@ -7,7 +7,7 @@ int main(void)
     long number = get_long("Number: ");
 
     // calculate checksum
-    int i;
+    int i = 10;
     while ()
     {
     long last_number = number % 10;
