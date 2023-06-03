@@ -68,7 +68,6 @@ int main(void)
     if (sum % 10 != 0)
     {
         printf("INVALID\n");
-        return;
     }
 
 
@@ -78,23 +77,19 @@ int main(void)
         if (two_first_number == 34 || two_first_number == 37)
         {
         printf("AMEX\n");
-        return;
         }
     }
-     if (loop_count == 16) {
+     else if (loop_count == 16) {
         if (two_first_number >= 51 && two_first_number <= 55)
         {
         printf("MASTERCARD\n");
-        return;
         }
     }
-    if (loop_count == 16 && first_number == 4) {
+    else if (loop_count == 16 && first_number == 4) {
             printf("VISA\n");
-            return;
     }
-    if (loop_count == 13 && first_number == 4) {
+    else if (loop_count == 13 && first_number == 4) {
         printf("VISA\n");
-        return;
     }
 
 printf("INVALID\n");
