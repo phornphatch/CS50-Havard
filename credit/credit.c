@@ -92,7 +92,7 @@ int main(void)
         printf("VISA\n");
     }
 
-
+printf("INVALID\n");
 
     // check starting number
 }
