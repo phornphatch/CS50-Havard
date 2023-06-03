@@ -26,6 +26,7 @@ int main(void)
             {
                 sum_even += last_number;
             }
+            printf("this is sum %i", sum_even);
         loop_count++;
     }
 
