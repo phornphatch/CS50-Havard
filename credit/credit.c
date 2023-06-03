@@ -4,6 +4,7 @@
 
 int main(void)
 {
+    string str;
     // get credit cardnumber
     long number = get_long("Number: ");
     sprintf(str, "%ld", number);
@@ -11,7 +12,7 @@ int main(void)
     // calculate checksum
     for (int i=1; i < strlen(str); i++)
     {
-
+        
     }
 
     // check card length
