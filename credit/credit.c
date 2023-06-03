@@ -58,11 +58,9 @@ int main(void)
     }
 
     // find 2 first digit
-    if (credit_card_number % (long) pow(10, loop_count - 2) > 0) {
-        two_first_number = number;
+
+        two_first_number = credit_card_number % (long) pow(10, loop_count - 1);
         printf("this is two first number %i\n", two_first_number);
-        return false;
-   }
 
     // printf("Super sum: %i\n", sum);
     //  printf("Number of loop: %i\n", loop_count);
