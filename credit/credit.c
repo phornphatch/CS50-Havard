@@ -58,6 +58,19 @@ int main(void)
         printf("INVALID\n");
     }
 
+    // find first number
+    int firstDigit(int n)
+    {
+    // Remove last digit from number
+    // till only one digit is left
+    while (n >= 10)
+        n /= 10;
+
+    // return the first digit
+    return n;
+    }
+
+
     // check card length
     if (loop_count == 15) {
         printf("AMEX\n");
