@@ -9,7 +9,7 @@ int main(void)
     // calculate checksum
     int i = 10;
     int loop_count = 1;
-    int sum_even = 0;
+    int sum = 0;
     while (number % i < number)
     {
             long last_number = number % i;
@@ -25,31 +25,38 @@ int main(void)
                 {
                     int last_digit_of_product_last_number = product_last_number % 10;
                     int first_digit_of_product_last_number = (product_last_number - last_digit_of_product_last_number)/10;
-                    sum_even = sum_even + last_digit_of_product_last_number + first_digit_of_product_last_number;
+                    sum = sum + last_digit_of_product_last_number + first_digit_of_product_last_number;
                 }
                 else
                 {
-                sum_even = sum_even + last_number * 2;
+                sum = sum + last_number * 2;
                 }
             }
             else
             {
-                sum_even += last_number;
+                sum += last_number;
             }
-            printf("this is sum %i", sum_even);
+            printf("this is sum %i\n", sum);
         loop_count++;
     }
 
     if (loop_count % 2 == 0)
     {
-        sum_even = sum_even + number * 2;
+        sum = sum + number * 2;
     }
     else
     {
-        sum_even += number;
+        sum += number;
     }
 
-    printf("sum: %i", sum_even);
+    printf("Super sum: %i", sum);
+
+    if (sum % 10 == 0)
+    {
+        printf(")
+    }
+
+
 
     // check card length
 
