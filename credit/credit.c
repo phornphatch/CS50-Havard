@@ -16,7 +16,8 @@ int main(void)
     {
 
         printf("%c ", str[i]);
-        int a = atoi(str[i]);
+        const char* num = str[i];
+        int a = atoi(num);
         sum1 += a;
     }
     printf("sum1: %i", sum1);
