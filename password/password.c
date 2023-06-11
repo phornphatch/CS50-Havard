@@ -29,11 +29,11 @@ bool valid(string password)
     {
         if (islower(password[i]))
         {
-            printf("Yoo");
+            printf("Lower");
         }
         else
         {
-            printf("Hi");
+            printf("Upper");
         }
     }
     return 0;
