@@ -111,7 +111,7 @@ int main(int argc, string argv[])
         }
 
         // Calculate score for the guess
-        int score = check_word(guess, wordsize, status, choice);
+        int score = check_word(guess, wordsize, status, choice); // choice is เฉลย
 
         printf("Guess %i: ", i + 1);
 
@@ -173,7 +173,11 @@ int check_word(string guess, int wordsize, int status[], string choice)
     // keep track of the total score by adding each individual letter's score from above
     for (int l=0; l < wordsize; l++)
     {
-        
+        if (guess[l] == choice[l]) // same alphabet, same position
+        {
+            status[l] = EXACT;
+            score += EXACT;
+        }
     }
 
     for (int i = 0; i < wordsize; i++)
