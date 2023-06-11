@@ -36,10 +36,13 @@ int main(void)
 int compute_score(string word)
 
     int total_points = 0;
-    word = touppercase(word);
 
     // loop char in word
     for (int i = 0; i < strlen(word); i++)
     {
+        if (isupper(word[i])) {
+            total_points = 
+        }
     }
+    return total_points;
 }
