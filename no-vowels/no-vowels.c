@@ -5,11 +5,10 @@
 
 #include <cs50.h>
 #include <stdio.h>
-#include<string.h>
+#include <string.h>
 
 string newword;
 string replace(string word);
-int j = 0;
 
 int main(int argc, string argv[])
 {
@@ -23,16 +22,18 @@ int main(int argc, string argv[])
     }
     else
     {
-        printf("not ok\n"); return 1;
+        printf("not ok\n");
+        return 1;
     }
 }
 
 // function replace : take string and return string
 string replace(string word)
 {
-    for (int j = 0, j < strlen(word); j++)
+    int i = 0;
+    for (i = 0; i < strlen(word); i++)
     {
-        printf("%c\n", argv[0][j]);
+        return "a";
     }
-    printf("\n");
+    return "b";
 }
