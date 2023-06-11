@@ -3,9 +3,9 @@
 // Practice using the ctype library
 
 #include <cs50.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-#include<ctype.h>
 
 bool valid(string password);
 
@@ -25,16 +25,30 @@ int main(void)
 // TODO: Complete the Boolean function below
 bool valid(string password)
 {
-    for (int i=0; i<strlen(password); i++)
+
+    bool hasUppercase = false;
+    bool hasLowercase = false;
+    bool hasNumber = false;
+    bool hasSymbol = false;
+
+    for (int i = 0; i < strlen(password); i++)
     {
-        if (islower(password[i]))
+        // Check if the character is an uppercase letter
+        if (isupper(password[i]))
         {
-            printf("Lower");
+            hasUppercase = true;
         }
-        else
+        // Check if the character is a lowercase letter
+        else if (islower(password[i]))
         {
-            printf("Upper");
+            hasLowercase = true;
+        }
+        // Check if the character is a digit
+        else if (isnumber(password[i]))
+        {
+            hasNumber = true;
         }
     }
-    return 0;
+    // Return true if all criterias are met
+    return hasUppercase && hasLowercase && hasNumber && hasSymbol;
 }
