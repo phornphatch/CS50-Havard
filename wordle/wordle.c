@@ -23,16 +23,16 @@ string get_guess(int wordsize);
 int check_word(string guess, int wordsize, int status[], string choice);
 void print_word(string guess, int wordsize, int status[]);
 
-int main(int argc, int argv[])
+int main(int argc, string argv[])
 {
     // ensure proper usage
     // TODO #1
 
-    int wordsize = argv[1];
+    int wordsize = 0;
     // get wordsize from user
     if (argc == 2)
     {
-        if (int argv[1] => 5 && int argv[1] <=8)
+        if (int argv[1] => '5' && int argv[1] <= '8')
         {
          wordsize = argv[1];
         } else {
