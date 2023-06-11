@@ -41,7 +41,7 @@ int compute_score(string word)
     for (int i = 0; i < strlen(word); i++)
     {
         if (isupper(word[i])) {
-            total_points = 
+            total_points += POINTS[word[i] - 'A']
         }
     }
     return total_points;
