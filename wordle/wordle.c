@@ -59,10 +59,10 @@ int main(int argc, string argv[])
         wordsize = size_number;
         // printf("wordsize is %i\n", size_number);
     }
-     // ---- DONE set wordsize to int ----
 
     // ensure argv[1] is either 5, 6, 7, or 8 and store that value in wordsize instead
-    // TODO #2
+    // TODO #2 - เช็คแล้วด้านบน
+    // ---- DONE set wordsize to int ----
 
     // open correct file, each file has exactly LISTSIZE words
     char wl_filename[6];
