@@ -33,20 +33,25 @@ string replace(string word)
     int i = 0;
     for (i = 0; i < strlen(word); i++)
     {
-        switch (word[i])
-        {
-        case word[i] == "a":
-            printf("a is 6\n");
-            break;
-
-        case word[i] == "e":
-            printf("e is 3\n");
-            break;
-
-        default:
-            printf("what\n");
-            break;
+        char character = word[i];
+        // printf("%c\n", character);
+        if (character == h) {
+            printf("%c\n", character);
         }
+        // switch (character)
+        // {
+        // case character == "a":
+        //     printf("a is 6\n");
+        //     break;
+
+        // case character == "e":
+        //     printf("e is 3\n");
+        //     break;
+
+        // default:
+        //     printf("what\n");
+        //     break;
+        // }
     }
     return "b";
 }
