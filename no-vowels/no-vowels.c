@@ -27,5 +27,8 @@ int main(int argc, string argv[])
 // function replace : take string and return string
 string replace(word)
 {
-    int length = strlen(word)
+    for (int i=0; i < strlen(word); i++)
+    {
+        newword += i;
+    } return newword;
 }
