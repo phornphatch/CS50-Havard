@@ -6,26 +6,23 @@
 #include <cs50.h>
 #include <stdio.h>
 
-string word;
 string newword;
+string replace(string word);
 
 int main(int argc, string argv[])
 {
     if (argc == 1)
     {
-        printf("ok");
-        word = argv[1];
-
-        printf("%s\n", replace(word));
+        printf("%s\n", replace(argv[1]));
     }
     else
     {
-        prints("not ok") return 1;
+        printf("not ok"); return 1;
     }
 }
 
 // function replace : take string and return string
-string replace(strign word)
+string replace(string word)
 {
     for (int i=0; i < strlen(word); i++)
     {
