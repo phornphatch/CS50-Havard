@@ -46,9 +46,9 @@ float calc_hours(int hours[], int weeks, char output)
 
         for (int i = 0; i < weeks; i++)
         {
-            a += hours[i];
+            T += hours[i];
         }
-        A = a / weeks;
+        A = T / weeks;
         return A;
     }
     return 0;
