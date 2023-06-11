@@ -107,7 +107,7 @@ int main(int argc, string argv[])
         // TODO #4
         for (int j = 0; j < wordsize; j++)
         {
-            status[j] = WRONG;
+            status[j] = 0;
         }
 
         // Calculate score for the guess
