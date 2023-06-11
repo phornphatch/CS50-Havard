@@ -21,27 +21,33 @@ int main(void)
     // Print the winner
     if (score1 > score2)
     {
-        printf("Player 1 wins!");
+        printf("Player 1 win\n");
     }
-    else if (score1 = score2)
+    else if (score1 == score2)
     {
-        printf("Tie!");
+        printf("Tie!\n");
     }
     else
     {
-        printf("Player 2 wins!");
+        printf("Player 2 win\n");
     }
 }
 
 int compute_score(string word)
-
+{
     int total_points = 0;
 
     // loop char in word
     for (int i = 0; i < strlen(word); i++)
     {
-        if (isupper(word[i])) {
-            total_points += POINTS[word[i] - 65] // minus 65 because A in ASCII is 65.
+        //  หาว่าตัวอักษรที่ใส่มาจะอยู่ลำดับที่เท่าไรของ array of POINTS
+        if (isupper(word[i]))
+        {
+            total_points += POINTS[word[i] - 'A']; // minus A : A in ASCII is 65.
+        }
+        else if (islower(word[i]))
+        {
+            total_points += POINTS[word[i] - 'a']; // minus a : a in ASCII is 25.
         }
     }
     return total_points;
