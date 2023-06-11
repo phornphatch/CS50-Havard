@@ -134,7 +134,7 @@ int main(int argc, string argv[])
     }
     else
     {
-        printf("You lose. Your score is %i\n", score);
+        printf("You lose.%i\n");
         printf("The word was: %s\n", choice);
     }
 
