@@ -25,6 +25,7 @@ int check_word(string guess, int wordsize, int status[], string choice);
 void print_word(string guess, int wordsize, int status[]);
 int size_number = 0;
 bool is_wordsize_valid = false;
+int point = 0;
 
 int main(int argc, string argv[])
 {
@@ -122,6 +123,7 @@ int main(int argc, string argv[])
         if (score == EXACT * wordsize)
         {
             won = true;
+            point = i;
             break;
         }
     }
@@ -134,8 +136,8 @@ int main(int argc, string argv[])
     }
     else
     {
-        printf("You lose.%i\n");
-        printf("The word was: %s\n", choice);
+        printf("You lose. Your score is %i/6.\n", point);
+        printf("The word is %s\n", choice);
     }
 
     // that's all folks!
