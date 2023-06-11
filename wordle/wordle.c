@@ -24,6 +24,7 @@ string get_guess(int wordsize);
 int check_word(string guess, int wordsize, int status[], string choice);
 void print_word(string guess, int wordsize, int status[]);
 int size_number = 0;
+bool is_wordsize_valid = false;
 
 int main(int argc, string argv[])
 {
@@ -38,6 +39,7 @@ int main(int argc, string argv[])
             printf("This is WORDLE50\n"); // continue game if number is ok
             printf("You have 6 tries to guess the %i-letter word I'm thinking of\n", size_number);
             printf("Input a %i-letter word:\n", size_number);
+            is_wordsize_valid = true;
         }
         else if (isdigit(size_number))
         {
@@ -55,8 +57,10 @@ int main(int argc, string argv[])
     // ---- DONE check argv[1] ----
 
     int wordsize = 0;
+    if (is_wordsize_valid == true) {
     wordsize = size_number;
     printf("wordsize is %i\n", size_number); // error if no argv[1]
+    }
 
     // ensure argv[1] is either 5, 6, 7, or 8 and store that value in wordsize instead
     // TODO #2
