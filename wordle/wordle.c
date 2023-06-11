@@ -4,7 +4,6 @@
 #include <string.h>
 #include <time.h>
 
-
 // each of our text files contains 1000 words
 #define LISTSIZE 1000
 
@@ -28,29 +27,8 @@ int main(int argc, string argv[])
 {
     // ensure proper usage
     // TODO #1
-
+    
     int wordsize = 0;
-    // get wordsize from user
-
-    if (argc == 2)
-    {
-        if (isdigit(argv[1]))
-        {
-            printf("Usage: ./wordle wordsize\n");
-        }
-    }
-    else if (argc == 1)
-    {
-         printf("Usage: ./wordle wordsize\n");
-    }
-    else
-    {
-        printf("not ok\n");
-        return 1;
-    }
-
-    //  printf("Error: wordsize must be either 5, 6, 7, or 8\n");
-
 
     // ensure argv[1] is either 5, 6, 7, or 8 and store that value in wordsize instead
     // TODO #2
