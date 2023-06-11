@@ -55,6 +55,8 @@ int main(int argc, string argv[])
     // ---- DONE check argv[1] ----
 
     int wordsize = 0;
+    wordsize = size_number;
+    printf("wordsize is %i\n", size_number); // error if no argv[1]
 
     // ensure argv[1] is either 5, 6, 7, or 8 and store that value in wordsize instead
     // TODO #2
