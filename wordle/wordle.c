@@ -111,12 +111,12 @@ int main(int argc, string argv[])
         }
 
         // Calculate score for the guess
-        int score = check_word(guess, wordsize, status, choice); // choice is เฉลย
+        int score = check_word(guess, wordsize, status, choice); // choice is เฉลย as TODO #5 below
 
         printf("Guess %i: ", i + 1);
 
         // Print the guess
-        print_word(guess, wordsize, status);
+        print_word(guess, wordsize, status); // TODO #6 as below
 
         // if they guessed it exactly right, set terminate loop
         if (score == EXACT * wordsize)
@@ -171,40 +171,22 @@ int check_word(string guess, int wordsize, int status[], string choice)
     // if they're the same position in the word, score EXACT points (green) and break so you don't compare that letter further
     // if it's in the word, but not the right spot, score CLOSE point (yellow)
     // keep track of the total score by adding each individual letter's score from above
-    for (int guess_letterposition=0; guess_letterposition < wordsize; guess_letterposition++)
+    for (int guess_letterposition = 0; guess_letterposition < wordsize; guess_letterposition++)
     {
         if (guess[guess_letterposition] == choice[guess_letterposition]) // same alphabet, same position
         {
             status[guess_letterposition] = EXACT; // same alphabet, same position
-            score += EXACT; // same alphabet, same position
-        }
-        else {
-            for (int choice_letterposition = 0; choice_letterposition< wordsize; choice_letterposition++)
-            {
-                if (guess[guess_letterposition] == choice[choice_letterposition] )
-                {
-                    status[choice_letterposition] = CLOSE;
-                    score += CLOSE;
-                    break;
-                }
-            }
-        }
-    }
-
-    for (int i = 0; i < wordsize; i++)
-    {
-        if (guess[i] == choice[i])
-        {
-            status[i] = EXACT;
-            score += EXACT;
+            score += EXACT;                       // same alphabet, same position
         }
         else
         {
-            for (int j = 0; j < wordsize; j++)
+            for (int choice_letterposition = 0; choice_letterposition < wordsize;
+                 choice_letterposition++) // check guess alphabet with all choice alphabet
             {
-                if (guess[i] == choice[j] && status[j] == WRONG)
+                if (guess[guess_letterposition] == choice[choice_letterposition] &&
+                    status[choice_letterposition] != EXACT) // same alphabet, diff position and not exact
                 {
-                    status[j] = CLOSE;
+                    status[choice_letterposition] = CLOSE;
                     score += CLOSE;
                     break;
                 }
