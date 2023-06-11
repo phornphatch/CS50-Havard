@@ -1,4 +1,5 @@
 #include <cs50.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -22,28 +23,36 @@
 string get_guess(int wordsize);
 int check_word(string guess, int wordsize, int status[], string choice);
 void print_word(string guess, int wordsize, int status[]);
-int size = 0;
+int size_number = 0;
 
 int main(int argc, string argv[])
 {
     // ensure proper usage
     // TODO #1
-
+    // check has argv[1] ?
     if (argc == 2)
     {
-        printf("This is WORDLE50\n");
-        printf("You have 6 tries to guess the %s-letter word I'm thinking of\n", argv[1]);
-        printf("Input a %s-letter word:\n", argv[1]);
-    }
-    else if (argc == 1)
-    {
-        printf("Usage: %s wordsize\n", argv[0]);
+        size_number = atoi(argv[1]);              // convert argv[1] to number (integer)
+        if (size_number >= 5 && size_number <= 8) // check number
+        {
+            printf("This is WORDLE50\n"); // continue game if number is ok
+            printf("You have 6 tries to guess the %i-letter word I'm thinking of\n", size_number);
+            printf("Input a %i-letter word:\n", size_number);
+        }
+        else if (isdigit(size_number))
+        {
+            printf("Error: wordsize must be either 5, 6, 7, or 8\n"); // error if number not in 5-8 range
+        }
+        else
+        {
+            printf("Usage: %s wordsize\n", argv[0]); // error if argv[1] is not a number
+        }
     }
     else
     {
-        printf("Error: wordsize must be either 5, 6, 7, or 8\n");
-        return 1;
+        printf("Usage: %s wordsize\n", argv[0]); // error if no argv[1]
     }
+    // ---- DONE check argv[1] ----
 
     int wordsize = 0;
 
