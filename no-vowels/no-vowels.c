@@ -15,8 +15,8 @@ int main(int argc, string argv[])
     {
         printf("ok");
         word = argv[1];
-        replace(word);
-        printf("%s\n", newword);
+
+        printf("%s\n", replace(word));
     }
     else
     {
@@ -25,7 +25,7 @@ int main(int argc, string argv[])
 }
 
 // function replace : take string and return string
-string replace(word)
+string replace(strign word)
 {
     for (int i=0; i < strlen(word); i++)
     {
