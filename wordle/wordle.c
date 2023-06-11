@@ -130,7 +130,7 @@ int main(int argc, string argv[])
     // TODO #7
     if (won)
     {
-        printf("Congratulations! You guessed the word!\n");
+        printf("You won!\n");
     }
     else
     {
