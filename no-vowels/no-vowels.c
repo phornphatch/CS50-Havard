@@ -5,27 +5,34 @@
 
 #include <cs50.h>
 #include <stdio.h>
+#include<string.h>
 
 string newword;
 string replace(string word);
+int j = 0;
 
 int main(int argc, string argv[])
 {
-    if (argc == 1)
+    if (argc == 2)
     {
         printf("%s\n", replace(argv[1]));
     }
+    else if (argc == 1)
+    {
+        printf("Usage: %s word\n", argv[0]);
+    }
     else
     {
-        printf("not ok"); return 1;
+        printf("not ok\n"); return 1;
     }
 }
 
 // function replace : take string and return string
 string replace(string word)
 {
-    for (int i=0; i < strlen(word); i++)
+    for (int j = 0, j < strlen(word); j++)
     {
-        newword += i;
-    } return newword;
+        printf("%c\n", argv[0][j]);
+    }
+    printf("\n");
 }
