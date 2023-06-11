@@ -23,12 +23,26 @@ string get_guess(int wordsize);
 int check_word(string guess, int wordsize, int status[], string choice);
 void print_word(string guess, int wordsize, int status[]);
 
-int main(int argc, string argv[])
+int main(int argc, int argv[])
 {
     // ensure proper usage
     // TODO #1
 
-    int wordsize = 0;
+    int wordsize = argv[1];
+    // get wordsize from user
+    if (argc == 2)
+    {
+        if (int argv[1] => 5 && int argv[1] <=8)
+        {
+         wordsize = argv[1];
+        } else {
+             printf("Error: wordsize must be either 5, 6, 7, or 8\n");
+        }
+    }
+    else if (argc == 1)
+    {
+        printf("Usage: ./wordle wordsize\n");
+    }
 
     // ensure argv[1] is either 5, 6, 7, or 8 and store that value in wordsize instead
     // TODO #2
