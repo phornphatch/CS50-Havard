@@ -129,6 +129,15 @@ int main(int argc, string argv[])
 
     // Print the game's result
     // TODO #7
+     if (won)
+    {
+        printf("Congratulations! You guessed the word!\n");
+    }
+    else
+    {
+        printf("Game over! You failed to guess the word.\n");
+        printf("The word was: %s\n", choice);
+    }
 
     // that's all folks!
     return 0;
@@ -140,6 +149,11 @@ string get_guess(int wordsize)
 
     // ensure users actually provide a guess that is the correct length
     // TODO #3
+        while (strlen(guess) != wordsize)
+    {
+        printf("Enter a %i-letter guess: ", wordsize);
+        guess = get_string("");
+    }
 
     return guess;
 }
@@ -159,6 +173,27 @@ int check_word(string guess, int wordsize, int status[], string choice)
     // if it's in the word, but not the right spot, score CLOSE point (yellow)
     // keep track of the total score by adding each individual letter's score from above
 
+     for (int i = 0; i < wordsize; i++)
+    {
+        if (guess[i] == choice[i])
+        {
+            status[i] = EXACT;
+            score += EXACT;
+        }
+        else
+        {
+            for (int j = 0; j < wordsize; j++)
+            {
+                if (guess[i] == choice[j] && status[j] == WRONG)
+                {
+                    status[j] = CLOSE;
+                    score += CLOSE;
+                    break;
+                }
+            }
+        }
+    }
+
     return score;
 }
 
@@ -166,6 +201,21 @@ void print_word(string guess, int wordsize, int status[])
 {
     // print word character-for-character with correct color coding, then reset terminal font to normal
     // TODO #6
+        for (int i = 0; i < wordsize; i++)
+    {
+        if (status[i] == EXACT)
+        {
+            printf(GREEN " %c " RESET, guess[i]);
+        }
+        else if (status[i] == CLOSE)
+        {
+            printf(YELLOW " %c " RESET, guess[i]);
+        }
+        else
+        {
+            printf(RED " %c " RESET, guess[i]);
+        }
+    }
 
     printf("\n");
     return;
