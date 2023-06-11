@@ -186,9 +186,9 @@ int check_word(string guess, int wordsize, int status[], string choice)
                  choice_letterposition++) // check guess alphabet with all choice alphabet
             {
                 if (guess[guess_letterposition] == choice[choice_letterposition] &&
-                    status[choice_letterposition] != EXACT) // same alphabet, diff position and not exact
+                    status[guess_letterposition] != EXACT) // same alphabet, diff position and not exact
                 {
-                    status[choice_letterposition] = CLOSE;
+                    status[guess_letterposition] = CLOSE;
                     score += CLOSE;
                     break;
                 }
