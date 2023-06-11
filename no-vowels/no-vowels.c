@@ -35,23 +35,23 @@ string replace(string word)
     {
         char character = word[i];
         // printf("%c\n", character);
-        if (character == h) {
-            printf("%c\n", character);
-        }
-        // switch (character)
-        // {
-        // case character == "a":
-        //     printf("a is 6\n");
-        //     break;
-
-        // case character == "e":
-        //     printf("e is 3\n");
-        //     break;
-
-        // default:
-        //     printf("what\n");
-        //     break;
+        // if (character == 'h') {
+        //     printf("%c\n", character);
         // }
+        switch (character)
+        {
+        case character == 'a':
+            printf("a is 6\n");
+            break;
+
+        case character == 'e':
+            printf("e is 3\n");
+            break;
+
+        default:
+            printf("what\n");
+            break;
+        }
     }
     return "b";
 }
