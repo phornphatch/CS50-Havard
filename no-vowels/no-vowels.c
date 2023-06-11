@@ -38,24 +38,24 @@ string replace(string word)
         // replace character
         switch (character)
         {
-        case 'a':
-            printf("6");
-            break;
-        case 'e':
-            printf("3");
-            break;
-        case 'i':
-            printf("1");
-            break;
-        case 'o':
-            printf("0");
-            break;
-        case 'u':
-            printf("u");
-            break;
-        default:
-            printf("%c", character);
-            break;
+            case 'a':
+                printf("6");
+                break;
+            case 'e':
+                printf("3");
+                break;
+            case 'i':
+                printf("1");
+                break;
+            case 'o':
+                printf("0");
+                break;
+            case 'u':
+                printf("u");
+                break;
+            default:
+                printf("%c", character);
+                break;
         }
     }
     return 0;
