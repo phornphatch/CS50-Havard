@@ -36,9 +36,6 @@ int main(int argc, string argv[])
         size_number = atoi(argv[1]);              // convert argv[1] to number (integer)
         if (size_number >= 5 && size_number <= 8) // check number
         {
-            printf("This is WORDLE50\n"); // continue game if number is ok
-            printf("You have 6 tries to guess the %i-letter word I'm thinking of\n", size_number);
-            printf("Input a %i-letter word:\n", size_number);
             is_wordsize_valid = true;
         }
         else if (isdigit(size_number))
@@ -57,10 +54,12 @@ int main(int argc, string argv[])
     // ---- DONE check argv[1] ----
 
     int wordsize = 0;
-    if (is_wordsize_valid == true) {
-    wordsize = size_number;
-    printf("wordsize is %i\n", size_number); // error if no argv[1]
+    if (is_wordsize_valid == true)
+    {
+        wordsize = size_number;
+        // printf("wordsize is %i\n", size_number);
     }
+     // ---- DONE set wordsize to int ----
 
     // ensure argv[1] is either 5, 6, 7, or 8 and store that value in wordsize instead
     // TODO #2
