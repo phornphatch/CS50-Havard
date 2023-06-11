@@ -43,10 +43,15 @@ bool valid(string password)
         {
             hasLowercase = true;
         }
-        // Check if the character is a digit
-        else if (isnumber(password[i]))
+        // Check if the character is a number (Digits)
+        else if (isdigit(password[i])) // number  { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }
         {
             hasNumber = true;
+        }
+        // Check if the character is a symbol (Punctuation characters)
+        else if (ispunct(password[i])) //  ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
+        {
+            hasSymbol = true;
         }
     }
     // Return true if all criterias are met
