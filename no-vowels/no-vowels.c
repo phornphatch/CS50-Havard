@@ -74,6 +74,5 @@ string replace(string word)
         //     break;
         // }
     }
-    printf("\n");
     return 0;
 }
