@@ -132,11 +132,11 @@ int main(int argc, string argv[])
     {
         printf("You won!\n");
     }
-    // else
-    // {
-    //     printf("Game over! You failed to guess the word.\n");
-    //     printf("The word was: %s\n", choice);
-    // }
+    else
+    {
+        printf("You lose. Your score is %i\n", score);
+        printf("The word was: %s\n", choice);
+    }
 
     // that's all folks!
     return 0;
