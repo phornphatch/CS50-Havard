@@ -31,48 +31,32 @@ int main(int argc, string argv[])
 string replace(string word)
 {
     int i = 0;
+    // loop every char in word
     for (i = 0; i < strlen(word); i++)
     {
         char character = word[i];
-        // printf("%c\n", character);
-        if (character == 'a')
+        // replace character
+        switch (character)
         {
+        case 'a':
             printf("6");
-        }
-        else if (character == 'e')
-        {
+            break;
+        case 'e':
             printf("3");
-        }
-        else if (character == 'i')
-        {
+            break;
+        case 'i':
             printf("1");
-        }
-        else if (character == 'o')
-        {
+            break;
+        case 'o':
             printf("0");
-        }
-        else if (character == 'u')
-        {
+            break;
+        case 'u':
             printf("u");
-        }
-        else
-        {
+            break;
+        default:
             printf("%c", character);
+            break;
         }
-        // switch (character)
-        // {
-        // case character == 'a':
-        //     printf("a is 6\n");
-        //     break;
-
-        // case character == 'e':
-        //     printf("e is 3\n");
-        //     break;
-
-        // default:
-        //     printf("what\n");
-        //     break;
-        // }
     }
     return 0;
 }
