@@ -24,11 +24,12 @@ int main(void)
     printf("%.1f hours\n", calc_hours(hours, weeks, output));
 }
 
-// TODO: complete the calc_hours function
+// calc_hours function
 
-int A = 0;
-int a = 0;
-int T = 0;
+// declare var to be float for decimal
+float A = 0;
+float a = 0;
+float T = 0;
 
 float calc_hours(int hours[], int weeks, char output)
 {
@@ -37,9 +38,9 @@ float calc_hours(int hours[], int weeks, char output)
 
         for (int i = 0; i < weeks; i++)
         {
-            T += hours[i];
+            T += hours[i]; // only total
         }
-        return T;
+        return T; // return total value to calc_hours function
     }
     else if (output == 'A')
     {
@@ -48,8 +49,8 @@ float calc_hours(int hours[], int weeks, char output)
         {
             T += hours[i];
         }
-        A = T / weeks;
-        return A;
+        A = T / weeks; // avg is total divided weeks
+        return A; // return avg value to calc_hours function
     }
-    return 0;
+    return 0; // return 0 if null
 }
