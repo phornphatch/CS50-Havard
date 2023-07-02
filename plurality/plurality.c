@@ -84,10 +84,10 @@ bool vote(string name)
     return voted;
 }
 
-int arr_size(int[] arr)
-{
-    for (int i; i < leng)
-}
+// int arr_size(int[] arr)
+// {
+//     for (int i; i < leng)
+// }
 
 // Print the winner (or winners) of the election
 void print_winner(void)
@@ -95,7 +95,7 @@ void print_winner(void)
     // TODO
     // print name of candidate most votes
     int max[] = {0};
-    printf("length %d\n", sizeof(max)  / sizeof(max[0]) );
+    // printf("length %d\n", sizeof(max)  / sizeof(max[0]) );
     for (int i = 1; i < candidate_count; i++)
     {
         if (candidates[max[0]].votes - candidates[i].votes < 0)
@@ -109,8 +109,9 @@ void print_winner(void)
         }
     }
     // if equal print both name
-    int loop;
 
-    for (loop = 0; loop < sizeof(max); loop++)
-        printf("%d ", max[loop]);
+    // int loop;
+
+    // for (loop = 0; loop < sizeof(max); loop++)
+    //     printf("%d ", max[loop]);
 }
