@@ -3,6 +3,7 @@
     "files.associations": {
         "numbers": "c",
         "ctype.h": "c",
-        "typeinfo": "c"
+        "typeinfo": "c",
+        "tuple": "c"
     }
 }
