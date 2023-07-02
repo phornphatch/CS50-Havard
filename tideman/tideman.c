@@ -92,6 +92,7 @@ int main(int argc, string argv[])
 
     add_pairs();
     sort_pairs();
+
     lock_pairs();
     print_winner();
     return 0;
@@ -126,7 +127,7 @@ void record_preferences(int ranks[])
     {
         for (int j = 1; j < candidate_count; j++)
         {
-            preference[i][j] += 1;
+            preferences[i][j] += 1;
         }
     }
 }
