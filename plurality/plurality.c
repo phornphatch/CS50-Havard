@@ -106,6 +106,8 @@ void print_winner(void)
         if (candidates[max[0]].votes - candidates[i].votes == 0)
         {
             max[0] = i;
+             printf("1winner is : %s\n", candidates[max[0]].name);
+              printf("2winner is : %s\n", candidates[max[0]].name);
         }
     }
 
