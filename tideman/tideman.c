@@ -8,6 +8,7 @@
 int preferences[MAX][MAX];
 
 // locked[i][j] means i is locked in over j
+// เก็บเป็น boolean ว่าใครชนะใคร
 bool locked[MAX][MAX];
 
 // Each pair has a winner, loser
