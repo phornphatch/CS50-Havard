@@ -119,6 +119,8 @@ void add_pairs(void)
 {
     // TODO
     return;
+    // add each pair of candidates to 'pairs' array if one candidate is preferred over the other
+    // update global variable 'pair_count' to be the total number of pairs
 }
 
 // Sort pairs in decreasing order by strength of victory
