@@ -67,12 +67,19 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // TODO
+    // look for a candidate called name
+    // if candidate found, update their vote total and return true
+    // if no candidate found, dont update and return false
     return false;
+
+
 }
 
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
     // TODO
+    // print name of candidate most votes
+    // if equal print both name
     return;
 }
