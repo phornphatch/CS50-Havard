@@ -69,8 +69,6 @@ bool vote(string name)
     // look for a candidate called name
     // if candidate found, update their vote total and return true
     // if no candidate found, dont update and return false
-    printf("cadidate 1 name %s\n", candidates[0].name);
-    printf("cadidate 2 name %s\n", candidates[1].name);
     bool voted = false;
     for (int i = 0; i < candidate_count; i++)
     {
@@ -91,6 +89,7 @@ void print_winner(void)
 {
     // TODO
     // print name of candidate most votes
+    
     // if equal print both name
     return;
 }
