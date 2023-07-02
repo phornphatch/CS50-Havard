@@ -73,6 +73,7 @@ bool vote(string name)
     if (strcmp(name, candidates[0].name ))
     {
         printf("cadidate 1");
+        return true;
     }
     return false;
 }
