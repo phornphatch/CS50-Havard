@@ -89,7 +89,14 @@ void print_winner(void)
 {
     // TODO
     // print name of candidate most votes
-    
+    int max = 0;
+    for (int i = 1; i < candidate_count; i++)
+    {
+        if (candidates[max].votes - candidates[i].votes <= 0)
+        {
+            max = i
+        }
+    }
     // if equal print both name
-    return;
+    return candidates[max].name;
 }
