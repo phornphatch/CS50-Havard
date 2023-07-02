@@ -160,6 +160,10 @@ void sort_pairs(void)
     // TODO
     return;
     // sort pairs in order by decreasing strength of victory
+    for (int i = 0; i < pair_count; i++)
+    {
+        
+    }
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
