@@ -121,6 +121,7 @@ void record_preferences(int ranks[])
 {
     // TODO
     // update the preferences array based on the current voter's ranks
+    // i j คือดำแหน่งในตาราง
     for (int i = 0; i < candidate_count - 1; i++)
     {
         for (int j = 1; j < candidate_count; j++)
