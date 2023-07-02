@@ -162,7 +162,11 @@ void sort_pairs(void)
     // sort pairs in order by decreasing strength of victory
     for (int i = 0; i < pair_count - 2; i++)
     {
-       if ()
+        int strength1 = 0
+        winner1 = pairs[i].winner
+        
+        int strength2 = 0
+        winner2 = pairs[i+1].winner
     }
 }
 
