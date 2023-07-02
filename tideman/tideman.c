@@ -164,9 +164,11 @@ void sort_pairs(void)
     {
         int strength1 = 0
         winner1 = pairs[i].winner
-        
+        preference[winner1]
+
         int strength2 = 0
         winner2 = pairs[i+1].winner
+        preference[winner2]
     }
 }
 
