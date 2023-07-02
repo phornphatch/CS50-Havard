@@ -108,6 +108,8 @@ void print_winner(void)
             max[0] = i;
         }
     }
+
+    printf("winner is : %s\n", candidates[max[0]].name);
     // if equal print both name
 
     // int loop;
