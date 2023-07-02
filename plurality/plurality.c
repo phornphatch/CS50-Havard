@@ -104,5 +104,8 @@ void print_winner(void)
         }
     }
     // if equal print both name
-    printf("max: %v\n", max);
+    int loop;
+
+    for (loop = 0; loop < sizeof(max); loop++)
+        printf("%d ", max[loop]);
 }
