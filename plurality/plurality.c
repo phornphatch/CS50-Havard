@@ -94,22 +94,26 @@ void print_winner(void)
 {
     // TODO
     // print name of candidate most votes
-    int max[] = {0};
+    int max = 0;
     // printf("length %d\n", sizeof(max)  / sizeof(max[0]) );
     for (int i = 1; i < candidate_count; i++)
     {
-        if (candidates[max[0]].votes - candidates[i].votes < 0)
+        if (candidates[max].votes - candidates[i].votes < 0)
         {
-            max[0] = i;
-        }
-
-        if (candidates[max[0]].votes - candidates[i].votes == 0)
-        {
-            max[0] = i;
+            max = i;
         }
     }
 
-    printf("winner is : %s\n", candidates[max[0]].name);
+    int max_votes = candidates[max].votes;
+    printf("total vote for winner: %i\n", candidates[max].votes);
+
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes == max_votes)
+        {
+            printf("%s\n", candidates[i].name);
+        }
+    }
     // if equal print both name
 
     // int loop;
