@@ -4,7 +4,7 @@ How do you know?: TODO
 
 sort2 uses: Merge sort
 
-How do you know?: because this sort show thefastest time for all files.
+How do you know?: The sort2 show the fastest time for all files.
 
 sort3 uses: TODO
 
