@@ -128,6 +128,7 @@ void sort_pairs(void)
 {
     // TODO
     return;
+    // sort pairs in order by decreasing strength of victory
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
@@ -135,6 +136,7 @@ void lock_pairs(void)
 {
     // TODO
     return;
+    // Update 'locked' to create the locked graph by adding all edges in decreasing order of victory strength, as long as there is no cycle
 }
 
 // Print the winner of the election
