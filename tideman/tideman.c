@@ -160,8 +160,12 @@ void sort_pairs(void)
     // TODO
     return;
     // sort pairs in order by decreasing strength of victory
-    for (int i = 0; i < pair_count - 2; i++)
+    for (int i = 0; i < pair_count - 1; i++)
     {
+        for (int j = 0; j < pair_count - i - 1)
+        {
+
+        }
         int strength1 = 0;
         winner1 = pairs[i].winner;
         for (int j = 0; j < candidate_count; j++)
