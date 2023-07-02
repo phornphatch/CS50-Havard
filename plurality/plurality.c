@@ -84,6 +84,11 @@ bool vote(string name)
     return voted;
 }
 
+int arr_size(int[] arr)
+{
+    for (int i; i < leng)
+}
+
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
