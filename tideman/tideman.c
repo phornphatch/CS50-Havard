@@ -16,8 +16,7 @@ typedef struct
 {
     int winner;
     int loser;
-}
-pair;
+} pair;
 
 // Array of candidates
 string candidates[MAX];
@@ -101,10 +100,20 @@ int main(int argc, string argv[])
 bool vote(int rank, string name, int ranks[])
 {
     // TODO
-    return false;
     // look for candidate called 'name'
     // if candidate found, update 'ranks' and return 'true'. 'ranks[i]' is the voter's ith perference
     // if no candidate found, dont update any ranks and return false
+
+    bool voted = false;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (strcmp(name, candidates[i].name) == 0)
+        {
+            candidates[i].votes += 1;
+            voted = true;
+        }
+    }
+    return voted;
 }
 
 // Update preferences given one voter's ranks
@@ -137,7 +146,8 @@ void lock_pairs(void)
 {
     // TODO
     return;
-    // Update 'locked' to create the locked graph by adding all edges in decreasing order of victory strength, as long as there is no cycle
+    // Update 'locked' to create the locked graph by adding all edges in decreasing order of victory strength, as long as there is
+    // no cycle
 }
 
 // Print the winner of the election
