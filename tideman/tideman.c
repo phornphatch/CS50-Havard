@@ -162,15 +162,27 @@ void sort_pairs(void)
     // sort pairs in order by decreasing strength of victory
     for (int i = 0; i < pair_count - 2; i++)
     {
-        int strength1 = 0
-        winner1 = pairs[i].winner
-        preference[winner1]
+        int strength1 = 0;
+        winner1 = pairs[i].winner;
+        for (int j = 0; j < candidate_count; j++)
+        {
+            strength1 += preference[winner1][j];
+        }
 
-        
+        int strength2 = 0;
+        winner2 = pairs[i + 1].winner;
+        for (int j = 0; j < candidate_count; j++)
+        {
+            strength2 += preference[winner2][j];
+        }
 
-        int strength2 = 0
-        winner2 = pairs[i+1].winner
-        preference[winner2]
+        // สลับตัวแปร : กรณีที่ตัวถัดไปมากกว่าตัวแรก
+        if (strength2 > strength1)
+        {
+            pair temp = pairs[i];
+            pairs[i] = pairs[i + 1];
+            pairs[i + 1] = temp;
+        }
     }
 }
 
