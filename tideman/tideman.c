@@ -101,6 +101,9 @@ bool vote(int rank, string name, int ranks[])
 {
     // TODO
     return false;
+    // look for candidate called 'name'
+    // if candidate found, update 'ranks' and return 'true'. 'ranks[i]' is the voter's ith perference
+    // if no candidate found, dont update any ranks and return false
 }
 
 // Update preferences given one voter's ranks
