@@ -73,12 +73,12 @@ bool vote(string name)
     printf("cadidate 2 name %s\n", candidates[1].name);
     for (int i = 0; i < candidate_count; i++)
     {
-    if (strcmp(name, candidates[i].name))
-    {
-        printf("valid name\n");
-        return true;
-    }
-    return false;
+        if (strcmp(name, candidates[i].name) == 0)
+        {
+            printf("valid name\n");
+            return true;
+        }
+        return false;
     }
 }
 
