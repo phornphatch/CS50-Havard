@@ -137,15 +137,14 @@ void add_pairs(void)
     // TODO
     // add each pair of candidates to 'pairs' array if one candidate is preferred over the other
     // update global variable 'pair_count' to be the total number of pairs
-    for (int i = 0; i < candidate_count - 1; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 1; j < candidate_count; j++)
+        for (int j = 0; j < candidate_count; j++)
         {
             if (preference[i][j] > preference[j][i])
             {
-                pair[0].winner = ""
-                pair[0].loser = ""
-                pairs[pair_count] =
+                pairs[pair_count].winner = i;
+                pairs[pair_count].loser = j;
             }
         }
     }
