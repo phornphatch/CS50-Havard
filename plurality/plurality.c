@@ -71,13 +71,15 @@ bool vote(string name)
     // if no candidate found, dont update and return false
     printf("cadidate 1 name %s\n", candidates[0].name);
     printf("cadidate 2 name %s\n", candidates[1].name);
-
-    if (!strcmp(name, candidates[0].name))
+    for (int i = 0; i < candidate_count; i++)
+    {
+    if (strcmp(name, candidates[i].name))
     {
         printf("valid name\n");
         return true;
     }
     return false;
+    }
 }
 
 // Print the winner (or winners) of the election
