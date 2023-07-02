@@ -176,14 +176,14 @@ void sort_pairs(void)
             winner1 = pairs[j].winner;
             for (k = 0; k < candidate_count; k++)
             {
-                strength1 += preferences[winner1][j];
+                strength1 += preferences[winner1][k];
             }
 
             int strength2 = 0;
             winner2 = pairs[j + 1].winner;
             for (k = 0; k < candidate_count; k++)
             {
-                strength2 += preferences[winner2][j];
+                strength2 += preferences[winner2][k];
             }
 
             // สลับตัวแปร : กรณีที่ตัวถัดไปมากกว่าตัวแรก
