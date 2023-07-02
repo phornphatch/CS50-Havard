@@ -1,6 +1,6 @@
 sort1 uses: Bubble sort
 
-How do you know?: The sorted case which is the best case for bubble sorting is faster than reversed case
+How do you know?: All test cases with the same amount of value show not much different time used. Bus all test cases take more time than sort2.
 
 sort2 uses: Merge sort
 
