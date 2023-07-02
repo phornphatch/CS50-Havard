@@ -163,8 +163,9 @@ void sort_pairs(void)
     // sort pairs in order by decreasing strength of victory
     for (i = 0; i < pair_count - 1; i++)
     {
+        // Bubble sort
         swapped = false;
-        for (j = 0; j < pair_count - i - 1;j++)
+        for (j = 0; j < pair_count - i - 1; j++)
         {
             int strength1 = 0;
             winner1 = pairs[j].winner;
@@ -189,6 +190,8 @@ void sort_pairs(void)
                 swapped = true;
             }
         }
+        if (swapped == false)
+            break;
     }
 }
 
