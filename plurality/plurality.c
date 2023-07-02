@@ -10,8 +10,7 @@ typedef struct
 {
     string name;
     int votes;
-}
-candidate;
+} candidate;
 
 // Array of candidates
 candidate candidates[MAX];
@@ -70,9 +69,12 @@ bool vote(string name)
     // look for a candidate called name
     // if candidate found, update their vote total and return true
     // if no candidate found, dont update and return false
-    if (strcmp(name, candidates[0].name ))
+    printf("cadidate 1 name %s\n", candidates[0].name);
+    printf("cadidate 2 name %s\n", candidates[1].name);
+
+    if (!strcmp(name, candidates[0].name))
     {
-        printf("cadidate 1");
+        printf("valid name\n");
         return true;
     }
     return false;
