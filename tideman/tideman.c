@@ -157,35 +157,37 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // TODO
-    return;
+    int i, j, k;
+    bool swapped;
+
     // sort pairs in order by decreasing strength of victory
-    for (int i = 0; i < pair_count - 1; i++)
+    for (i = 0; i < pair_count - 1; i++)
     {
-        for (int j = 0; j < pair_count - i - 1)
+        swapped = false;
+        for (j = 0; j < pair_count - i - 1;j++)
         {
+            int strength1 = 0;
+            winner1 = pairs[j].winner;
+            for (k = 0; k < candidate_count; k++)
+            {
+                strength1 += preference[winner1][j];
+            }
 
-        }
-        int strength1 = 0;
-        winner1 = pairs[i].winner;
-        for (int j = 0; j < candidate_count; j++)
-        {
-            strength1 += preference[winner1][j];
-        }
+            int strength2 = 0;
+            winner2 = pairs[j + 1].winner;
+            for (k = 0; k < candidate_count; k++)
+            {
+                strength2 += preference[winner2][j];
+            }
 
-        int strength2 = 0;
-        winner2 = pairs[i + 1].winner;
-        for (int j = 0; j < candidate_count; j++)
-        {
-            strength2 += preference[winner2][j];
-        }
-
-        // สลับตัวแปร : กรณีที่ตัวถัดไปมากกว่าตัวแรก
-        if (strength2 > strength1)
-        {
-            pair temp = pairs[i];
-            pairs[i] = pairs[i + 1];
-            pairs[i + 1] = temp;
+            // สลับตัวแปร : กรณีที่ตัวถัดไปมากกว่าตัวแรก
+            if (strength2 > strength1)
+            {
+                pair temp = pairs[i];
+                pairs[i] = pairs[i + 1];
+                pairs[i + 1] = temp;
+                swapped = true;
+            }
         }
     }
 }
