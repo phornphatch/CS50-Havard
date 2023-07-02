@@ -34,6 +34,7 @@ int convert(string input)
     printf("last int %d\n", last_int);
 
     if (index_last_char <= 0)
+    
     {
         return last_int;
     }
