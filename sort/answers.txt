@@ -2,9 +2,9 @@ sort1 uses: TODO
 
 How do you know?: TODO
 
-sort2 uses: TODO
+sort2 uses: Merge sort
 
-How do you know?: TODO
+How do you know?: because this sort show thefastest time for all files.
 
 sort3 uses: TODO
 
