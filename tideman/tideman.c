@@ -143,8 +143,11 @@ void add_pairs(void)
         {
             if (preference[i][j] > preference[j][i])
             {
-                pairs[pair_count].winner = i;
-                pairs[pair_count].loser = j;
+                // create stucture var of pair
+                struct pair p;
+                p.winner = i;
+                p.loser = j;
+                pairs[pair_count] = p;
             }
         }
     }
