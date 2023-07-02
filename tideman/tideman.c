@@ -123,6 +123,7 @@ void record_preferences(int ranks[])
     // TODO
     return;
     // update the preferences array based on the current voter's ranks
+    
 }
 
 // Record pairs of candidates where one is preferred over the other
