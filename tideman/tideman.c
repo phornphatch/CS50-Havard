@@ -148,6 +148,7 @@ void add_pairs(void)
                 p.winner = i;
                 p.loser = j;
                 pairs[pair_count] = p;
+                pair_count++;
             }
         }
     }
