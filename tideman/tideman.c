@@ -93,6 +93,10 @@ int main(int argc, string argv[])
     add_pairs();
     sort_pairs();
 
+    for(int i=0; i<pair_count; i++)
+    {
+        printf("pairs : %i - %i\n", pairs[i].winner, pairs[i].loser);
+    }
     lock_pairs();
     print_winner();
     return 0;
@@ -142,10 +146,10 @@ void add_pairs(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
-            if (preference[i][j] > preference[j][i])
+            if (preferences[i][j] > preferences[j][i])
             {
                 // create stucture var of pair
-                struct pair p;
+                pair p;
                 p.winner = i;
                 p.loser = j;
                 pairs[pair_count] = p;
@@ -158,7 +162,7 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    int i, j, k;
+    int i, j, k, winner1, winner2;
     bool swapped;
 
     // sort pairs in order by decreasing strength of victory
@@ -172,14 +176,14 @@ void sort_pairs(void)
             winner1 = pairs[j].winner;
             for (k = 0; k < candidate_count; k++)
             {
-                strength1 += preference[winner1][j];
+                strength1 += preferences[winner1][j];
             }
 
             int strength2 = 0;
             winner2 = pairs[j + 1].winner;
             for (k = 0; k < candidate_count; k++)
             {
-                strength2 += preference[winner2][j];
+                strength2 += preferences[winner2][j];
             }
 
             // สลับตัวแปร : กรณีที่ตัวถัดไปมากกว่าตัวแรก
