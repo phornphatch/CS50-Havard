@@ -8,4 +8,4 @@ How do you know?: The sort2 show the fastest time for all files.
 
 sort3 uses: Selection sort
 
-How do you know?: TODO
+How do you know?: The worst case which is sorted case show the sane time as random case and the reversed case which is 
