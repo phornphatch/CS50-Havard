@@ -70,7 +70,7 @@ bool vote(string name)
     // look for a candidate called name
     // if candidate found, update their vote total and return true
     // if no candidate found, dont update and return false
-    if (strcmp(name, candidate.name[0]))
+    if (strcmp(name, candidates[0].name ))
     {
         printf("cadidate 1");
     }
