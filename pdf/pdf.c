@@ -22,7 +22,9 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    uint8_t buffer[4];
+    uint8_t buffer[4]; // uint8_t is special type of 'pdf'.
+    // uint = unsigned integer. 8 = 8 bits or single byte. _t = all type
+    // หมายถึง unsigned interger ทั้งหมด
 
     fread(buffer, 1, 4, input);
 
