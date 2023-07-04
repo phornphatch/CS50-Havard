@@ -26,9 +26,9 @@ int main(int argc, string argv[])
     // uint8_t is special type of 'pdf'.
     // uint = unsigned integer. 8 = 8 bits or single byte. _t = all type
     // หมายถึง unsigned interger ทั้งหมด
-    // 4 เพราะ pdf จะขึ้นด้วยเลข 4 ตัว 
+    // 4 เพราะ pdf จะขึ้นด้วยเลข 4 ตัว 37 80 68 70
 
-    fread(buffer, 1, 4, input);
+    fread(buffer, 1, 4, input); // 
 
     for (int i = 0; i < 4; i++)
     {
