@@ -12,7 +12,7 @@ int main(int argc, string argv[])
     }
 
     // open file
-    string filename = argc[1];         // ดึงเอา 2nd argument
+    string filename = argv[1];         // ดึงเอา 2nd argument
     FILE *file = fopen(argv[1], "r"); // r is reading mode
 
     // check if file exists
