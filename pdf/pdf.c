@@ -4,7 +4,7 @@
 
 int main(int argc, string argv[])
 {
-    FILE *input = fopen(argv[1], "r");
+    FILE *input = fopen(argv[1], "r"); // r is reading mode
 
     uint8_t buffer[4];
 
