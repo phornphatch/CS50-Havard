@@ -13,7 +13,7 @@ int main(int argc, string argv[])
 
     // open file
     string filename = argc[1];         // ดึงเอา 2nd argument
-    FILE *input = fopen(argv[1], "r"); // r is reading mode
+    FILE *file = fopen(argv[1], "r"); // r is reading mode
 
     // check if file exists
     if (file == NULL)
@@ -28,12 +28,12 @@ int main(int argc, string argv[])
     // หมายถึง unsigned interger ทั้งหมด
     // 4 เพราะ pdf จะขึ้นด้วยเลข 4 ตัว 37 80 68 70
 
-    fread(buffer, 1, 4, input); // 
+    fread(buffer, 1, 4, file); // (location, size of block to read, how many block to read, location to read from)
 
     for (int i = 0; i < 4; i++)
     {
         printf("%i\n", buffer[i]);
     }
 
-    fclose(input);
+    fclose(file);
 }
