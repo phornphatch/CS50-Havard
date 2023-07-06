@@ -230,7 +230,7 @@ void lock_pairs(void)
     // no cycle
     for (int i = 0; i < pair_count; i++)
     {
-        if (i > 2)
+        if (i + 1 == pair_count)
         {
             bool has_won = false;
             for (int j = 0; j < pair_count - 1; j++)
