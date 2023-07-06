@@ -169,7 +169,7 @@ void sort_pairs(void)
     for(int i=0; i < pair_count; i++)
     {
         strength[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
-        printf("strength of %i is %i\n", i, strength);
+        printf("strength of %i is %i\n", i, strength[i]);
     }
 
     int i, j, k, winner1, winner2;
