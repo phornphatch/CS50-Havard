@@ -210,10 +210,8 @@ void sort_pairs(void)
                 pair temp = pairs[j];
                 pairs[j] = pairs[j+1];
                 pairs[j+1] = temp;
-
             }
         }
-        
     }
 }
 
