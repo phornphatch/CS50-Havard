@@ -202,6 +202,7 @@ void sort_pairs(void)
         swapped = false;
         for (j = 0; j < pair_count - i - 1; j++)
         {
+            
             // สลับตัวแปร : กรณีที่ตัวถัดไปมากกว่าตัวแรก
             if (strength[i] < strength[j])
             {
