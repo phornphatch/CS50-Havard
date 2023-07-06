@@ -206,10 +206,11 @@ void sort_pairs(void)
             // สลับตัวแปร : กรณีที่ตัวถัดไปมากกว่าตัวแรก
             if (strength[j] < strength[j+1])
             {
-                printf("in najn");
+                printf("in na\n");
                 pair temp = pairs[j];
                 pairs[j] = pairs[j+1];
                 pairs[j+1] = temp;
+                printf("pairs j is %i\n", pairs[j].winner);
             }
         }
     }
