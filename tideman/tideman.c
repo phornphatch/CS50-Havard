@@ -165,9 +165,11 @@ void add_pairs(void)
 void sort_pairs(void)
 {
 
+    // find strength by pairs[i].winner - pairs[i].loser
     for(int i=0; i < pair_count; i++)
     {
-        printf("pairs : %i - %i\n", pairs[i].winner, pairs[i].loser);
+        int strength = pairs[i].winner - pairs[i].loser;
+        printf("strength of %i is %i\n", i, strength);
     }
 
     int i, j, k, winner1, winner2;
