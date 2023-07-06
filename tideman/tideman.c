@@ -199,7 +199,7 @@ void sort_pairs(void)
     for (i = 0; i < pair_count - 1; i++)
     {
         // Bubble sort
-        swapped = false;
+
         for (j = 0; j < pair_count - 2; j++)
         {
             printf("strength %i %i\n", strength[j], strength[j+1]);
@@ -210,11 +210,10 @@ void sort_pairs(void)
                 pair temp = pairs[j];
                 pairs[j] = pairs[j+1];
                 pairs[j+1] = temp;
-                swapped = true;
+
             }
         }
-        if (swapped == false)
-            break;
+        
     }
 }
 
