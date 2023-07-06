@@ -232,9 +232,20 @@ void lock_pairs(void)
     {
         if (i + 1 == pair_count)
         {
-            for ()
+            bool has_won = false;
+            for (int j = 0; j < pair_count; j++)
+            {
+                if (pairs[i].winner == pairs[j].winner)
+                {
+                    has_won = true;
+                }
+            }
+            locked[pairs[i].winner][pairs[i].loser] = has_won;
         }
-        locked[pairs[i].winner][pairs[i].loser] = true;
+        else
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
     }
 }
 
