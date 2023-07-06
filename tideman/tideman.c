@@ -202,18 +202,19 @@ void sort_pairs(void)
 
         for (j = 0; j < pair_count - i - 1; j++)
         {
-            printf("strength %i %i\n", strength[j], strength[j+1]);
+            printf("strength %i %i\n", strength[j], strength[j + 1]);
             // สลับตัวแปร : กรณีที่ตัวถัดไปมากกว่าตัวแรก
-            if (strength[j] < strength[j+1])
+            if (strength[j] < strength[j + 1])
             {
+                // swap pairs
                 printf("in na\n");
                 pair temp = pairs[j];
-                pairs[j] = pairs[j+1];
-                pairs[j+1] = temp;
-
+                pairs[j] = pairs[j + 1];
+                pairs[j + 1] = temp;
+                // swap strength
                 int t = strength[j];
-                strength[j] = strength[j+1];
-                strength[j+1] = t;
+                strength[j] = strength[j + 1];
+                strength[j + 1] = t;
 
                 printf("pairs j is %i\n", pairs[j].winner);
             }
