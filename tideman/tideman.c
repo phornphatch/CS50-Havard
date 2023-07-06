@@ -92,11 +92,6 @@ int main(int argc, string argv[])
 
     add_pairs();
     sort_pairs();
-
-    for (int i = 0; i < pair_count; i++)
-    {
-        printf("pairs : %i - %i\n", pairs[i].winner, pairs[i].loser);
-    }
     lock_pairs();
     print_winner();
     return 0;
@@ -141,10 +136,13 @@ void record_preferences(int ranks[])
     }
 
     // PRINT preference table
-    for (int i = 0; i < candidate_count; i++) {
-        for(int j = 0; j < candidate_count; j++) {
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
             printf("%i ", preferences[i][j]);
-            if ((j + 1) % 3 == 0) {
+            if ((j + 1) % 3 == 0)
+            {
                 printf("\n");
             }
         }
@@ -172,6 +170,12 @@ void add_pairs(void)
             }
         }
     }
+}
+
+// print pairs
+for (int i = 0; i < pair_count; i++)
+{
+    printf("pairs : %i - %i\n", pairs[i].winner, pairs[i].loser);
 }
 
 // Sort pairs in decreasing order by strength of victory
