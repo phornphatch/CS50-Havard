@@ -206,8 +206,8 @@ void sort_pairs(void)
             if (strength[i] < strength[j])
             {
                 pair temp = pairs[i];
-                pairs[i] = pairs[i + 1];
-                pairs[i + 1] = temp;
+                pairs[i] = pairs[j];
+                pairs[j] = temp;
                 swapped = true;
             }
         }
