@@ -136,18 +136,18 @@ void record_preferences(int ranks[])
             {
                 preferences[ranks[i]][ranks[j]] += 1;
             }
-            // printf("pref %i over %i %d\n", i, j, preferences[ranks[i]][ranks[j]]);
+            printf("pref %i over %i %d\n", i, j, preferences[i][j]);
         }
     }
 
-    for (int i = 0; i < candidate_count; i++) {
-        for(int j = 0; j < candidate_count; j++) {
-            printf("%i ", preferences[i][j]);
-            if ((j + 1) % 3 == 0) {
-                printf("\n");
-            }
-        }
-    }
+    // for (int i = 0; i < candidate_count; i++) {
+    //     for(int j = 0; j < candidate_count; j++) {
+    //         printf("%i ", preferences[i][j]);
+    //         if ((j + 1) % 3 == 0) {
+    //             printf("\n");
+    //         }
+    //     }
+    // }
 
 }
 
