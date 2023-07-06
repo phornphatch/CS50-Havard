@@ -235,7 +235,7 @@ void lock_pairs(void)
             bool has_won = false;
             for (int j = 0; j < pair_count; j++)
             {
-                printf("i winner: %i, j winner: %i", pairs[i].winner, pairs[j].winner);
+                printf("i winner: %i, j winner: %i\n", pairs[i].winner, pairs[j].winner);
                 if (pairs[i].winner == pairs[j].winner)
                 {
                     has_won = true;
