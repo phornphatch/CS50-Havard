@@ -97,7 +97,7 @@ int main(int argc, string argv[])
         printf("pair %i - %i is %i \n", pairs[i].winner, pairs[i].loser, preferences[pairs[i].winner][pairs[i].loser]);
     }
     sort_pairs();
-     for (int i = 0; i < pair_count; i++)
+    for (int i = 0; i < pair_count; i++)
     {
         printf("pair %i - %i is %i \n", pairs[i].winner, pairs[i].loser, preferences[pairs[i].winner][pairs[i].loser]);
     }
@@ -202,10 +202,11 @@ void sort_pairs(void)
         swapped = false;
         for (j = 0; j < pair_count - i - 1; j++)
         {
-            
-            // สลับตัวแปร : กรณีที่ตัวถัดไปมากกว่าตัวแรก
-            if (strength[i] < strength[j])
+            printf("strength %i %i\n", strength[i], strength[j]);
+                // สลับตัวแปร : กรณีที่ตัวถัดไปมากกว่าตัวแรก
+                if (strength[i] < strength[j])
             {
+                printf("in najn");
                 pair temp = pairs[i];
                 pairs[i] = pairs[j];
                 pairs[j] = temp;
