@@ -134,7 +134,7 @@ void record_preferences(int ranks[])
             preferences[i][j] += 1;
         }
     }
-    printf("pref %d\n",preferences[0][0]);
+    printf("pref %d\n",preferences[0][1]);
 }
 
 // Record pairs of candidates where one is preferred over the other
