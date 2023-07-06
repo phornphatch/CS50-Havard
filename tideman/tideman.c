@@ -136,7 +136,7 @@ void record_preferences(int ranks[])
             {
                 preferences[ranks[i]][ranks[j]] += 1;
             }
-            printf("pref %i over %i %d\n", i, j, preferences[i][j]);
+           
         }
     }
 }
