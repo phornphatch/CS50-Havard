@@ -232,16 +232,16 @@ void lock_pairs(void)
     {
         if (i + 1 == pair_count)
         {
-            bool has_won = false;
+            bool has_lost = false;
             for (int j = 0; j < pair_count; j++)
             {
                 printf("i winner: %i, j winner: %i\n", pairs[i].winner, pairs[j].winner);
-                if (pairs[i].winner == pairs[j].winner)
+                if (pairs[i].winner == pairs[j].loser)
                 {
-                    has_won = true;
+                    has_lost = true;
                 }
             }
-            locked[pairs[i].winner][pairs[i].loser] = has_won;
+            locked[pairs[i].winner][pairs[i].loser] = !has_lost;
         }
         else
         {
