@@ -129,7 +129,7 @@ void record_preferences(int ranks[])
     // i j คือดำแหน่งในตาราง
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = i; j < candidate_count; j++)
+        for (int j = 0; j < candidate_count; j++)
         {
             // ต้องเชคก่อนว่าใครอยุก่อน
             if (i != j)
