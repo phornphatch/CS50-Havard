@@ -226,9 +226,14 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     // TODO
-    return;
     // Update 'locked' to create the locked graph by adding all edges in decreasing order of victory strength, as long as there is
     // no cycle
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+        }
+    }
 }
 
 // Print the winner of the election
