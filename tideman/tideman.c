@@ -198,22 +198,8 @@ void sort_pairs(void)
         swapped = false;
         for (j = 0; j < pair_count - i - 1; j++)
         {
-            int strength1 = 0;
-            winner1 = pairs[j].winner;
-            for (k = 0; k < candidate_count; k++)
-            {
-                strength1 += preferences[winner1][k];
-            }
-
-            int strength2 = 0;
-            winner2 = pairs[j + 1].winner;
-            for (k = 0; k < candidate_count; k++)
-            {
-                strength2 += preferences[winner2][k];
-            }
-
             // สลับตัวแปร : กรณีที่ตัวถัดไปมากกว่าตัวแรก
-            if (strength2 > strength1)
+            if (strength[i] < strength[j])
             {
                 pair temp = pairs[i];
                 pairs[i] = pairs[i + 1];
