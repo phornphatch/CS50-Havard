@@ -93,7 +93,7 @@ int main(int argc, string argv[])
     add_pairs();
     sort_pairs();
 
-    for(int i=0; i<pair_count; i++)
+    for (int i = 0; i < pair_count; i++)
     {
         printf("pairs : %i - %i\n", pairs[i].winner, pairs[i].loser);
     }
@@ -133,9 +133,9 @@ void record_preferences(int ranks[])
         {
             // ต้องเชคก่อนว่าใครอยุก่อน
             preferences[ranks[i]][ranks[j]] += 1;
+            printf("pref %i over %i %d\n", i, j, preferences[i][j]);
         }
     }
-    printf("pref %d\n",preferences[0][1]);
 }
 
 // Record pairs of candidates where one is preferred over the other
@@ -166,7 +166,7 @@ void sort_pairs(void)
 {
     int strength[pair_count];
     // find strength by pairs[i].winner - pairs[i].loser
-    for(int i=0; i < pair_count; i++)
+    for (int i = 0; i < pair_count; i++)
     {
         strength[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
         printf("strength of %i is %i\n", i, strength[i]);
