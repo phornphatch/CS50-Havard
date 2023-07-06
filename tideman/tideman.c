@@ -200,11 +200,11 @@ void sort_pairs(void)
     {
         // Bubble sort
         swapped = false;
-        for (j = 0; j < pair_count - i - 1; j++)
+        for (j = i + 1; j < pair_count - i - 1; j++)
         {
             printf("strength %i %i\n", strength[i], strength[j]);
-                // สลับตัวแปร : กรณีที่ตัวถัดไปมากกว่าตัวแรก
-                if (strength[i] < strength[j])
+            // สลับตัวแปร : กรณีที่ตัวถัดไปมากกว่าตัวแรก
+            if (strength[i] < strength[j])
             {
                 printf("in najn");
                 pair temp = pairs[i];
