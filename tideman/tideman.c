@@ -210,6 +210,11 @@ void sort_pairs(void)
                 pair temp = pairs[j];
                 pairs[j] = pairs[j+1];
                 pairs[j+1] = temp;
+
+                int temp = strength[j];
+                strength[j] = strength[j+1];
+                strength[j+1] = temp;
+
                 printf("pairs j is %i\n", pairs[j].winner);
             }
         }
