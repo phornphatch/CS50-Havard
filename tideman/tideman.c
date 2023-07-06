@@ -132,7 +132,7 @@ void record_preferences(int ranks[])
         for (int j = 0; j < candidate_count; j++)
         {
             // ต้องเชคก่อนว่าใครอยุก่อน
-            if (i != j && ranks[i] > ranks[j])
+            if (i != j && ranks[i] < ranks[j])
             {
                 preferences[ranks[i]][ranks[j]] += 1;
             }
