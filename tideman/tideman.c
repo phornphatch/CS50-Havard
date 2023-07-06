@@ -132,7 +132,7 @@ void record_preferences(int ranks[])
         for (int j = i + 1; j < candidate_count; j++)
         {
             // ต้องเชคก่อนว่าใครอยุก่อน
-            preferences[i][j] += 1;
+            preferences[ranks[i]][ranks[j]] += 1;
         }
     }
     printf("pref %d\n",preferences[0][1]);
