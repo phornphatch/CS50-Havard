@@ -134,9 +134,9 @@ void record_preferences(int ranks[])
             // ต้องเชคก่อนว่าใครอยุก่อน
             if (i != j)
             {
-                preferences[ranks[i]][ranks[j]] += 1;
+                preferences[ranks[j]][ranks[i]] += 1;
             }
-            printf("pref %i over %i %d\n", i, j, preferences[i][j]);
+            printf("pref %i over %i %d\n", j, i, preferences[j][i]);
         }
     }
 }
