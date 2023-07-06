@@ -136,10 +136,10 @@ void record_preferences(int ranks[])
             {
                 preferences[ranks[i]][ranks[j]] += 1;
             }
-            printf("pref %i over %i %d\n", ranks[i], ranks[j], preferences[ranks[i]][ranks[j]]);
+            printf("pref %i over %i %d\n", i, j, preferences[ranks[i]][ranks[j]]);
         }
     }
-    
+
 }
 
 // Record pairs of candidates where one is preferred over the other
