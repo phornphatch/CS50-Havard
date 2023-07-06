@@ -200,7 +200,7 @@ void sort_pairs(void)
     {
         // Bubble sort
 
-        for (j = 0; j < pair_count - 1; j++)
+        for (j = 0; j < pair_count - i - 1; j++)
         {
             printf("strength %i %i\n", strength[j], strength[j+1]);
             // สลับตัวแปร : กรณีที่ตัวถัดไปมากกว่าตัวแรก
