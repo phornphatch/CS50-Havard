@@ -94,7 +94,7 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < pair_count; i++)
     {
-        printf("pair %i - %i\n is %i", pairs[i].winner, pairs[i].loser, preferences[[pairs[i].winner][pairs[i].loser]]);
+        printf("pair %i - %i\n is %i", pairs[i].winner, pairs[i].loser, preferences[pairs[i].winner][pairs[i].loser]);
     }
     sort_pairs();
     lock_pairs();
