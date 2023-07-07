@@ -194,6 +194,15 @@ void lock_pairs(void)
             locked[pairs[i].winner][pairs[i].loser] = false;
         }
     }
+
+    // Lock remaining pairs if no cycles were detected
+    for (int i = pair_count - 1; i >= 0; i--)
+    {
+        if (!locked[pairs[i].winner][pairs[i].loser])
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
+    }
 }
 
 // Print the winner of the election
