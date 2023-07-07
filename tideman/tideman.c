@@ -225,74 +225,75 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
+    
     // TODO
     // Update 'locked' to create the locked graph by adding all edges in decreasing order of victory strength, as long as there is
     // no cycle
-    for (int i = 0; i < pair_count; i++)
-    {
-        if (i == 0 || i == 1)
-        {
-            locked[pairs[i].winner][pairs[i].loser] = true;
-            printf("i is 0 or 1\n");
-        }
-        else
-        {
-            int curr_winner = pairs[i].winner;
-            int curr_loser = pairs[i].loser;
-            int curr_winner_lost_to = -1;
+    // for (int i = 0; i < pair_count; i++)
+    // {
+    //     if (i == 0 || i == 1)
+    //     {
+    //         locked[pairs[i].winner][pairs[i].loser] = true;
+    //         printf("i is 0 or 1\n");
+    //     }
+    //     else
+    //     {
+    //         int curr_winner = pairs[i].winner;
+    //         int curr_loser = pairs[i].loser;
+    //         int curr_winner_lost_to = -1;
 
-            // check if curr_winner lost to someone
-            for (int j = 0; j < i; j++)
-            {
-                if (pairs[j].loser == curr_winner)
-                {
-                    curr_winner_lost_to = pairs[j].winner;
-                }
-            }
+    //         // check if curr_winner lost to someone
+    //         for (int j = 0; j < i; j++)
+    //         {
+    //             if (pairs[j].loser == curr_winner)
+    //             {
+    //                 curr_winner_lost_to = pairs[j].winner;
+    //             }
+    //         }
 
-            // if curr_winner lost to someone check
-            // if curr_loser won that person or curr_winner
-            if (curr_winner_lost_to != -1)
-            {
-                for (int j = 0; j < i; j++)
-                {
-                    if (pairs[j].loser == curr_winner_lost_to && pairs[j].winner == curr_loser)
-                    {
-                        curr_winner_lost_to = pairs[j].loser;
-                    }
-                }
-            }
-            else
-            {
-                locked[pairs[i].winner][pairs[i].loser] = true;
-            }
-            // printf("i is not 0 or 1\n");
-            // bool should_lock = false;
-            // bool should_check = false;
-            // for (int j = i - 1; j >= 0; j--)
-            // {
-            //     printf("i winner: %i, j winner: %i\n", pairs[i].winner, pairs[j].winner);
-            //     if (pairs[i].loser == pairs[j].winner || should_check)
-            //     {
-            //         should_check = pairs[j + 1].loser == pairs[j].winner;
-            //         printf("cycle\n");
-            //     }
-            //     else
-            //     {
-            //         should_lock = true;
-            //         break;
-            //     }
-            // }
+    //         // if curr_winner lost to someone check
+    //         // if curr_loser won that person or curr_winner
+    //         if (curr_winner_lost_to != -1)
+    //         {
+    //             for (int j = 0; j < i; j++)
+    //             {
+    //                 if (pairs[j].loser == curr_winner_lost_to && pairs[j].winner == curr_loser)
+    //                 {
+    //                     curr_winner_lost_to = pairs[j].loser;
+    //                 }
+    //             }
+    //         }
+    //         else
+    //         {
+    //             locked[pairs[i].winner][pairs[i].loser] = true;
+    //         }
+    //         // printf("i is not 0 or 1\n");
+    //         // bool should_lock = false;
+    //         // bool should_check = false;
+    //         // for (int j = i - 1; j >= 0; j--)
+    //         // {
+    //         //     printf("i winner: %i, j winner: %i\n", pairs[i].winner, pairs[j].winner);
+    //         //     if (pairs[i].loser == pairs[j].winner || should_check)
+    //         //     {
+    //         //         should_check = pairs[j + 1].loser == pairs[j].winner;
+    //         //         printf("cycle\n");
+    //         //     }
+    //         //     else
+    //         //     {
+    //         //         should_lock = true;
+    //         //         break;
+    //         //     }
+    //         // }
 
-            // if (should_check)
-            // {
-            //     locked[pairs[i].winner][pairs[i].loser] = false;
-            // }
-            // else
-            // {
-            //     locked[pairs[i].winner][pairs[i].loser] = should_lock;
-            // }
-        }
+    //         // if (should_check)
+    //         // {
+    //         //     locked[pairs[i].winner][pairs[i].loser] = false;
+    //         // }
+    //         // else
+    //         // {
+    //         //     locked[pairs[i].winner][pairs[i].loser] = should_lock;
+    //         // }
+    //     }
     }
     for (int i = 0; i < pair_count; i++)
     {
