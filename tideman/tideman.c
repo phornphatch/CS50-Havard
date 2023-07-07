@@ -246,6 +246,7 @@ void lock_pairs(void)
                 if (pairs[i].loser == pairs[j].winner || should_check)
                 {
                     should_check = pairs[j + 1].loser == pairs[j].winner;
+                     printf("cycle\n");
                 }
                 else
                 {
