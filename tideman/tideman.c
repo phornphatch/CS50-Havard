@@ -239,7 +239,14 @@ void lock_pairs(void)
         {
             for (int i = 0; i < pair_count; i++)
             {
-                
+                int curr_winner = pairs[i].winner;
+                int curr_loser = pairs[i].loser;
+
+                bool curr_winner_lost = false;
+                for (int j = 0; j < i; j++)
+                {
+                    
+                }
             }
             // printf("i is not 0 or 1\n");
             // bool should_lock = false;
