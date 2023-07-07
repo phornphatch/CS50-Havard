@@ -249,7 +249,7 @@ void lock_pairs(void)
                 {
                     if (pairs[j].loser == curr_winner)
                     {
-                        curr_winner_lost_to = pairs[j].loser;
+                        curr_winner_lost_to = pairs[j].winner;
                     }
                 }
 
