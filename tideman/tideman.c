@@ -233,7 +233,7 @@ bool check(int winner, int loser, int end)
     {
         if (locked[loser][i])
         {
-            check(loser, pairs[i].winneyr )
+            check(loser, pairs[i].loser, end)
         }
     }
     return true;
