@@ -294,7 +294,7 @@ void print_winner(void)
     {
         for (int j = 0; j < candidate_count; j++) // j is col
         {
-            if (locked[i][j] == true)
+            if (locked[j][i] == true)
             {
                 candidate_score[i]++;
             }
