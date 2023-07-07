@@ -243,7 +243,7 @@ void lock_pairs(void)
                 printf("i winner: %i, j winner: %i\n", pairs[i].winner, pairs[j].winner);
                 if (pairs[i].loser == pairs[j].winner || should_check = true)
                 {
-                    should_check = true;
+                    should_check = pairs[i].loser == pairs[j].winner;
                 }
                 else
                 {
