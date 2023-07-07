@@ -222,10 +222,20 @@ void sort_pairs(void)
     }
 }
 
+bool check(int winner, int loser)
+{
+    
+}
+
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    
+    for (int i=0; i< pair_count; i++)
+    {
+        int current_winner = pairs[i].winner;
+        int current_loser = pairs[i].loser;
+
+    }
     // TODO
     // Update 'locked' to create the locked graph by adding all edges in decreasing order of victory strength, as long as there is
     // no cycle
