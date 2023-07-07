@@ -190,7 +190,7 @@ void sort_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
         strength[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
-        printf("strength of %i is %i\n", i, strength[i]);
+        // printf("strength of %i is %i\n", i, strength[i]);
     }
 
     int i, j, k, winner1, winner2;
@@ -203,7 +203,7 @@ void sort_pairs(void)
 
         for (j = 0; j < pair_count - i - 1; j++)
         {
-            printf("strength %i %i\n", strength[j], strength[j + 1]);
+            // printf("strength %i %i\n", strength[j], strength[j + 1]);
             // สลับตัวแปร : กรณีที่ตัวถัดไปมากกว่าตัวแรก
             if (strength[j] < strength[j + 1])
             {
@@ -217,7 +217,7 @@ void sort_pairs(void)
                 strength[j] = strength[j + 1];
                 strength[j + 1] = t;
 
-                printf("pairs j is %i\n", pairs[j].winner);
+                // printf("pairs j is %i\n", pairs[j].winner);
             }
         }
     }
@@ -261,17 +261,18 @@ void lock_pairs(void)
         }
     }
 
-    for (int i = 0; i < pair_count; i++)
-    {
-        for (int j = 0; j < pair_count; j++)
-        {
-            printf("%i ", locked[i][j]);
-            if ((j + 1) % 3 == 0)
-            {
-                printf("\n");
-            }
-        }
-    }
+    // print locked table (matrix)
+    // for (int i = 0; i < pair_count; i++)
+    // {
+    //     for (int j = 0; j < pair_count; j++)
+    //     {
+    //         printf("%i ", locked[i][j]);
+    //         if ((j + 1) % 3 == 0)
+    //         {
+    //             printf("\n");
+    //         }
+    //     }
+    // }
 }
 
 // Print the winner of the election
