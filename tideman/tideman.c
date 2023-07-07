@@ -292,11 +292,12 @@ void print_winner(void)
 
     for (int i = 0; i < candidate_count; i++) // i is row
     {
+        bool no_lose = false
         for (int j = 0; j < candidate_count; j++) // j is col
         {
             if (locked[j][i] == true)
             {
-                candidate_score[i]++;
+                break;
             }
         }
     }
