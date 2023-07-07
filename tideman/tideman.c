@@ -282,7 +282,16 @@ void lock_pairs(void)
 void print_winner(void)
 {
     // TODO
-    return;
     // Print out the winner of the election, who will be the source of the graph.
     // You may assume there will not be more than one source.
+    for (i = 0; i < candidate_count; i++)
+    {
+        for (j=0; j < candidate_count; j++)
+        {
+            if (locked[i][j] == true)
+            {
+                
+            }
+        }
+    }
 }
