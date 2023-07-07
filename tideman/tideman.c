@@ -258,7 +258,13 @@ void lock_pairs(void)
                 // if curr_loser won that person or curr_winner
                 if (curr_winner_lost_to != -1)
                 {
-
+                    for (int j = 0; j < i; j++)
+                    {
+                        if (pairs[j].winner == curr_loser)
+                        {
+                            curr_winner_lost_to = pairs[j].loser;
+                        }
+                    }
                 }
                 else
                 {
