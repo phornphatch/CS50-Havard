@@ -233,7 +233,7 @@ void lock_pairs(void)
         if (i == 0 || i == 1)
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
-             printf("i is 0 or 1\n");
+            printf("i is 0 or 1\n");
         }
         else
         {
@@ -246,7 +246,7 @@ void lock_pairs(void)
                 if (pairs[i].loser == pairs[j].winner || should_check)
                 {
                     should_check = pairs[j + 1].loser == pairs[j].winner;
-                     printf("cycle\n");
+                    printf("cycle\n");
                 }
                 else
                 {
@@ -285,14 +285,19 @@ void print_winner(void)
     // Print out the winner of the election, who will be the source of the graph.
     // You may assume there will not be more than one source.
     int candidate_score[candidate_count];
-    for (i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++) // i is row
     {
-        for (j=0; j < candidate_count; j++)
+        for (int j = 0; j < candidate_count; j++) // j is col
         {
             if (locked[i][j] == true)
             {
-
+                candidate_score[i] += 1;
             }
         }
+    }
+
+    for (int i = 0; i < candidate_count; i++) // i is row
+    {
+        printf("candidate number %i score -> %i\n", i, candidate_score[i]);
     }
 }
