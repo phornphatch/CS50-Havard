@@ -240,7 +240,7 @@ void lock_pairs(void)
             printf("i is not 0 or 1\n");
             bool should_lock = false;
             bool should_check = false;
-            for (int j = i - 1; j == 0; j--)
+            for (int j = i - 1; j >= 0; j--)
             {
                 printf("i winner: %i, j winner: %i\n", pairs[i].winner, pairs[j].winner);
                 if (pairs[i].loser == pairs[j].winner || should_check)
