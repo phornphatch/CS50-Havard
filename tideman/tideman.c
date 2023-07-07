@@ -222,7 +222,7 @@ void sort_pairs(void)
     }
 }
 
-bool check(int winner, int loser, int end)
+bool check(int winner, int loser)
 {
     if (winner == end)
     {
