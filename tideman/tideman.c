@@ -233,7 +233,7 @@ bool check(int winner, int loser, int end)
     {
         if (locked[loser][i])
         {
-            check(pairs[i].loser, )
+            check(loser, pairs[i].winner )
         }
     }
 }
@@ -245,7 +245,14 @@ void lock_pairs(void)
     {
         int current_winner = pairs[i].winner;
         int current_loser = pairs[i].loser;
-
+        if (check(current_winner, current_loser, current_winner))
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
+        else
+        {
+            locked[pairs[i].winner][pairs[i].loser] = false;
+        }
     }
     // TODO
     // Update 'locked' to create the locked graph by adding all edges in decreasing order of victory strength, as long as there is
