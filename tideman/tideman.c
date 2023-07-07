@@ -236,6 +236,7 @@ bool check(int winner, int loser, int end)
             check(loser, pairs[i].winner )
         }
     }
+    return true;
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
