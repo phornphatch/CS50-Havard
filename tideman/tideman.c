@@ -235,7 +235,7 @@ bool check(int winner, int loser)
     {
         if (locked[i][winner])
         {
-            check(i, loser);
+            return check(i, loser);
         }
     }
     return true;
