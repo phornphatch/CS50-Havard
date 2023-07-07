@@ -284,13 +284,14 @@ void print_winner(void)
     // TODO
     // Print out the winner of the election, who will be the source of the graph.
     // You may assume there will not be more than one source.
+    int candidate_score[candidate_count];
     for (i = 0; i < candidate_count; i++)
     {
         for (j=0; j < candidate_count; j++)
         {
             if (locked[i][j] == true)
             {
-                
+
             }
         }
     }
