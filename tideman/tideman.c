@@ -233,9 +233,11 @@ void lock_pairs(void)
         if (i == 0 || i == 1)
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
+             printf("i is 0 or 1\n");
         }
         else
         {
+            printf("i is not 0 or 1\n");
             bool should_lock = false;
             bool should_check = false;
             for (int j = i - 1; j == 0; j--)
