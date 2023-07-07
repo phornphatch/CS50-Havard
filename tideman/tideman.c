@@ -242,18 +242,27 @@ void lock_pairs(void)
                 int curr_winner = pairs[i].winner;
                 int curr_loser = pairs[i].loser;
 
-                bool curr_winner_lost = false;
+                int curr_winner_lost_to = -1;
+
+                // check if curr_winner lost to someone
                 for (int j = 0; j < i; j++)
                 {
                     if (pairs[j].loser == curr_winner)
                     {
-                        curr_winner_lost = true;
+                        curr_winner_lost_to = pairs[j].loser;
                     }
                 }
 
-                if (curr_winner_lost)
+
+                // if curr_winer didn't lose to anyone
+                // 
+                if (curr_winner_lost_to != -1)
                 {
-                    
+
+                }
+                else
+                {
+                    locked[pairs[i].winner][pairs[i].loser] = true;
                 }
             }
             // printf("i is not 0 or 1\n");
