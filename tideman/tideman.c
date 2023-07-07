@@ -325,7 +325,7 @@ void lock_pairs(void)
     //         //     locked[pairs[i].winner][pairs[i].loser] = should_lock;
     //         // }
     //     }
-}
+
 for (int i = 0; i < pair_count; i++)
 {
     for (int j = 0; j < pair_count; j++)
