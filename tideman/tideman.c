@@ -285,13 +285,18 @@ void print_winner(void)
     // Print out the winner of the election, who will be the source of the graph.
     // You may assume there will not be more than one source.
     int candidate_score[candidate_count];
+    for (int i = 0; i < candidate_count; i++)
+    {
+        candidate_score[i] = 0;
+    }
+
     for (int i = 0; i < candidate_count; i++) // i is row
     {
         for (int j = 0; j < candidate_count; j++) // j is col
         {
             if (locked[i][j] == true)
             {
-                candidate_score[i] += 1;
+                candidate_score[i]++;
             }
         }
     }
