@@ -17,8 +17,7 @@ typedef struct
 {
     int winner;
     int loser;
-}
-pair;
+} pair;
 
 // Array of candidates
 string candidates[MAX];
@@ -164,23 +163,31 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-     for (int i = 0; i < pair_count; i++)
+    bool creates_cycle;
+    bool temp_locked[MAX][MAX];
+    memcpy(temp_locked, locked, sizeof(locked));
+
+    for (int i = 0; i < pair_count; i++)
     {
-        // Check if locking the pair creates a cycle
-        bool creates_cycle = false;
+        creates_cycle = false;
+
+        // Temporarily lock the pair
         locked[pairs[i].winner][pairs[i].loser] = true;
 
-        // Check if there's a path from loser to winner
+        // Check if locking the pair creates a cycle
         for (int j = 0; j < candidate_count; j++)
         {
-            if (locked[pairs[i].loser][j])
+            if (i != j && locked[pairs[j].loser][pairs[j].winner])
             {
-                if (j == pairs[i].winner)
+                // If locking the current pair creates a cycle with an earlier pair, skip it
+                if (locked[pairs[i].loser][pairs[i].winner])
                 {
                     creates_cycle = true;
                     break;
                 }
-                else if (!locked[j][pairs[i].winner])
+
+                // If there's a path from the current pair's loser to the earlier pair's winner, skip it
+                if (locked[pairs[j].loser][pairs[i].loser])
                 {
                     creates_cycle = true;
                     break;
@@ -188,19 +195,14 @@ void lock_pairs(void)
             }
         }
 
-        // If a cycle is created, unlock the pair
+        // If a cycle is created, restore original locked array
         if (creates_cycle)
         {
-            locked[pairs[i].winner][pairs[i].loser] = false;
+            memcpy(locked, temp_locked, sizeof(locked));
         }
-    }
-
-    // Lock remaining pairs if no cycles were detected
-    for (int i = pair_count - 1; i >= 0; i--)
-    {
-        if (!locked[pairs[i].winner][pairs[i].loser])
+        else
         {
-            locked[pairs[i].winner][pairs[i].loser] = true;
+            memcpy(temp_locked, locked, sizeof(locked)); // Update temporary locked array
         }
     }
 }
