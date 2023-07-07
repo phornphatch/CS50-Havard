@@ -222,6 +222,8 @@ void sort_pairs(void)
     }
 }
 
+// Sorted Pairs = [(d, a), (a, b), (b, c), (c, a), (d, b), (d, c)]
+
 bool check(int winner, int loser)
 {
     if (winner == end)
