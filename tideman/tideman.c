@@ -230,7 +230,12 @@ void lock_pairs(void)
     // no cycle
     for (int i = 0; i < pair_count; i++)
     {
-
+        if (i == 0)
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
+        else
+        {
             bool has_won = false;
             for (int j = i - 1; j == 0; j--)
             {
@@ -241,7 +246,7 @@ void lock_pairs(void)
                 }
             }
             locked[pairs[i].winner][pairs[i].loser] = has_won;
-
+        }
     }
     for (int i = 0; i < pair_count; i++)
     {
