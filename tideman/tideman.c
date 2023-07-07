@@ -237,12 +237,13 @@ void lock_pairs(void)
         else
         {
             bool should_lock = false;
+            bool should_check = false;
             for (int j = i - 1; j == 0; j--)
             {
                 printf("i winner: %i, j winner: %i\n", pairs[i].winner, pairs[j].winner);
-                if (pairs[i].loser == pairs[j].winner)
+                if (pairs[i].loser == pairs[j].winner || should_check = true)
                 {
-                    // 
+                    should_check = true;
                 }
                 else
                 {
