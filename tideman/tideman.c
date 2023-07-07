@@ -222,9 +222,9 @@ void sort_pairs(void)
     }
 }
 
-bool check(int winner, int loser)
+bool check(int winner, int loser, int end)
 {
-    if (winner == loser)
+    if (winner == end)
     {
         return false;
     }
@@ -233,7 +233,7 @@ bool check(int winner, int loser)
     {
         if (locked[loser][i])
         {
-            check(pairs[i].loser)
+            check(pairs[i].loser, )
         }
     }
 }
