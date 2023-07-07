@@ -284,40 +284,27 @@ void print_winner(void)
     // TODO
     // Print out the winner of the election, who will be the source of the graph.
     // You may assume there will not be more than one source.
-    int candidate_score[candidate_count];
+    bool candidate_won[candidate_count];
     for (int i = 0; i < candidate_count; i++)
     {
-        candidate_score[i] = 0;
+        candidate_won[i] = true;
     }
-
-    int winner = 0;
     for (int i = 0; i < candidate_count; i++) // i is row
     {
         for (int j = 0; j < candidate_count; j++) // j is col
         {
             if (locked[j][i] == true)
             {
-                break;
-            } else {
-
+                candidate_won[i] = false;
             }
         }
     }
 
-    for (int i = 0; i < candidate_count; i++) // i is row
+    for (int i = 0; i < candidate_count; i++)
     {
-        printf("candidate number %i score -> %i\n", i, candidate_score[i]);
-    }
-
-    int max_score = candidate_score[0];
-    int winner = 0;
-    for (int i = 1; i < candidate_count; i++)
-    {
-        if (max_score < candidate_score[i])
+        if (candidate_won[i])
         {
-            max_score = candidate_score[i];
-            winner = i;
+            printf("%s\n", candidates[i]);
         }
     }
-    printf("%s", candidates[winner]);
 }
