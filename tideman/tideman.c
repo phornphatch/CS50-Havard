@@ -241,9 +241,9 @@ void lock_pairs(void)
             for (int j = i - 1; j == 0; j--)
             {
                 printf("i winner: %i, j winner: %i\n", pairs[i].winner, pairs[j].winner);
-                if (pairs[i].loser == pairs[j].winner || should_check = true)
+                if (pairs[i].loser == pairs[j].winner || should_check)
                 {
-                    should_check = pairs[i].loser == pairs[j].winner;
+                    should_check = pairs[j + 1].loser == pairs[j].winner;
                 }
                 else
                 {
