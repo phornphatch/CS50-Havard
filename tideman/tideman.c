@@ -117,13 +117,13 @@ bool vote(int rank, string name, int ranks[])
     bool voted = false;
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcmp(name, candidates[i]) == 0)
+        if (strcmp(name, candidates[i]) == 0) // look for candidate called 'name' and candidate found
         {
-            ranks[rank] = i;
-            voted = true;
+            ranks[rank] = i; // update 'ranks'
+            voted = true; // and return 'true'
         }
     }
-    return voted;
+    return voted; // candidate not found return false
 }
 
 // Update preferences given one voter's ranks
