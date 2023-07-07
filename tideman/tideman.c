@@ -254,8 +254,8 @@ void lock_pairs(void)
                 }
 
 
-                // if curr_winer didn't lose to anyone
-                // 
+                // if curr_winner lost to someone check
+                // if curr_loser won that person or curr_winner
                 if (curr_winner_lost_to != -1)
                 {
 
