@@ -228,6 +228,14 @@ bool check(int winner, int loser)
     {
         return false;
     }
+
+    for (int i = 0; i < pair_count; i++)
+    {
+        if (locked[loser][i])
+        {
+            check(pair)
+        }
+    }
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
@@ -237,8 +245,6 @@ void lock_pairs(void)
     {
         int current_winner = pairs[i].winner;
         int current_loser = pairs[i].loser;
-
-        
 
     }
     // TODO
