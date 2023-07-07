@@ -260,7 +260,7 @@ void lock_pairs(void)
                 {
                     for (int j = 0; j < i; j++)
                     {
-                        if (pairs[j].winner == curr_loser)
+                        if (pairs[j].winner == curr_winner_lost_to && pairs[j].winner == curr_loser)
                         {
                             curr_winner_lost_to = pairs[j].loser;
                         }
