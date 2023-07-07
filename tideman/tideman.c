@@ -248,7 +248,7 @@ void lock_pairs(void)
     {
         int current_winner = pairs[i].winner;
         int current_loser = pairs[i].loser;
-        if (check(current_winner, current_loser, current_winner))
+        if (check(current_winner, current_loser))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
