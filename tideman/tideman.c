@@ -237,32 +237,36 @@ void lock_pairs(void)
         }
         else
         {
-            printf("i is not 0 or 1\n");
-            bool should_lock = false;
-            bool should_check = false;
-            for (int j = i - 1; j >= 0; j--)
+            for (int i = 0; i < pair_count; i++)
             {
-                printf("i winner: %i, j winner: %i\n", pairs[i].winner, pairs[j].winner);
-                if (pairs[i].loser == pairs[j].winner || should_check)
-                {
-                    should_check = pairs[j + 1].loser == pairs[j].winner;
-                    printf("cycle\n");
-                }
-                else
-                {
-                    should_lock = true;
-                    break;
-                }
+                
             }
+            // printf("i is not 0 or 1\n");
+            // bool should_lock = false;
+            // bool should_check = false;
+            // for (int j = i - 1; j >= 0; j--)
+            // {
+            //     printf("i winner: %i, j winner: %i\n", pairs[i].winner, pairs[j].winner);
+            //     if (pairs[i].loser == pairs[j].winner || should_check)
+            //     {
+            //         should_check = pairs[j + 1].loser == pairs[j].winner;
+            //         printf("cycle\n");
+            //     }
+            //     else
+            //     {
+            //         should_lock = true;
+            //         break;
+            //     }
+            // }
 
-            if (should_check)
-            {
-                locked[pairs[i].winner][pairs[i].loser] = false;
-            }
-            else
-            {
-                locked[pairs[i].winner][pairs[i].loser] = should_lock;
-            }
+            // if (should_check)
+            // {
+            //     locked[pairs[i].winner][pairs[i].loser] = false;
+            // }
+            // else
+            // {
+            //     locked[pairs[i].winner][pairs[i].loser] = should_lock;
+            // }
         }
     }
     for (int i = 0; i < pair_count; i++)
