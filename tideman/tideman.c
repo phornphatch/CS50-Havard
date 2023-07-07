@@ -237,38 +237,34 @@ void lock_pairs(void)
         }
         else
         {
-            for (int i = 0; i < pair_count; i++)
+            int curr_winner = pairs[i].winner;
+            int curr_loser = pairs[i].loser;
+            int curr_winner_lost_to = -1;
+
+            // check if curr_winner lost to someone
+            for (int j = 0; j < i; j++)
             {
-                int curr_winner = pairs[i].winner;
-                int curr_loser = pairs[i].loser;
+                if (pairs[j].loser == curr_winner)
+                {
+                    curr_winner_lost_to = pairs[j].winner;
+                }
+            }
 
-                int curr_winner_lost_to = -1;
-
-                // check if curr_winner lost to someone
+            // if curr_winner lost to someone check
+            // if curr_loser won that person or curr_winner
+            if (curr_winner_lost_to != -1)
+            {
                 for (int j = 0; j < i; j++)
                 {
-                    if (pairs[j].loser == curr_winner)
+                    if (pairs[j].loser == curr_winner_lost_to && pairs[j].winner == curr_loser)
                     {
-                        curr_winner_lost_to = pairs[j].winner;
+                        curr_winner_lost_to = pairs[j].loser;
                     }
                 }
-
-                // if curr_winner lost to someone check
-                // if curr_loser won that person or curr_winner
-                if (curr_winner_lost_to != -1)
-                {
-                    for (int j = 0; j < i; j++)
-                    {
-                        if (pairs[j].loser == curr_winner_lost_to && pairs[j].winner == curr_loser)
-                        {
-                            curr_winner_lost_to = pairs[j].loser;
-                        }
-                    }
-                }
-                else
-                {
-                    locked[pairs[i].winner][pairs[i].loser] = true;
-                }
+            }
+            else
+            {
+                locked[pairs[i].winner][pairs[i].loser] = true;
             }
             // printf("i is not 0 or 1\n");
             // bool should_lock = false;
