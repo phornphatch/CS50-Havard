@@ -305,4 +305,10 @@ void print_winner(void)
     {
         printf("candidate number %i score -> %i\n", i, candidate_score[i]);
     }
+
+    int max_score = 0;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        
+    }
 }
