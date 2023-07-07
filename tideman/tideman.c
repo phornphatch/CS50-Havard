@@ -250,7 +250,7 @@ void lock_pairs(void)
                 }
                 else
                 {
-                    should_lock = false;
+                    should_lock = true;
                     break;
                 }
             }
