@@ -245,6 +245,14 @@ void lock_pairs(void)
                 bool curr_winner_lost = false;
                 for (int j = 0; j < i; j++)
                 {
+                    if (pairs[j].loser == curr_winner)
+                    {
+                        curr_winner_lost = true;
+                    }
+                }
+
+                if (curr_winner_lost)
+                {
                     
                 }
             }
