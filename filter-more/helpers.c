@@ -5,6 +5,17 @@
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
     return;
+    // find avg of red green blue
+    //.rgbtRed + .rgbtGreen + .rgbtBlue / 3
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+                red = image[i][j].rgbtRed = 0xff;
+                green = image[i][j].rgbtGreen = 0xff;
+                blue = image[i][j].rgbtBlue = 0x00;
+        }
+    }
 }
 
 // Reflect image horizontally
