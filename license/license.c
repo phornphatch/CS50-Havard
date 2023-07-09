@@ -39,7 +39,9 @@ int main(int argc, char *argv[])
         plates[idx] = buffer;
         idx++;
         for (int i=0; i<7; i++){
-            printf("%c",buffer[i]);
+            
+            heap_plates[i] = buffer[i];
+            printf("%c",heap_plates[i]);
         }
         printf("\n");
     }
