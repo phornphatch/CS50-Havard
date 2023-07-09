@@ -77,16 +77,6 @@ int get_pixel(RGBTRIPLE image[height][width], int i, int j, int height, int widt
 int get_divisor(RGBTRIPLE image[height][width], int height, int width, )
 {
     int divisor = 0;
-    for (int i = 0; i <= height; i++)
-    {
-        for (int j = 0; j <= width; j++)
-        {
-            if (i >= 0 && i < height && j >= 0 && j < width)
-            {
-                divisor++;
-            }
-        }
-    }
     return divisor;
 }
 
