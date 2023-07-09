@@ -7,7 +7,7 @@
 int main(int argc, char *argv[])
 {
     // Define allowable filters
-    char *filters = "begr";
+    char *filters = "begr"; // blur, edge detection, grayscale, and reflection
 
     // Get filter flag and check validity
     char filter = getopt(argc, argv, filters);
