@@ -54,7 +54,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
 void get_pixel()
 {
-
+    if ()
 }
 
 void avg_pixel(RGBTRIPLE image[height][width], int i, int j)
