@@ -52,9 +52,12 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     }
 }
 
-void get_pixel()
+int get_pixel()
 {
-    if ()
+    // ขอบบน
+    if (i-1 < 0) {
+        return 0;
+    }
 }
 
 void avg_pixel(RGBTRIPLE image[height][width], int i, int j)
