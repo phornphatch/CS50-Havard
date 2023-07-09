@@ -120,7 +120,7 @@ bool vote(int rank, string name, int ranks[])
         if (strcmp(name, candidates[i]) == 0) // look for candidate called 'name' and candidate found
         {
             ranks[rank] = i; // update 'ranks'
-            voted = true; // and return 'true'
+            voted = true;    // and return 'true'
         }
     }
     return voted; // candidate not found return false
@@ -139,7 +139,7 @@ void record_preferences(int ranks[])
             // ต้องเชคก่อนว่าใครอยุก่อน
             if (i != j)
             {
-                preferences[ranks[i]][ranks[j]] += 1;
+                preferences[ranks[i]][ranks[j]] += 1; // ถ้า rank i ชนะ j ให้ +1 ให้ตำแหน่งนั้น
             }
             // printf("pref %i over %i %d\n", i, j, preferences[i][j]);
         }
@@ -169,13 +169,13 @@ void add_pairs(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
-            if (preferences[i][j] > preferences[j][i])
+            if (preferences[i][j] > preferences[j][i]) // เทียบแต่ละคู่ ว่า i มากกว่า j มั้ย
             {
                 // create stucture var of pair
                 pair p;
-                p.winner = i;
-                p.loser = j;
-                pairs[pair_count] = p;
+                p.winner = i;          // ถ้าใช่ให้ i เปน winner
+                p.loser = j;           // j เปน loser
+                pairs[pair_count] = p; // เชคคู่ถัดไป
                 pair_count++;
             }
         }
@@ -187,9 +187,10 @@ void sort_pairs(void)
 {
     int strength[pair_count];
     // find strength by pairs[i].winner - pairs[i].loser
-    for (int i = 0; i < pair_count; i++)
+    for (int i = 0; i < pair_count; i++) // ดูแต่ละคู่
     {
-        strength[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
+        strength[i] =
+            preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner]; // หา strength ของแค่ละคู่
         // printf("strength of %i is %i\n", i, strength[i]);
     }
 
@@ -200,7 +201,6 @@ void sort_pairs(void)
     for (i = 0; i < pair_count - 1; i++)
     {
         // Bubble sort
-
         for (j = 0; j < pair_count - i - 1; j++)
         {
             // printf("strength %i %i\n", strength[j], strength[j + 1]);
@@ -216,29 +216,28 @@ void sort_pairs(void)
                 int t = strength[j];
                 strength[j] = strength[j + 1];
                 strength[j + 1] = t;
-
                 // printf("pairs j is %i\n", pairs[j].winner);
             }
         }
     }
 }
 
-// Sorted Pairs = [(d, a), (a, b), (b, c), (c, a), (d, b), (d, c)]
+// Sorted Pairs = [(d, a), (a, b), (b, c), (c, a), (d, b), (d, c)]  ตย ของ 4 candidates
 bool check(int winner, int loser)
 {
     if (winner == loser)
     {
-        return false;
+        return false; // ถ้าเจอว่าคนเดียวกันให้ false เลย
     }
 
     for (int i = 0; i < candidate_count; i++)
     {
         if (locked[i][winner])
         {
-            return check(i, loser);
+            return check(i, loser); // recursive โดยเอา loser ของคู่ที่เจอไปเช็คใหม่
         }
     }
-    return true;
+    return true; // ถ้าไม่เจอว่าคนเดียวกันให้คู่นั้น true
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
