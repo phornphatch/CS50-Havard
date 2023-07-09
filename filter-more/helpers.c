@@ -1,4 +1,5 @@
 #include "helpers.h"
+#include "stdlib.h
 
 // TODO implement all filters function
 // Convert image to grayscale
@@ -11,9 +12,11 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-                int red = image[i][j].rgbtRed; // -> 0x00 or 0xff
-                int green = image[i][j].rgbtGreen;
-                int blue = image[i][j].rgbtBlue;
+            int num_red = (int)strtol(image[i][j].rgbtRed, NULL, 0); // -> 0x00 or 0xff
+            int num_green = (int)strtol(image[i][j].rgbtGreen, NULL, 0);
+            int num_blue = (int)strtol(image[i][j].rgbtBlue, NULL, 0);
+            float num_avg = (num_red + num_green + num_blue) / 3;
+            printf("%f", num_avg);
         }
     }
 }
