@@ -77,12 +77,31 @@ int get_pixel(RGBTRIPLE image[height][width], int i, int j, int height, int widt
 int get_divisor(int height, int width, int i, int j)
 {
     int divisor = 0;
-    if (i - 1 >= 0)
+    if (i = 0)
     {
-       
+        if (j = 0 || j = width)
+        {
+            return divisor = 4;
+        }
+        else
+        {
+            return divisor = 6;
+        }
     }
 
-    return divisor;
+    if (i = height)
+    {
+        if (j = 0 || j = width)
+        {
+            return divisor = 4;
+        }
+        else
+        {
+            return divisor = 6;
+        }
+    }
+
+    return divisor = 9;
 }
 
 void avg_pixel(RGBTRIPLE image[height][width], int i, int j)
