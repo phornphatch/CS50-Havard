@@ -52,10 +52,10 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     }
 }
 
-int get_pixel(RGBTRIPLE image[height][width], int i, int j, int height, int width, string color)
+int get_pixel(int height, int width, RGBTRIPLE image[height][width], int i, int j, string color)
 {
     // ขอบบน ล่าง ซ้าน ขวา
-    if (i < 0 || i >= height || j < 0 || j > = width)
+    if (i < 0 || i >= height || j < 0 || j >= width)
     {
         return 0;
     }
@@ -109,7 +109,7 @@ int divisor(int height, int width, int i, int j)
     return 9;
 }
 
-void avg_pixel(RGBTRIPLE image[height][width], int i, int j, int height, int width)
+void avg_pixel(int height, int width, RGBTRIPLE image[height][width], int i, int j)
 {
     image[i][j].rgbtRed =
         (int) (get_pixel(image, i - 1, j - 1, height, width, 'r') + get_pixel(image, i - 1, j, height, width, 'r') + get_pixel(image, i - 1, j + 1, height, width, 'r')+
@@ -123,7 +123,7 @@ void avg_pixel(RGBTRIPLE image[height][width], int i, int j, int height, int wid
                 get_pixel(image, i + 1, j - 1, height, width, 'g') + get_pixel(image, i + 1, j, height, width, 'g') +
                 get_pixel(image, i + 1, j + 1, height, width, 'g')) /
                divisor(height, width, i, j));
-    image[i][j].rgbBlue =
+    image[i][j].rgbtBlue =
         (int) ((get_pixel(image, i - 1, j - 1, height, width, 'b') + get_pixel(image, i - 1, j, height, width, 'b') +
                 get_pixel(image, i - 1, j + 1, height, width, 'b') + get_pixel(image, i, j - 1, height, width, 'b') +
                 image[i][j].rgbtRed + get_pixel(image, i - 1, j + 1, height, width, 'b') +
@@ -153,7 +153,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         // switch (mirror)
         for (int j = 0; j < width; j++)
         {
-            avg_pixel(image, i, j, width, height);
+            avg_pixel(width, height, image, i, j);
         }
     }
 }
