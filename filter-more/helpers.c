@@ -52,19 +52,46 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     }
 }
 
-int get_pixel(image, i, j, height, width, color)
+int get_pixel(RGBTRIPLE image[height][width], int i, int j, int height, int width, string color)
 {
-    // ขอบบน
-    if (i < 0 || i >= height || j < 0 || j > = width) {
+    // ขอบบน ล่าง ซ้าน ขวา
+    if (i < 0 || i >= height || j < 0 || j > = width)
+    {
         return 0;
     }
 
     if (color == 'red')
     {
-        return image[i][j].red;
+        return image[i][j].rgbtRed;
     }
+    if (color == 'green')
+    {
+        return image[i][j].rgbtGreen;
+    }
+    if (color == 'blue')
+    {
+        return image[i][j].rgbtBlue;
+    }
+}
 
-
+int get_divisor(RGBTRIPLE image[height][width], int i, int j, int height, int width, )
+{
+    int divisor = 0;
+    for (i = 0; i <= height; i++)
+    {
+        for (i = 0; i <= height; i++)
+        {
+            if (i < 0 || i >= height || j < 0 || j > = width)
+            {
+                return 0;
+            }
+            else
+            {
+                divisor++;
+            }
+        }
+    }
+    return divisor;
 }
 
 void avg_pixel(RGBTRIPLE image[height][width], int i, int j)
