@@ -67,6 +67,18 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             original_image[i][j].rgbtBlue = image[i][j].rgbtBlue;
         }
     }
+
+
+    for (int i = 0; i < height; i++) // access to each row
+    {
+        // switch (mirror)
+        for (int j = 0; j < width; j++)
+        {
+            image[i][width - j].rgbtRed = original_image[i][j].rgbtRed;
+            image[i][width - j].rgbtGreen = original_image[i][j].rgbtGreen;
+            image[i][width - j].rgbtBlue = original_image[i][j].rgbtBlue;
+        }
+    }
 }
 
 // Detect edges
