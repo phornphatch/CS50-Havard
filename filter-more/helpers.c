@@ -13,9 +13,9 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            int num_red = (int)strtol(image[i][j].rgbtRed, NULL, 0); // -> 0x00 or 0xff
-            int num_green = (int)strtol(image[i][j].rgbtGreen, NULL, 0);
-            int num_blue = (int)strtol(image[i][j].rgbtBlue, NULL, 0);
+            int num_red = (long)strtol(image[i][j].rgbtRed, NULL, 0); // -> 0x00 or 0xff
+            int num_green = (long)strtol(image[i][j].rgbtGreen, NULL, 0);
+            int num_blue = (long)strtol(image[i][j].rgbtBlue, NULL, 0);
             float num_avg = (num_red + num_green + num_blue) / 3;
             printf("%f", num_avg);
         }
