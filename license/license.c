@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main(int argc, char *argv[])
 {
@@ -15,7 +17,13 @@ int main(int argc, char *argv[])
     // Create array to store plate numbers
     char *plates[8];
 
-    char* heap_plates = malloc(8)
+    // memory allocation
+    char *heap_plates = malloc(8);
+      if ( heap_plates == NULL) // ถ้า mem ไม่พอ
+    {
+        return 1;
+    }
+
 
     FILE *infile = fopen(argv[1], "r");
 
@@ -23,6 +31,7 @@ int main(int argc, char *argv[])
 
     while (fread(buffer, 1, 7, infile) == 7)
     {
+        strcpy(buffer, heap_plates);
         // Replace '\n' with '\0'
         buffer[6] = '\0';
 
