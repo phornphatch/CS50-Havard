@@ -52,7 +52,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     }
 }
 
-int get_pixel(int height, int width, RGBTRIPLE image[height][width], int i, int j, string color)
+int get_pixel(int height, int width, RGBTRIPLE image[height][width], int i, int j, char color)
 {
     // ขอบบน ล่าง ซ้าน ขวา
     if (i < 0 || i >= height || j < 0 || j >= width)
@@ -112,10 +112,12 @@ int divisor(int height, int width, int i, int j)
 void avg_pixel(int height, int width, RGBTRIPLE image[height][width], int i, int j)
 {
     image[i][j].rgbtRed =
-        (int) (get_pixel(height, width, image, i - 1, j - 1, 'r') + get_pixel(height, width, image, i - 1, j, 'r') + get_pixel(height, width, image, i - 1, j + 1, 'r')+
-                get_pixel(height, width, image, i, j - 1, 'r')+ image[i][j].rgbtRed + get_pixel(height, width, image, i - 1, j + 1, 'r') +
-                get_pixel(height, width, image, i +1, j - 1, 'r') + get_pixel(height, width, image, i + 1, j, 'r') + get_pixel(height, width, image, i + 1, j + 1, 'r')) /
-                divisor(height, width, i, j));
+        (int) ((get_pixel(height, width, image, i - 1, j - 1, 'r') + get_pixel(height, width, image, i - 1, j, 'r') +
+                get_pixel(height, width, image, i - 1, j + 1, 'r') + get_pixel(height, width, image, i, j - 1, 'r') +
+                image[i][j].rgbtRed + get_pixel(height, width, image, i - 1, j + 1, 'r') +
+                get_pixel(height, width, image, i + 1, j - 1, 'r') + get_pixel(height, width, image, i + 1, j, 'r') +
+                get_pixel(height, width, image, i + 1, j + 1, 'r')) /
+               divisor(height, width, i, j));
     image[i][j].rgbtGreen =
         (int) ((get_pixel(height, width, image, i - 1, j - 1, 'g') + get_pixel(height, width, image, i - 1, j, 'g') +
                 get_pixel(height, width, image, i - 1, j + 1, 'g') + get_pixel(height, width, image, i, j - 1, 'g') +
