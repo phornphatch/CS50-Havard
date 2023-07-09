@@ -1,5 +1,6 @@
 #include "helpers.h"
 #include "stdlib.h
+#include "stdio.h"
 
 // TODO implement all filters function
 // Convert image to grayscale
