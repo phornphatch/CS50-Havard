@@ -27,6 +27,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    
     for (int i = 0; i <= height; i++) // access to each row
     {
         // switch (mirror)
@@ -35,9 +36,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             int prev_red = image[i][j].rgbtRed;
             int prev_green = image[i][j].rgbtGreen;
             int prev_blue = image[i][j].rgbtBlue;
-            image[i][width - j].rgbtRed = image[i][j].rgbtRed;
-            image[i][width - j].rgbtGreen = image[i][j].rgbtGreen;
-            image[i][width - j].rgbtBlue = image[i][j].rgbtBlue;
+            // image[i][width - j].rgbtRed = image[i][j].rgbtRed;
+            // image[i][width - j].rgbtGreen = image[i][j].rgbtGreen;
+            // image[i][width - j].rgbtBlue = image[i][j].rgbtBlue;
         }
     }
 }
