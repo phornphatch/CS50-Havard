@@ -38,16 +38,14 @@ int main(int argc, char *argv[])
         // Save plate number in array
         plates[idx] = buffer;
         idx++;
-        for (int i=0; i < 7; i++){
 
-            heap_plates[i] = buffer[i];
-            printf("%c",heap_plates[i]);
-        }
+
+
     }
 
     for (int i = 0; i < 8; i++)
     {
-        printf("%c\n", plates[i]);
+        printf("%s\n", plates[i]);
     }
 
     free(heap_plates);
