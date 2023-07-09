@@ -31,13 +31,17 @@ int main(int argc, char *argv[])
 
     while (fread(buffer, 1, 7, infile) == 7)
     {
-        strcpy(buffer, heap_plates);
+
         // Replace '\n' with '\0'
         buffer[6] = '\0';
 
         // Save plate number in array
         plates[idx] = buffer;
         idx++;
+        for (int i=0; i<7; i++){
+            printf("%c",buffer[i]);
+        }
+        printf("\n");
     }
 
     for (int i = 0; i < 8; i++)
