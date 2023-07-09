@@ -72,6 +72,7 @@ int get_pixel(int height, int width, RGBTRIPLE image[height][width], int i, int 
     {
         return image[i][j].rgbtBlue;
     }
+    return 0;
 }
 
 int divisor(int height, int width, int i, int j)
