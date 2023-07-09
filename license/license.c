@@ -18,11 +18,11 @@ int main(int argc, char *argv[])
     char *plates[8];
 
     // memory allocation
-    char *memory = malloc(7);
-      if (  memory == NULL) // ถ้า mem ไม่พอ
-    {
-        return 1;
-    }
+    // char *memory = malloc(7);
+    //   if (  memory == NULL) // ถ้า mem ไม่พอ
+    // {
+    //     return 1;
+    // }
 
     FILE *infile = fopen(argv[1], "r");
 
@@ -35,9 +35,10 @@ int main(int argc, char *argv[])
         buffer[6] = '\0';
 
         // Save plate number in array
-        plates[idx] = buffer;
+        // plates[idx] = buffer;
+
+        strcpy(plates[idx], buffer);
         idx++;
-        strcpy(memory, buffer);
     }
 
     for (int i = 0; i < 8; i++)
@@ -45,5 +46,5 @@ int main(int argc, char *argv[])
         printf("%s\n", plates[i]);
     }
 
-    free(memory);
+    // free(memory);
 }
