@@ -81,11 +81,11 @@ int get_divisor(int height, int width, int i, int j)
     {
         if (j = 0 || j = width)
         {
-            return divisor = 4;
+            return 4;
         }
         else
         {
-            return divisor = 6;
+            return 6;
         }
     }
 
@@ -93,15 +93,20 @@ int get_divisor(int height, int width, int i, int j)
     {
         if (j = 0 || j = width)
         {
-            return divisor = 4;
+            return 4;
         }
         else
         {
-            return divisor = 6;
+            return 6;
         }
     }
 
-    return divisor = 9;
+    if (j = 0 || j = width)
+    {
+        return 6;
+    }
+
+    return 9;
 }
 
 void avg_pixel(RGBTRIPLE image[height][width], int i, int j)
@@ -109,15 +114,15 @@ void avg_pixel(RGBTRIPLE image[height][width], int i, int j)
     image[i][j].rgbtRed = (int) (image[i - 1][j - 1] + image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed +
                                   image[i][j - 1].rgbtRed + image[i][j].rgbtRed + image[i][j + 1].rgbtRed +
                                   image[i + 1][j - 1].rgbtRed + image[i + 1][j].rgbtRed + image[i + 1][j + 1].rgbtRed) /
-                                 9);
+                                 divisor(height, width, i, j));
     image[i][j].rgbtGreen = (int) ((image[i - 1][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen +
                                     image[i][j - 1].rgbtGreen + image[i][j].rgbtGreen + image[i][j + 1].rgbtGreen +
                                     image[i + 1][j - 1].rgbtGreen + image[i + 1][j].rgbtGreen + image[i + 1][j + 1].rgbtGreen) /
-                                   9);
+                                   divisor(height, width, i, j));
     image[i][j].rgbBlue = (int) ((image[i - 1][j - 1].rgbBlue + image[i - 1][j].rgbBlue + image[i - 1][j + 1].rgbBlue +
                                   image[i][j - 1].rgbBlue + image[i][j].rgbBlue + image[i][j + 1].rgbBlue +
                                   image[i + 1][j - 1].rgbBlue + image[i + 1][j].rgbBlue + image[i + 1][j + 1].rgbBlue) /
-                                 9);
+                                 divisor(height, width, i, j));
 }
 
 // Blur image
