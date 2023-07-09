@@ -74,7 +74,7 @@ int get_pixel(RGBTRIPLE image[height][width], int i, int j, int height, int widt
     }
 }
 
-int get_divisor(int height, int width, int i, int j)
+int divisor(int height, int width, int i, int j)
 {
     int divisor = 0;
     if (i == 0)
@@ -154,7 +154,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             avg_pixel(image, i, j, width, height);
-            image[i][j].rgbtRed = 
         }
     }
 }
