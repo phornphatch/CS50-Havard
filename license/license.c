@@ -31,6 +31,13 @@ int main(int argc, char *argv[])
     while (fread(buffer, 1, 7, infile) == 7)
     {
 
+        // memory allocation
+        char *memory = malloc(7);
+          if (  memory == NULL) // ถ้า mem ไม่พอ
+        {
+            return 1;
+        }
+
         // Replace '\n' with '\0'
         buffer[6] = '\0';
 
