@@ -55,7 +55,18 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+    RGBTRIPLE original_image[height][width];
+
+    for (int i = 0; i < height; i++) // access to each row
+    {
+        // save orginal image
+        for (int j = 0; j < width; j++)
+        {
+            original_image[i][j].rgbtRed = image[i][j].rgbtRed;
+            original_image[i][j].rgbtGreen = image[i][j].rgbtGreen;
+            original_image[i][j].rgbtBlue = image[i][j].rgbtBlue;
+        }
+    }
 }
 
 // Detect edges
