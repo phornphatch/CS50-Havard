@@ -109,7 +109,7 @@ int get_divisor(int height, int width, int i, int j)
     return 9;
 }
 
-void avg_pixel(RGBTRIPLE image[height][width], int i, int j)
+void avg_pixel(RGBTRIPLE image[height][width], int i, int j, int height, int width)
 {
     image[i][j].rgbtRed =
         (int) (get_pixel(image, i - 1, j - 1, height, width, 'r') + get_pixel(image, i - 1, j, height, width, 'r') + get_pixel(image, i - 1, j + 1, height, width, 'r')+
@@ -153,7 +153,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         // switch (mirror)
         for (int j = 0; j < width; j++)
         {
-            avg_pixel(image, i, j);
+            avg_pixel(image, i, j, width, height);
+            image[i][j].rgbtRed = 
         }
     }
 }
