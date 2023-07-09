@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
     // Create array to store plate numbers
     char *plates[8];
 
+    // memory allocation
     for (int i = 0; i <= 8; i++)
     {
         plates[i] = malloc(7);
@@ -25,13 +26,6 @@ int main(int argc, char *argv[])
             return 1;
         }
     }
-
-    // memory allocation
-    // char *memory = malloc(7);
-    //   if (  memory == NULL) // ถ้า mem ไม่พอ
-    // {
-    //     return 1;
-    // }
 
     FILE *infile = fopen(argv[1], "r");
 
