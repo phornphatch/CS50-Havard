@@ -169,7 +169,8 @@ void add_pairs(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
-            if (preferences[i][j] > preferences[j][i]) // เทียบแต่ละคู่ ว่า i มากกว่า j มั้ย
+            if (preferences[i][j] >
+                preferences[j][i]) // เทียบแต่ละคู่ ว่า i มากกว่า j มั้ย
             {
                 // create stucture var of pair
                 pair p;
@@ -190,7 +191,8 @@ void sort_pairs(void)
     for (int i = 0; i < pair_count; i++) // ดูแต่ละคู่
     {
         strength[i] =
-            preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner]; // หา strength ของแค่ละคู่
+            preferences[pairs[i].winner][pairs[i].loser] -
+            preferences[pairs[i].loser][pairs[i].winner]; // หา strength ของแค่ละคู่
         // printf("strength of %i is %i\n", i, strength[i]);
     }
 
