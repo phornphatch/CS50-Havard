@@ -156,7 +156,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         // switch (mirror)
         for (int j = 0; j < width; j++)
         {
-            avg_pixel(width, height, image, i, j);
+            avg_pixel(width, height, original_image, i, j);
         }
     }
 }
