@@ -44,8 +44,7 @@ int main(int argc, char *argv[])
     fread(&bi, sizeof(BITMAPINFOHEADER), 1, inptr);
 
     // Ensure infile is (likely) a 24-bit uncompressed BMP 4.0
-    if (bf.bfType != 0x4d42 || bf.bfOffBits != 54 || bi.biSize != 40 ||
-        bi.biBitCount != 24 || bi.biCompression != 0)
+    if (bf.bfType != 0x4d42 || bf.bfOffBits != 54 || bi.biSize != 40 || bi.biBitCount != 24 || bi.biCompression != 0)
     {
         fclose(outptr);
         fclose(inptr);
@@ -53,7 +52,11 @@ int main(int argc, char *argv[])
         return 4;
     }
 
-    bi.biHeight = -bi.biHeight;
+    bi.biHeight = -bi.biHeight; // แก้ตรงนี้
+    // The height of the bitmap, in pixels. If biHeight is positive, the bitmap is a bottom-up DIB and its origin is the lower-left
+    // corner. If biHeight is negative, the bitmap is a top-down DIB and its origin is the upper-left corner.
+    // If biHeight is negative, indicating a top-down DIB, biCompression must be either BI_RGB or BI_BITFIELDS. Top-down DIBs cannot
+    // be compressed.
 
     // Write outfile's BITMAPFILEHEADER
     fwrite(&bf, sizeof(BITMAPFILEHEADER), 1, outptr);
