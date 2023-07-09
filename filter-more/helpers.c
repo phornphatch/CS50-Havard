@@ -27,7 +27,16 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-    for (int i = 0; i )
+    for (int i = 0; i <= height; i++) // access to each row
+    {
+        // switch (mirror)
+        for (int j = 0; i <= width; i++)
+        {
+            image[i][j].rgbtRed = image[i][width - j].rgbtRed;
+            image[i][j].rgbtGreen = image[i][width - j].rgbtGreen;
+            image[i][j].rgbtBlue = image[i][width - j].rgbtBlue;
+        }
+    }
 }
 
 // Blur image
