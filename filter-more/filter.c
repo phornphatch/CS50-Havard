@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
     }
 
     // Filter image
-    switch (filter)
+    switch (filter) 
     {
         // Blur
         case 'b':
