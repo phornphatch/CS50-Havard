@@ -84,6 +84,7 @@ int main(int argc, char *argv[])
         // Then add it back (to demonstrate how)
         for (int k = 0; k < padding; k++)
         {
+            
             fputc(0x00, outptr);
         }
     }
