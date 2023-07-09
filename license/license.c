@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
     int idx = 0;
 
-    while (fread(buffer, 1, 7, infile) == 7)
+    while (fread(buffer, 1, 7, infile) == 7) // อ่านไลฟล์ทีละ 7 ตัว
     {
 
         // Replace '\n' with '\0'
