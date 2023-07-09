@@ -39,16 +39,15 @@ int main(int argc, char *argv[])
         plates[idx] = buffer;
         idx++;
         for (int i=0; i<7; i++){
-            
+
             heap_plates[i] = buffer[i];
-            printf("%c",heap_plates[i]);
+            //printf("%c",heap_plates[i]);
         }
-        printf("\n");
     }
 
     for (int i = 0; i < 8; i++)
     {
-        printf("%s\n", plates[i]);
+        printf("%c\n", heap_plates[i]);
     }
 
     free(heap_plates);
