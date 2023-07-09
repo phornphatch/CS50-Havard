@@ -52,6 +52,22 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     }
 }
 
+void avg_pixel(RGBTRIPLE image[height][width], int i, int j)
+{
+    image[i][j].rgbtRed = (int) ((image[i - 1][j - 1].rgbtRed + image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed +
+                                  image[i][j - 1].rgbtRed + image[i][j].rgbtRed + image[i][j + 1].rgbtRed +
+                                  image[i + 1][j - 1].rgbtRed + image[i + 1][j].rgbtRed + image[i + 1][j + 1].rgbtRed) /
+                                 3);
+    image[i][j].rgbtGreen = (int) ((image[i - 1][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen +
+                                    image[i][j - 1].rgbtGreen + image[i][j].rgbtGreen + image[i][j + 1].rgbtGreen +
+                                    image[i + 1][j - 1].rgbtGreen + image[i + 1][j].rgbtGreen + image[i + 1][j + 1].rgbtGreen) /
+                                   3);
+    image[i][j].rgbBlue = (int) ((image[i - 1][j - 1].rgbBlue + image[i - 1][j].rgbBlue + image[i - 1][j + 1].rgbBlue +
+                                  image[i][j - 1].rgbBlue + image[i][j].rgbBlue + image[i][j + 1].rgbBlue +
+                                  image[i + 1][j - 1].rgbBlue + image[i + 1][j].rgbBlue + image[i + 1][j + 1].rgbBlue) /
+                                 3);
+}
+
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -68,15 +84,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-
     for (int i = 0; i < height; i++) // access to each row
     {
         // switch (mirror)
         for (int j = 0; j < width; j++)
         {
-            image[i][width - j].rgbtRed = original_image[i][j].rgbtRed;
-            image[i][width - j].rgbtGreen = original_image[i][j].rgbtGreen;
-            image[i][width - j].rgbtBlue = original_image[i][j].rgbtBlue;
+            avg_pixel(image, i, j);
         }
     }
 }
