@@ -208,7 +208,6 @@ void sort_pairs(void)
             if (strength[j] < strength[j + 1])
             {
                 // swap pairs
-                printf("in na\n");
                 pair temp = pairs[j];
                 pairs[j] = pairs[j + 1];
                 pairs[j + 1] = temp;
