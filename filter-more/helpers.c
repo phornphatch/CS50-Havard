@@ -170,12 +170,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 typedef struct
 {
-    int GXRed;
-    int GYRed;
-    int GXGreen;
-    int GYGreen;
-    int GXBlue;
-    int GYBlue;
+    int GRed;
+    int GGreen;
+    int GBlue;
 } __attribute__((__packed__)) GALL;
 
 // find gx and gy
@@ -228,7 +225,11 @@ GALL find_g(int height, int width, RGBTRIPLE image[height][width], RGBTRIPLE ori
                    (0 * get_pixel(height, width, original_image, i, j + 1, 'b')) +
                    (1 * get_pixel(height, width, original_image, i + 1, j - 1, 'b')) +
                    (2 * get_pixel(height, width, original_image, i + 1, j, 'b')) +
-                   (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'b')))
+                   (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'b')));
+
+    GALL GRed = (gx_red*gx_red)+(gy_red*gy_red);
+    GALL GGreen = (gx_green*gx_green)+(gy_green*gy_green);
+    GALL GBlue = (gx_blue*gx_blue)+(gy_blue*gy_blue);
 }
 
 // Detect edges
