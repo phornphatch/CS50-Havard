@@ -229,21 +229,21 @@ GALL find_g(int height, int width, RGBTRIPLE image[height][width], RGBTRIPLE ori
 
     GALL final_value;
 
-    final_value.GRed = sqrt((gx_red * gx_red) + (gy_red * gy_red));
-    final_value.GGreen = sqrt((gx_green * gx_green) + (gy_green * gy_green));
-    final_value.GBlue = sqrt((gx_blue * gx_blue) + (gy_blue * gy_blue));
+    final_value.GRed = round(sqrt((gx_red * gx_red) + (gy_red * gy_red)));
+    final_value.GGreen = round(sqrt((gx_green * gx_green) + (gy_green * gy_green)));
+    final_value.GBlue = round(sqrt((gx_blue * gx_blue) + (gy_blue * gy_blue)));
 
     if (final_value.GRed > 255)
     {
         final_value.GRed = 255;
     }
 
-     if (final_value.GGreen > 255)
+    if (final_value.GGreen > 255)
     {
         final_value.GGreen = 255;
     }
 
-     if (final_value.GBlue > 255)
+    if (final_value.GBlue > 255)
     {
         final_value.GBlue = 255;
     }
