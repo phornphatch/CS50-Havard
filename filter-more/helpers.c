@@ -229,37 +229,6 @@ GALL find_g(int height, int width, RGBTRIPLE image[height][width], RGBTRIPLE ori
 
     GALL final_value;
 
-    if (i == 0)
-    {
-        if (j == 0 || j == width - 1) // corner
-        {
-            return 4.00;
-        }
-        else
-        {
-            return 6.00;
-        }
-    }
-
-    if (i == height - 1)
-    {
-        if (j == 0 || j == width - 1)
-        {
-            return 4.00;
-        }
-        else
-        {
-            return 6.00;
-        }
-    }
-
-    if (j == 0 || j == width - 1)
-    {
-        return 6.00;
-    }
-
-    return 9.00;
-
     final_value.GRed = sqrt((gx_red * gx_red) + (gy_red * gy_red));
     final_value.GGreen = sqrt((gx_green * gx_green) + (gy_green * gy_green));
     final_value.GBlue = sqrt((gx_blue * gx_blue) + (gy_blue * gy_blue));
