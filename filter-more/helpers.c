@@ -169,7 +169,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 }
 
 // find gx and gy
-int find_gx()
+int find_g(int height, int width, RGBTRIPLE image[height][width], RGBTRIPLE original_image[height][width], int i, int j)
 {
     int gx_red = (((-1) * get_pixel(height, width, original_image, i - 1, j - 1, 'r')) +
                   (0 * get_pixel(height, width, original_image, i - 1, j, 'r')) +
@@ -194,6 +194,30 @@ int find_gx()
                    (2 * get_pixel(height, width, original_image, i, j + 1, 'b')) +
                    ((-1) * get_pixel(height, width, original_image, i + 1, j - 1, 'b')) +
                    (0 * get_pixel(height, width, original_image, i + 1, j, 'b')) +
+                   (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'b')));
+    int gy_red = (((-1) * get_pixel(height, width, original_image, i - 1, j - 1, 'r')) +
+                  ((-2) * get_pixel(height, width, original_image, i - 1, j, 'r')) +
+                  ((-1) * get_pixel(height, width, original_image, i - 1, j + 1, 'r')) +
+                  (0 * get_pixel(height, width, original_image, i, j - 1, 'r')) + (0 * original_image[i][j].rgbtRed) +
+                  (0 * get_pixel(height, width, original_image, i, j + 1, 'r')) +
+                  (1 * get_pixel(height, width, original_image, i + 1, j - 1, 'r')) +
+                  (2 * get_pixel(height, width, original_image, i + 1, j, 'r')) +
+                  (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'r')));
+    int gy_green = (((-1) * get_pixel(height, width, original_image, i - 1, j - 1, 'g')) +
+                    ((-2)) * get_pixel(height, width, original_image, i - 1, j, 'g')) +
+                    ((-1) * get_pixel(height, width, original_image, i - 1, j + 1, 'g')) +
+                    (0 * get_pixel(height, width, original_image, i, j - 1, 'g')) + (0 * original_image[i][j].rgbtGreen) +
+                    (0 * get_pixel(height, width, original_image, i, j + 1, 'g')) +
+                    (1 * get_pixel(height, width, original_image, i + 1, j - 1, 'g')) +
+                    (2 * get_pixel(height, width, original_image, i + 1, j, 'g')) +
+                    (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'g')));
+    int gy_blue = (((-1) * get_pixel(height, width, original_image, i - 1, j - 1, 'b')) +
+                   ((-2) * get_pixel(height, width, original_image, i - 1, j, 'b')) +
+                   ((-1)) * get_pixel(height, width, original_image, i - 1, j + 1, 'b')) +
+                   (0 * get_pixel(height, width, original_image, i, j - 1, 'b')) + (0 * original_image[i][j].rgbtBlue) +
+                   (0 * get_pixel(height, width, original_image, i, j + 1, 'b')) +
+                   (1 * get_pixel(height, width, original_image, i + 1, j - 1, 'b')) +
+                   (2 * get_pixel(height, width, original_image, i + 1, j, 'b')) +
                    (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'b')))
 }
 
