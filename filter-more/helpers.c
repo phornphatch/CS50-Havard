@@ -194,13 +194,14 @@ GALL find_g(int height, int width, RGBTRIPLE image[height][width], RGBTRIPLE ori
                     ((-1) * get_pixel(height, width, original_image, i + 1, j - 1, 'g')) +
                     (0 * get_pixel(height, width, original_image, i + 1, j, 'g')) +
                     (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'g')));
-   int gx_blue = (((-1) * get_pixel(height, width, original_image, i - 1, j - 1, 'b')) +
-                    (0 * get_pixel(height, width, original_image, i - 1, j, 'b')) +
-                    (1 * get_pixel(height, width, original_image, i - 1, j + 1, 'b')) +
-                    ((-2) * get_pixel(height, width, original_image, i, j - 1, 'b')) + (0 * original_image[i][j].rgbtBlue) +
-                    (2 * get_pixel(height, width, original_image, i, j + 1, 'b')) +
-                    ((-1) * get_pixel(height, width, original_image, i + 1, j - 1, 'b')) +
-                    (0 * get_pixel(height, width, original_image, i + 1, j, 'b')) +
+    int gx_blue = (((-1) * get_pixel(height, width, original_image, i - 1, j - 1, 'b')) +
+                   (0 * get_pixel(height, width, original_image, i - 1, j, 'b')) +
+                   (1 * get_pixel(height, width, original_image, i - 1, j + 1, 'b')) +
+                   ((-2) * get_pixel(height, width, original_image, i, j - 1, 'b')) + (0 * original_image[i][j].rgbtBlue) +
+                   (2 * get_pixel(height, width, original_image, i, j + 1, 'b')) +
+                   ((-1) * get_pixel(height, width, original_image, i + 1, j - 1, 'b')) +
+                   (0 * get_pixel(height, width, original_image, i + 1, j, 'b')) +
+                   (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'b')));
     int gy_red = (((-1) * get_pixel(height, width, original_image, i - 1, j - 1, 'r')) +
                   ((-2) * get_pixel(height, width, original_image, i - 1, j, 'r')) +
                   ((-1) * get_pixel(height, width, original_image, i - 1, j + 1, 'r')) +
@@ -218,13 +219,13 @@ GALL find_g(int height, int width, RGBTRIPLE image[height][width], RGBTRIPLE ori
                    (2 * get_pixel(height, width, original_image, i + 1, j, 'g')) +
                    (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'g'));
     int gy_blue = (((-1) * get_pixel(height, width, original_image, i - 1, j - 1, 'b')) +
-                    ((-2)) * get_pixel(height, width, original_image, i - 1, j, 'b')) +
-                   ((-1) * get_pixel(height, width, original_image, i - 1, j + 1, 'b')) +
-                   (0 * get_pixel(height, width, original_image, i, j - 1, 'b')) + (0 * original_image[i][j].rgbtBlue) +
-                   (0 * get_pixel(height, width, original_image, i, j + 1, 'b')) +
-                   (1 * get_pixel(height, width, original_image, i + 1, j - 1, 'b')) +
-                   (2 * get_pixel(height, width, original_image, i + 1, j, 'b')) +
-                   (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'b'));
+                   ((-2)) * get_pixel(height, width, original_image, i - 1, j, 'b')) +
+                  ((-1) * get_pixel(height, width, original_image, i - 1, j + 1, 'b')) +
+                  (0 * get_pixel(height, width, original_image, i, j - 1, 'b')) + (0 * original_image[i][j].rgbtBlue) +
+                  (0 * get_pixel(height, width, original_image, i, j + 1, 'b')) +
+                  (1 * get_pixel(height, width, original_image, i + 1, j - 1, 'b')) +
+                  (2 * get_pixel(height, width, original_image, i + 1, j, 'b')) +
+                  (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'b'));
 
     GALL final_value;
 
@@ -238,27 +239,27 @@ GALL find_g(int height, int width, RGBTRIPLE image[height][width], RGBTRIPLE ori
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-   RGBTRIPLE original_image[height][width];
+    RGBTRIPLE original_image[height][width];
 
-   for (int i = 0; i < height; i++) // access to each row
-   {
-       // save orginal image
-       for (int j = 0; j < width; j++)
-       {
-           original_image[i][j].rgbtRed = image[i][j].rgbtRed;
-           original_image[i][j].rgbtGreen = image[i][j].rgbtGreen;
-           original_image[i][j].rgbtBlue = image[i][j].rgbtBlue;
-       }
-   }
+    for (int i = 0; i < height; i++) // access to each row
+    {
+        // save orginal image
+        for (int j = 0; j < width; j++)
+        {
+            original_image[i][j].rgbtRed = image[i][j].rgbtRed;
+            original_image[i][j].rgbtGreen = image[i][j].rgbtGreen;
+            original_image[i][j].rgbtBlue = image[i][j].rgbtBlue;
+        }
+    }
 
-   for (int i = 0; i < height; i++) // access to each row
-   {
-       for (int j = 0; j < width; j++)
-       {
-           GALL new_pixel = find_g(width, height, image, original_image, i, j);
-           image[i][j].rgbtRed = new_pixel.GRed;
-           image[i][j].rgbtGreen = new_pixel.GGreen;
-           image[i][j].rgbtBlue = new_pixel.GBlue;
-       }
-   }
+    for (int i = 0; i < height; i++) // access to each row
+    {
+        for (int j = 0; j < width; j++)
+        {
+            GALL new_pixel = find_g(width, height, image, original_image, i, j);
+            image[i][j].rgbtRed = new_pixel.GRed;
+            image[i][j].rgbtGreen = new_pixel.GGreen;
+            image[i][j].rgbtBlue = new_pixel.GBlue;
+        }
+    }
 }
