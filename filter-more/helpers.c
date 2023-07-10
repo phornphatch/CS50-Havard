@@ -22,13 +22,13 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtGreen = round(num_avg);
             image[i][j].rgbtBlue = round(num_avg);
 
-            if (i == 0 && j == 0)
-            {
-                printf("%f\n", num_avg);
-                printf("%i", num_red);
-                printf("%i", num_green);
-                printf("%i\n", num_blue);
-            }
+            // if (i == 0 && j == 0)
+            // {
+            //     printf("%f\n", num_avg);
+            //     printf("%i", num_red);
+            //     printf("%i", num_green);
+            //     printf("%i\n", num_blue);
+            // }
         }
     }
 }
