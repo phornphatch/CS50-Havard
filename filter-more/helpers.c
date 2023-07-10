@@ -171,14 +171,31 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // find gx and gy
 int find_gx()
 {
-    int gx_red =
-        ((-1)get_pixel(height, width, original_image, i - 1, j - 1, 'r') + (0)get_pixel(height, width, original_image, i - 1, j, 'r') +
-         (1)get_pixel(height, width, original_image, i - 1, j + 1, 'r') + (-2)get_pixel(height, width, original_image, i, j - 1, 'r') +
-         (0)original_image[i][j].rgbtRed + (2)get_pixel(height, width, original_image, i, j + 1, 'r') +
-         (-1)get_pixel(height, width, original_image, i + 1, j - 1, 'r') + (0)get_pixel(height, width, original_image, i + 1, j, 'r') +
-         (1)get_pixel(height, width, original_image, i + 1, j + 1, 'r'))
+    int gx_red = (((-1) * get_pixel(height, width, original_image, i - 1, j - 1, 'r')) +
+                  (0 * get_pixel(height, width, original_image, i - 1, j, 'r')) +
+                  (1 * get_pixel(height, width, original_image, i - 1, j + 1, 'r')) +
+                  ((-2) * get_pixel(height, width, original_image, i, j - 1, 'r')) + (0 * original_image[i][j].rgbtRed) +
+                  (2 * get_pixel(height, width, original_image, i, j + 1, 'r')) +
+                  ((-1) * get_pixel(height, width, original_image, i + 1, j - 1, 'r')) +
+                  (0 * get_pixel(height, width, original_image, i + 1, j, 'r')) +
+                  (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'r')));
+    int gx_green = (((-1) * get_pixel(height, width, original_image, i - 1, j - 1, 'g')) +
+                    (0 * get_pixel(height, width, original_image, i - 1, j, 'g')) +
+                    (1 * get_pixel(height, width, original_image, i - 1, j + 1, 'g')) +
+                    ((-2) * get_pixel(height, width, original_image, i, j - 1, 'g')) + (0 * original_image[i][j].rgbtGreen) +
+                    (2 * get_pixel(height, width, original_image, i, j + 1, 'g')) +
+                    ((-1) * get_pixel(height, width, original_image, i + 1, j - 1, 'g')) +
+                    (0 * get_pixel(height, width, original_image, i + 1, j, 'g')) +
+                    (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'g')));
+    int gx_blue = (((-1) * get_pixel(height, width, original_image, i - 1, j - 1, 'b')) +
+                   (0 * get_pixel(height, width, original_image, i - 1, j, 'b')) +
+                   (1 * get_pixel(height, width, original_image, i - 1, j + 1, 'b')) +
+                   ((-2) * get_pixel(height, width, original_image, i, j - 1, 'b')) + (0 * original_image[i][j].rgbtBlue) +
+                   (2 * get_pixel(height, width, original_image, i, j + 1, 'b')) +
+                   ((-1) * get_pixel(height, width, original_image, i + 1, j - 1, 'b')) +
+                   (0 * get_pixel(height, width, original_image, i + 1, j, 'b')) +
+                   (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'b')))
 }
-
 
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
