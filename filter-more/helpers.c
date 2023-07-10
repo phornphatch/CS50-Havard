@@ -54,9 +54,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         // switch (mirror)
         for (int j = 0; j < width; j++)
         {
-            image[i][width - j-1].rgbtRed = original_image[i][j].rgbtRed;
-            image[i][width - j-1].rgbtGreen = original_image[i][j].rgbtGreen;
-            image[i][width - j-1].rgbtBlue = original_image[i][j].rgbtBlue;
+            image[i][width - j - 1].rgbtRed = original_image[i][j].rgbtRed;
+            image[i][width - j - 1].rgbtGreen = original_image[i][j].rgbtGreen;
+            image[i][width - j - 1].rgbtBlue = original_image[i][j].rgbtBlue;
         }
     }
 }
@@ -88,7 +88,7 @@ float divisor(int height, int width, int i, int j)
 {
     if (i == 0)
     {
-        if (j == 0 || j == width-1) // corner
+        if (j == 0 || j == width - 1) // corner
         {
             return 4.00;
         }
@@ -98,9 +98,9 @@ float divisor(int height, int width, int i, int j)
         }
     }
 
-    if (i == height-1)
+    if (i == height - 1)
     {
-        if (j == 0 || j == width-1)
+        if (j == 0 || j == width - 1)
         {
             return 4.00;
         }
@@ -110,7 +110,7 @@ float divisor(int height, int width, int i, int j)
         }
     }
 
-    if (j == 0 || j == width-1)
+    if (j == 0 || j == width - 1)
     {
         return 6.00;
     }
@@ -118,46 +118,46 @@ float divisor(int height, int width, int i, int j)
     return 9.00;
 }
 
-void avg_pixel(int height, int width, RGBTRIPLE image[height][width], int i, int j)
+RGBTRIPLE avg_pixel(int height, int width, RGBTRIPLE image[height][width], int i, int j)
 {
-    image[i][j].rgbtRed =
-        round((get_pixel(height, width, image, i - 1, j - 1, 'r') + get_pixel(height, width, image, i - 1, j, 'r') +
-                get_pixel(height, width, image, i - 1, j + 1, 'r') + get_pixel(height, width, image, i, j - 1, 'r') +
-                image[i][j].rgbtRed + get_pixel(height, width, image, i, j + 1, 'r') +
-                get_pixel(height, width, image, i + 1, j - 1, 'r') + get_pixel(height, width, image, i + 1, j, 'r') +
-                get_pixel(height, width, image, i + 1, j + 1, 'r')) /
-               divisor(height, width, i, j));
+    image[i][j].rgbtRed = round(
+        (get_pixel(height, width, image, i - 1, j - 1, 'r') + get_pixel(height, width, image, i - 1, j, 'r') +
+         get_pixel(height, width, image, i - 1, j + 1, 'r') + get_pixel(height, width, image, i, j - 1, 'r') + image[i][j].rgbtRed +
+         get_pixel(height, width, image, i, j + 1, 'r') + get_pixel(height, width, image, i + 1, j - 1, 'r') +
+         get_pixel(height, width, image, i + 1, j, 'r') + get_pixel(height, width, image, i + 1, j + 1, 'r')) /
+        divisor(height, width, i, j));
     image[i][j].rgbtGreen =
         round((get_pixel(height, width, image, i - 1, j - 1, 'g') + get_pixel(height, width, image, i - 1, j, 'g') +
-                get_pixel(height, width, image, i - 1, j + 1, 'g') + get_pixel(height, width, image, i, j - 1, 'g') +
-                image[i][j].rgbtGreen + get_pixel(height, width, image, i, j + 1, 'g') +
-                get_pixel(height, width, image, i + 1, j - 1, 'g') + get_pixel(height, width, image, i + 1, j, 'g') +
-                get_pixel(height, width, image, i + 1, j + 1, 'g')) /
-               divisor(height, width, i, j));
+               get_pixel(height, width, image, i - 1, j + 1, 'g') + get_pixel(height, width, image, i, j - 1, 'g') +
+               image[i][j].rgbtGreen + get_pixel(height, width, image, i, j + 1, 'g') +
+               get_pixel(height, width, image, i + 1, j - 1, 'g') + get_pixel(height, width, image, i + 1, j, 'g') +
+               get_pixel(height, width, image, i + 1, j + 1, 'g')) /
+              divisor(height, width, i, j));
     image[i][j].rgbtBlue =
         round((get_pixel(height, width, image, i - 1, j - 1, 'b') + get_pixel(height, width, image, i - 1, j, 'b') +
-                get_pixel(height, width, image, i - 1, j + 1, 'b') + get_pixel(height, width, image, i, j - 1, 'b') +
-                image[i][j].rgbtBlue + get_pixel(height, width, image, i, j + 1, 'b') +
-                get_pixel(height, width, image, i + 1, j - 1, 'b') + get_pixel(height, width, image, i + 1, j, 'b') +
-                get_pixel(height, width, image, i + 1, j + 1, 'b')) /
-               divisor(height, width, i, j));
+               get_pixel(height, width, image, i - 1, j + 1, 'b') + get_pixel(height, width, image, i, j - 1, 'b') +
+               image[i][j].rgbtBlue + get_pixel(height, width, image, i, j + 1, 'b') +
+               get_pixel(height, width, image, i + 1, j - 1, 'b') + get_pixel(height, width, image, i + 1, j, 'b') +
+               get_pixel(height, width, image, i + 1, j + 1, 'b')) /
+              divisor(height, width, i, j));
+    return image;
 }
 
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    // RGBTRIPLE original_image[height][width];
+    RGBTRIPLE original_image[height][width];
 
-    // for (int i = 0; i < height; i++) // access to each row
-    // {
-    //     // save orginal image
-    //     for (int j = 0; j < width; j++)
-    //     {
-    //         original_image[i][j].rgbtRed = image[i][j].rgbtRed;
-    //         original_image[i][j].rgbtGreen = image[i][j].rgbtGreen;
-    //         original_image[i][j].rgbtBlue = image[i][j].rgbtBlue;
-    //     }
-    // }
+    for (int i = 0; i < height; i++) // access to each row
+    {
+        // save orginal image
+        for (int j = 0; j < width; j++)
+        {
+            original_image[i][j].rgbtRed = image[i][j].rgbtRed;
+            original_image[i][j].rgbtGreen = image[i][j].rgbtGreen;
+            original_image[i][j].rgbtBlue = image[i][j].rgbtBlue;
+        }
+    }
 
     for (int i = 0; i < height; i++) // access to each row
     {
