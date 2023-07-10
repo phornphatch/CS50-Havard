@@ -217,7 +217,7 @@ GALL find_g(int height, int width, RGBTRIPLE image[height][width], RGBTRIPLE ori
                     (0 * get_pixel(height, width, original_image, i, j + 1, 'g')) +
                     (1 * get_pixel(height, width, original_image, i + 1, j - 1, 'g')) +
                     (2 * get_pixel(height, width, original_image, i + 1, j, 'g')) +
-                    (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'g')));
+                    (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'g'));
     int gy_blue = (((-1) * get_pixel(height, width, original_image, i - 1, j - 1, 'b')) +
                    ((-2) * get_pixel(height, width, original_image, i - 1, j, 'b')) +
                    ((-1)) * get_pixel(height, width, original_image, i - 1, j + 1, 'b')) +
@@ -225,7 +225,7 @@ GALL find_g(int height, int width, RGBTRIPLE image[height][width], RGBTRIPLE ori
                    (0 * get_pixel(height, width, original_image, i, j + 1, 'b')) +
                    (1 * get_pixel(height, width, original_image, i + 1, j - 1, 'b')) +
                    (2 * get_pixel(height, width, original_image, i + 1, j, 'b')) +
-                   (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'b')));
+                   (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'b'));
 
     GALL final_value;
     final_value.GRed = sqrt((gx_red * gx_red) + (gy_red * gy_red));
@@ -255,7 +255,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            find_g(width, height, image, original_image, i, j);
+            GALL new_pixel = find_g(width, height, image, original_image, i, j);
+            image[i][j].rgbtRed = new_pixel.GRed;
+            image[i][j].rgbtGreen = new_pixel.GGreen;
+            image[i][j].rgbtBlue = new_pixel.GBlue;
         }
     }
 }
