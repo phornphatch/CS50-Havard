@@ -84,18 +84,17 @@ int get_pixel(int height, int width, RGBTRIPLE image[height][width], int i, int 
     return 0;
 }
 
-int divisor(int height, int width, int i, int j)
+float divisor(int height, int width, int i, int j)
 {
-    int divisor = 0;
     if (i == 0)
     {
         if (j == 0 || j == width)
         {
-            return 4;
+            return 4.00;
         }
         else
         {
-            return 6;
+            return 6.00;
         }
     }
 
@@ -103,40 +102,40 @@ int divisor(int height, int width, int i, int j)
     {
         if (j == 0 || j == width)
         {
-            return 4;
+            return 4.00;
         }
         else
         {
-            return 6;
+            return 6.00;
         }
     }
 
     if (j == 0 || j == width)
     {
-        return 6;
+        return 6.00;
     }
 
-    return 9;
+    return 9.00;
 }
 
 void avg_pixel(int height, int width, RGBTRIPLE image[height][width], int i, int j)
 {
     image[i][j].rgbtRed =
-        (int) ((get_pixel(height, width, image, i - 1, j - 1, 'r') + get_pixel(height, width, image, i - 1, j, 'r') +
+        round((get_pixel(height, width, image, i - 1, j - 1, 'r') + get_pixel(height, width, image, i - 1, j, 'r') +
                 get_pixel(height, width, image, i - 1, j + 1, 'r') + get_pixel(height, width, image, i, j - 1, 'r') +
                 image[i][j].rgbtRed + get_pixel(height, width, image, i - 1, j + 1, 'r') +
                 get_pixel(height, width, image, i + 1, j - 1, 'r') + get_pixel(height, width, image, i + 1, j, 'r') +
                 get_pixel(height, width, image, i + 1, j + 1, 'r')) /
                divisor(height, width, i, j));
     image[i][j].rgbtGreen =
-        (int) ((get_pixel(height, width, image, i - 1, j - 1, 'g') + get_pixel(height, width, image, i - 1, j, 'g') +
+        round((get_pixel(height, width, image, i - 1, j - 1, 'g') + get_pixel(height, width, image, i - 1, j, 'g') +
                 get_pixel(height, width, image, i - 1, j + 1, 'g') + get_pixel(height, width, image, i, j - 1, 'g') +
                 image[i][j].rgbtRed + get_pixel(height, width, image, i - 1, j + 1, 'g') +
                 get_pixel(height, width, image, i + 1, j - 1, 'g') + get_pixel(height, width, image, i + 1, j, 'g') +
                 get_pixel(height, width, image, i + 1, j + 1, 'g')) /
                divisor(height, width, i, j));
     image[i][j].rgbtBlue =
-        (int) ((get_pixel(height, width, image, i - 1, j - 1, 'b') + get_pixel(height, width, image, i - 1, j, 'b') +
+        round((get_pixel(height, width, image, i - 1, j - 1, 'b') + get_pixel(height, width, image, i - 1, j, 'b') +
                 get_pixel(height, width, image, i - 1, j + 1, 'b') + get_pixel(height, width, image, i, j - 1, 'b') +
                 image[i][j].rgbtRed + get_pixel(height, width, image, i - 1, j + 1, 'b') +
                 get_pixel(height, width, image, i + 1, j - 1, 'b') + get_pixel(height, width, image, i + 1, j, 'b') +
