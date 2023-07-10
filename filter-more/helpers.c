@@ -130,14 +130,14 @@ void avg_pixel(int height, int width, RGBTRIPLE image[height][width], int i, int
     image[i][j].rgbtGreen =
         round((get_pixel(height, width, image, i - 1, j - 1, 'g') + get_pixel(height, width, image, i - 1, j, 'g') +
                 get_pixel(height, width, image, i - 1, j + 1, 'g') + get_pixel(height, width, image, i, j - 1, 'g') +
-                image[i][j].rgbtRed + get_pixel(height, width, image, i - 1, j + 1, 'g') +
+                image[i][j].rgbtGreen + get_pixel(height, width, image, i - 1, j + 1, 'g') +
                 get_pixel(height, width, image, i + 1, j - 1, 'g') + get_pixel(height, width, image, i + 1, j, 'g') +
                 get_pixel(height, width, image, i + 1, j + 1, 'g')) /
                divisor(height, width, i, j));
     image[i][j].rgbtBlue =
         round((get_pixel(height, width, image, i - 1, j - 1, 'b') + get_pixel(height, width, image, i - 1, j, 'b') +
                 get_pixel(height, width, image, i - 1, j + 1, 'b') + get_pixel(height, width, image, i, j - 1, 'b') +
-                image[i][j].rgbtRed + get_pixel(height, width, image, i - 1, j + 1, 'b') +
+                image[i][j].rgbtBlue + get_pixel(height, width, image, i - 1, j + 1, 'b') +
                 get_pixel(height, width, image, i + 1, j - 1, 'b') + get_pixel(height, width, image, i + 1, j, 'b') +
                 get_pixel(height, width, image, i + 1, j + 1, 'b')) /
                divisor(height, width, i, j));
