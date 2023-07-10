@@ -88,7 +88,7 @@ float divisor(int height, int width, int i, int j)
 {
     if (i == 0)
     {
-        if (j == 0 || j == width) // corner
+        if (j == 0 || j == width-1) // corner
         {
             return 4.00;
         }
@@ -98,9 +98,9 @@ float divisor(int height, int width, int i, int j)
         }
     }
 
-    if (i == height)
+    if (i == height-1)
     {
-        if (j == 0 || j == width)
+        if (j == 0 || j == width-1)
         {
             return 4.00;
         }
@@ -110,7 +110,7 @@ float divisor(int height, int width, int i, int j)
         }
     }
 
-    if (j == 0 || j == width)
+    if (j == 0 || j == width-1)
     {
         return 6.00;
     }
@@ -146,18 +146,18 @@ void avg_pixel(int height, int width, RGBTRIPLE image[height][width], int i, int
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    RGBTRIPLE original_image[height][width];
+    // RGBTRIPLE original_image[height][width];
 
-    for (int i = 0; i < height; i++) // access to each row
-    {
-        // save orginal image
-        for (int j = 0; j < width; j++)
-        {
-            original_image[i][j].rgbtRed = image[i][j].rgbtRed;
-            original_image[i][j].rgbtGreen = image[i][j].rgbtGreen;
-            original_image[i][j].rgbtBlue = image[i][j].rgbtBlue;
-        }
-    }
+    // for (int i = 0; i < height; i++) // access to each row
+    // {
+    //     // save orginal image
+    //     for (int j = 0; j < width; j++)
+    //     {
+    //         original_image[i][j].rgbtRed = image[i][j].rgbtRed;
+    //         original_image[i][j].rgbtGreen = image[i][j].rgbtGreen;
+    //         original_image[i][j].rgbtBlue = image[i][j].rgbtBlue;
+    //     }
+    // }
 
     for (int i = 0; i < height; i++) // access to each row
     {
