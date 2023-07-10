@@ -233,7 +233,17 @@ GALL find_g(int height, int width, RGBTRIPLE image[height][width], RGBTRIPLE ori
     final_value.GGreen = sqrt((gx_green * gx_green) + (gy_green * gy_green));
     final_value.GBlue = sqrt((gx_blue * gx_blue) + (gy_blue * gy_blue));
 
-    if (final_value.GBlue > 225)
+    if (final_value.GRed > 225)
+    {
+        final_value.GRed = 225;
+    }
+
+     if (final_value.GGreen > 225)
+    {
+        final_value.GGreen = 225;
+    }
+
+     if (final_value.GBlue > 225)
     {
         final_value.GBlue = 225;
     }
