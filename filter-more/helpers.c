@@ -226,10 +226,11 @@ GALL find_g(int height, int width, RGBTRIPLE image[height][width], RGBTRIPLE ori
                    (1 * get_pixel(height, width, original_image, i + 1, j - 1, 'b')) +
                    (2 * get_pixel(height, width, original_image, i + 1, j, 'b')) +
                    (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'b')));
-GALL 
-    .GRed = sqrt((gx_red * gx_red) + (gy_red * gy_red));
-    GALL .GGreen = sqrt((gx_green * gx_green) + (gy_green * gy_green));
-    GALL .GBlue = sqrt((gx_blue * gx_blue) + (gy_blue * gy_blue));
+
+    GALL final_value[i][j];
+    final_value.GRed = sqrt((gx_red * gx_red) + (gy_red * gy_red));
+    final_value.GGreen = sqrt((gx_green * gx_green) + (gy_green * gy_green));
+    final_value.GBlue = sqrt((gx_blue * gx_blue) + (gy_blue * gy_blue));
 }
 
 // Detect edges
