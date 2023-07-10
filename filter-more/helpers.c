@@ -168,6 +168,17 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     }
 }
 
+// find gx and gy
+int find_gx()
+{
+    int gx =
+        (get_pixel(height, width, original_image, i - 1, j - 1, 'r') + get_pixel(height, width, original_image, i - 1, j, 'r') +
+         get_pixel(height, width, original_image, i - 1, j + 1, 'r') + get_pixel(height, width, original_image, i, j - 1, 'r') +
+         original_image[i][j].rgbtRed + get_pixel(height, width, original_image, i, j + 1, 'r') +
+         get_pixel(height, width, original_image, i + 1, j - 1, 'r') + get_pixel(height, width, original_image, i + 1, j, 'r') +
+         get_pixel(height, width, original_image, i + 1, j + 1, 'r'))
+}
+
 
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
