@@ -227,10 +227,12 @@ GALL find_g(int height, int width, RGBTRIPLE image[height][width], RGBTRIPLE ori
                    (2 * get_pixel(height, width, original_image, i + 1, j, 'b')) +
                    (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'b')));
 
-    GALL final_value[i][j];
+    GALL final_value;
     final_value.GRed = sqrt((gx_red * gx_red) + (gy_red * gy_red));
     final_value.GGreen = sqrt((gx_green * gx_green) + (gy_green * gy_green));
     final_value.GBlue = sqrt((gx_blue * gx_blue) + (gy_blue * gy_blue));
+
+    return final_value;
 }
 
 // Detect edges
@@ -253,7 +255,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            // avg_pixel(width, height, image, original_image, i, j);
+            find_g(width, height, image, original_image, i, j);
         }
     }
 }
