@@ -18,6 +18,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             int num_blue = image[i][j].rgbtBlue;
             double num_avg = ((num_red + num_green + num_blue) / 3);
             // printf("%d", num_avg);
+            printf("%f", num_avg);
             image[i][j].rgbtRed = round(num_avg);
             image[i][j].rgbtGreen = round(num_avg);
             image[i][j].rgbtBlue = round(num_avg);
