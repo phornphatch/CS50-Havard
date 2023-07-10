@@ -212,22 +212,54 @@ GALL find_g(int height, int width, RGBTRIPLE image[height][width], RGBTRIPLE ori
                   (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'r')));
     int gy_green = (((-1) * get_pixel(height, width, original_image, i - 1, j - 1, 'g')) +
                     ((-2)) * get_pixel(height, width, original_image, i - 1, j, 'g')) +
-                    ((-1) * get_pixel(height, width, original_image, i - 1, j + 1, 'g')) +
-                    (0 * get_pixel(height, width, original_image, i, j - 1, 'g')) + (0 * original_image[i][j].rgbtGreen) +
-                    (0 * get_pixel(height, width, original_image, i, j + 1, 'g')) +
-                    (1 * get_pixel(height, width, original_image, i + 1, j - 1, 'g')) +
-                    (2 * get_pixel(height, width, original_image, i + 1, j, 'g')) +
-                    (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'g'));
+                   ((-1) * get_pixel(height, width, original_image, i - 1, j + 1, 'g')) +
+                   (0 * get_pixel(height, width, original_image, i, j - 1, 'g')) + (0 * original_image[i][j].rgbtGreen) +
+                   (0 * get_pixel(height, width, original_image, i, j + 1, 'g')) +
+                   (1 * get_pixel(height, width, original_image, i + 1, j - 1, 'g')) +
+                   (2 * get_pixel(height, width, original_image, i + 1, j, 'g')) +
+                   (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'g'));
     int gy_blue = (((-1) * get_pixel(height, width, original_image, i - 1, j - 1, 'b')) +
                    ((-2) * get_pixel(height, width, original_image, i - 1, j, 'b')) +
                    ((-1)) * get_pixel(height, width, original_image, i - 1, j + 1, 'b')) +
-                   (0 * get_pixel(height, width, original_image, i, j - 1, 'b')) + (0 * original_image[i][j].rgbtBlue) +
-                   (0 * get_pixel(height, width, original_image, i, j + 1, 'b')) +
-                   (1 * get_pixel(height, width, original_image, i + 1, j - 1, 'b')) +
-                   (2 * get_pixel(height, width, original_image, i + 1, j, 'b')) +
-                   (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'b'));
+                  (0 * get_pixel(height, width, original_image, i, j - 1, 'b')) + (0 * original_image[i][j].rgbtBlue) +
+                  (0 * get_pixel(height, width, original_image, i, j + 1, 'b')) +
+                  (1 * get_pixel(height, width, original_image, i + 1, j - 1, 'b')) +
+                  (2 * get_pixel(height, width, original_image, i + 1, j, 'b')) +
+                  (1 * get_pixel(height, width, original_image, i + 1, j + 1, 'b'));
 
     GALL final_value;
+
+    if (i == 0)
+    {
+        if (j == 0 || j == width - 1) // corner
+        {
+            return 4.00;
+        }
+        else
+        {
+            return 6.00;
+        }
+    }
+
+    if (i == height - 1)
+    {
+        if (j == 0 || j == width - 1)
+        {
+            return 4.00;
+        }
+        else
+        {
+            return 6.00;
+        }
+    }
+
+    if (j == 0 || j == width - 1)
+    {
+        return 6.00;
+    }
+
+    return 9.00;
+
     final_value.GRed = sqrt((gx_red * gx_red) + (gy_red * gy_red));
     final_value.GGreen = sqrt((gx_green * gx_green) + (gy_green * gy_green));
     final_value.GBlue = sqrt((gx_blue * gx_blue) + (gy_blue * gy_blue));
