@@ -88,7 +88,7 @@ float divisor(int height, int width, int i, int j)
 {
     if (i == 0)
     {
-        if (j == 0 || j == width)
+        if (j == 0 || j == width) // corner
         {
             return 4.00;
         }
