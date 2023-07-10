@@ -54,9 +54,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         // switch (mirror)
         for (int j = 0; j < width; j++)
         {
-            image[i][width - j].rgbtRed = original_image[i][j].rgbtRed;
-            image[i][width - j].rgbtGreen = original_image[i][j].rgbtGreen;
-            image[i][width - j].rgbtBlue = original_image[i][j].rgbtBlue;
+            image[i][width - j-1].rgbtRed = original_image[i][j].rgbtRed;
+            image[i][width - j-1].rgbtGreen = original_image[i][j].rgbtGreen;
+            image[i][width - j-1].rgbtBlue = original_image[i][j].rgbtBlue;
         }
     }
 }
