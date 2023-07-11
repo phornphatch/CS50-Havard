@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // open memory card
+    // 1. open memory card
     char *filename = argv[1];         // ดึงเอา 2nd argument
     FILE *file = fopen(argv[1], "r"); // r is reading mode
 
@@ -46,4 +46,6 @@ int main(int argc, char *argv[])
 
     // write 512 bytes until a new jpeg is found
      fwrite(data, size, number, outptr);
+
+     // find the end of the file
 }
