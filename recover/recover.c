@@ -38,13 +38,13 @@ int main(int argc, char *argv[])
         {
             if (jpegStarted == true)
             {
+                fclose(img);
                 // เปน jpeg แต่ไม่ใช่จุด start
                 file_number++;
                 char *filename = malloc(4);
                 sprintf(filename, "%03i.jpg", file_number);
-                FILE *img = fopen(filename, "w");
+                img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
-                fclose(img);
                 free(filename);
                 printf("next img here !!!!\n");
             }
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
                 // found begining of jpeg
                 char *filename = malloc(4);
                 sprintf(filename, "%03i.jpg", file_number);
-                FILE *img = fopen(filename, "w");
+                img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
                 fclose(img);
                 free(filename);
@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
             {
                 char *filename = malloc(4);
                 sprintf(filename, "%03i.jpg", file_number);
-                FILE *img = fopen(filename, "w");
+                img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
                 fclose(img);
                 free(filename);
