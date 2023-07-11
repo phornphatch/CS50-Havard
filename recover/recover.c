@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
 
     int file_number = 0;
     bool jpegStarted = false;
+    FILE *img;
 
     // Check buffer match with JPEG?
     while (fread(buffer, 512, 1, raw_file) == 1) // (location, size of block to read, how many block to read, location to read from)
@@ -43,9 +44,8 @@ int main(int argc, char *argv[])
                 sprintf(filename, "%03i.jpg", file_number);
                 FILE *img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
-               
-                free(filename);
                 fclose(img);
+                free(filename);
                 printf("next img here !!!!\n");
             }
             else
@@ -57,9 +57,8 @@ int main(int argc, char *argv[])
                 sprintf(filename, "%03i.jpg", file_number);
                 FILE *img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
-
-                free(filename);
                 fclose(img);
+                free(filename);
                 printf("first img here !!!!\n");
             }
         }
@@ -71,9 +70,8 @@ int main(int argc, char *argv[])
                 sprintf(filename, "%03i.jpg", file_number);
                 FILE *img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
-
-                free(filename);
                 fclose(img);
+                free(filename);
                 printf("add !!!!\n");
             }
 
