@@ -32,16 +32,20 @@ int main(int argc, char *argv[])
         printf("It's jpeg.\n");
         return 0;
     }
-    printf("It's not a  jpeg !!!!\n");
-    fclose(file); // ****** ถ้าไม่ close จะ leak memory ถ้า run valgrind ./pdf test.pdf ดู
+    else
+    {
+        printf("It's not a  jpeg !!!!\n");
+    }
     return 0;
+    fclose(file); // ****** ถ้าไม่ close จะ leak memory ถ้า run valgrind ./pdf test.pdf ดู
+     // --- end of check: JPEG? ---
 
     // open new jpeg file
-    sprintf(filename, "%03i.jpg", 2);
-    FILE *img = fopen(filename, "w");
+    // sprintf(filename, "%03i.jpg", 2);
+    // FILE *img = fopen(filename, "w");
 
     // write 512 bytes until a new jpeg is found
-    fwrite(data, size, number, outptr);
+    // fwrite(data, size, number, outptr);
 
     // find the end of the file
 }
