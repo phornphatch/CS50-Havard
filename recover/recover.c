@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
                 // {
                 //     fclose(img);
                 // }
-                fclose(img);
+                fclose(img); // ปิดอันก่อนหน้า
                 // เปน jpeg แต่ไม่ใช่จุด start
                 file_number++; // เพิ่มเลขในชื่อไฟล์
                 sprintf(filename, "%03i.jpg", file_number);
