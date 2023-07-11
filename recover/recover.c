@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
                 file_number++;
                 // char *filename = malloc(4);
                 sprintf(filename, "%03i.jpg", file_number);
+                printf("%s", filename);
                 img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
                 printf("next img here !!!!\n");
