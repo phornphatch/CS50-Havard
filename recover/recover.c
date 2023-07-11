@@ -23,23 +23,24 @@ int main(int argc, char *argv[])
     }
 
     // look for beginning of jpeg
-    uint8_t buffer[4];
-    uint8_t signature[] = {0xff, 0xd8, 0xff, 0xe1};
+    uint8_t buffer[3]; // actual 4
+    uint8_t signature[] = {0xff, 0xd8, 0xff}; // actual 4 : 0xe_
 
     fread(buffer, 1, 4, file); // (location, size of block to read, how many block to read, location to read from)
 
- for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 3; i++)
     {
         // Check dose the buffer signer match?
         if (buffer[i] != signature[i])
         {
-            printf("It's not pdf.\n");
+            printf("It's not jpeg.\n");
             return 0;
         }
-        printf("It's a  pdf !!!!\n");
+        printf("It's a  jpeg !!!!\n");
         fclose(file); // ****** ถ้าไม่ close จะ leak memory ถ้า run valgrind ./pdf test.pdf ดู
         return 0;
     }
+    
     // open new jpeg file
     // write 512 bytes until a new jpeg is found
 }
