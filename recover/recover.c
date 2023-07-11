@@ -56,13 +56,9 @@ int main(int argc, char *argv[])
             {
                 // เปน jpeg และเป็นจุด start
                 jpegStarted = true;
-                // found begining of jpeg
-                // char *filename = malloc(4);
                 sprintf(filename, "%03i.jpg", file_number);
                 img = fopen(filename, "w");
                 fwrite(buffer, sizeof(BYTE)*512, 1, img);
-                // fclose(img);
-                printf("first img here !!!!\n");
             }
         }
         else
