@@ -4,6 +4,7 @@
         "numbers": "c",
         "ctype.h": "c",
         "typeinfo": "c",
-        "tuple": "c"
+        "tuple": "c",
+        "string": "c"
     }
 }
