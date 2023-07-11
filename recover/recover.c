@@ -41,6 +41,9 @@ int main(int argc, char *argv[])
     }
 
     // open new jpeg file
-    
+    sprintf(filename, "%03i.jpg", 2);
+    FILE *img = fopen(filename, "w");
+
     // write 512 bytes until a new jpeg is found
+     fwrite(data, size, number, outptr);
 }
