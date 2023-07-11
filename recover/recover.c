@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     char filename[8];
 
     // Check buffer match with JPEG?
-    while (fread(buffer, sizeof(BYTE) * 512, 1, raw_file) ==
+    while (fread(buffer, 512, 1, raw_file) ==
            1) // (location, size of block to read, how many block to read, location to read from)
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0) // if buffer matched
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
                 jpegStarted = true; // set จุดเริ่มต้นรูป
                 sprintf(filename, "%03i.jpg", file_number);
                 img = fopen(filename, "w");
-                fwrite(buffer, sizeof(BYTE) * 512, 1, img);  // go to else ที่ if (jpegStarted)***
+                fwrite(buffer, 512, 1, img);  // go to else ที่ if (jpegStarted)***
             }
             else // not starting point of jpeg = next image
             {
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
                 file_number++; // เพิ่มเลขในชื่อไฟล์
                 sprintf(filename, "%03i.jpg", file_number);
                 img = fopen(filename, "w"); // เปิดและเขียนอันใหม่ เลขไฟล์ใหม่
-                fwrite(buffer, sizeof(BYTE) * 512, 1, img);
+                fwrite(buffer, 512, 1, img);
             }
         }
         else
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
             if (jpegStarted) // *** ยังอยู่ในรูปเดียวดัน ไม่ได้่ขึ้นต้นด้วย buffer ที่ matched
             {
                 sprintf(filename, "%03i.jpg", file_number); // เขียนต่อๆๆ
-                fwrite(buffer, sizeof(BYTE) * 512, 1, img);
+                fwrite(buffer, 512, 1, img);
             }
         }
     }
