@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     char *filename = malloc(4);
 
     // Check buffer match with JPEG?
-    while (fread(buffer, 512, 1, raw_file) == 1) // (location, size of block to read, how many block to read, location to read from)
+    while (fread(buffer, sizeof(BYTE)*512, 1, raw_file) == 1) // (location, size of block to read, how many block to read, location to read from)
     {
         printf("not img yet\n");
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
                 sprintf(filename, "%03i.jpg", file_number);
                 printf("%s", filename);
                 img = fopen(filename, "w");
-                fwrite(buffer, 512*512, 1, img);
+                fwrite(buffer, sizeof(BYTE)*512, 1, img);
                 printf("next img here !!!!\n");
             }
             else
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
                 // char *filename = malloc(4);
                 sprintf(filename, "%03i.jpg", file_number);
                 img = fopen(filename, "w");
-                fwrite(buffer, 512*512, 1, img);
+                fwrite(buffer, sizeof(BYTE)*512, 1, img);
                 // fclose(img);
                 printf("first img here !!!!\n");
             }
@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
 
                 sprintf(filename, "%03i.jpg", file_number);
                 img = fopen(filename, "w");
-                fwrite(buffer, 512*512, 1, img);
+                fwrite(buffer, sizeof(BYTE)*512, 1, img);
                 // fclose(img);
             }
         }
