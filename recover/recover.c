@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
     }
     if (img != NULL)
     {
-        fclose(img)
+        fclose(img);
     }
     fclose(raw_file); // ****** ถ้าไม่ close จะ leak memory ถ้า run valgrind ./pdf test.pdf ดู
     free(filename);
