@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     }
 
     // look for beginning of jpeg
-    uint8_t buffer[3];                        // actual 4
+    uint8_t buffer[4];                        // actual 4
 
     fread(buffer, 1, 4, file); // (location, size of block to read, how many block to read, location to read from)
 
