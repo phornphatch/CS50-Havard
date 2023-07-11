@@ -65,11 +65,8 @@ int main(int argc, char *argv[])
         {
             if (jpegStarted)
             {
-
                 sprintf(filename, "%03i.jpg", file_number);
-                img = fopen(filename, "w");
                 fwrite(buffer, sizeof(BYTE)*512, 1, img);
-                // fclose(img);
             }
         }
     }
