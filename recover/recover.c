@@ -34,7 +34,9 @@ int main(int argc, char *argv[])
         {
             printf("It's jpeg.\n");
             // found begining of jpeg
-            
+            char *filename = malloc(4));
+            sprintf(filename, "%03i.jpg", file_number);
+            FILE *img = fopen(filename, "w");
             file_number++;
         }
         else
@@ -48,11 +50,11 @@ int main(int argc, char *argv[])
     // open new jpeg file
 
     // Create a new block of memory to store filename
-    int filename_length = 3;
-    char *filename = malloc(sizeof(char) * (filename_length + 1)); // ### + \0
+    // int filename_length = 3;
+    // char *filename = malloc(sizeof(char) * (filename_length + 1)); // ### + \0
 
     // Copy argv[1] into block of memory for filename
-    sprintf(filename, "%03i.jpg", 2);
+    // sprintf(filename, "%03i.jpg", 2);
 
     // sprintf(filename, "%03i.jpg", 2);
     // FILE *img = fopen(filename, "w");
