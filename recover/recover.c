@@ -35,8 +35,6 @@ int main(int argc, char *argv[])
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            printf("It's jpeg.\n");
-
             if (jpegStarted == true)
             {
                 // เปน jpeg แต่ไม่ใช่จุด start
@@ -46,6 +44,7 @@ int main(int argc, char *argv[])
                 FILE *img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
                 free(filename);
+                printf("next img here !!!!\n");
             }
             else
             {
@@ -57,6 +56,7 @@ int main(int argc, char *argv[])
                 FILE *img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
                 free(filename);
+                printf("first img here !!!!\n");
             }
         }
         else
@@ -68,8 +68,9 @@ int main(int argc, char *argv[])
                 FILE *img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
                 free(filename);
+                printf("add !!!!\n");
             }
-            printf("It's not a  jpeg !!!!\n");
+
         }
     }
     fclose(raw_file); // ****** ถ้าไม่ close จะ leak memory ถ้า run valgrind ./pdf test.pdf ดู
