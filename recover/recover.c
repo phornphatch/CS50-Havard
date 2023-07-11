@@ -59,6 +59,14 @@ int main(int argc, char *argv[])
         }
         else
         {
+            if (jpegStarted)
+            {
+                char *filename = malloc(4);
+                sprintf(filename, "%03i.jpg", file_number);
+                FILE *img = fopen(filename, "w");
+                fwrite(buffer, 512, 1, img);
+                free(filename);
+            }
             printf("It's not a  jpeg !!!!\n");
         }
     }
