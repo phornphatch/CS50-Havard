@@ -48,18 +48,12 @@ int main(int argc, char *argv[])
             }
             else // not starting point of jpeg = next image
             {
-                // if (img != NULL) // ถ้าก่อนหน้ามีรูปให้ปิดก่อน
-                // {
-                //     fclose(img);
-                // }
                 fclose(img); // ปิดอันก่อนหน้า
                 // เปน jpeg แต่ไม่ใช่จุด start
                 file_number++; // เพิ่มเลขในชื่อไฟล์
                 sprintf(filename, "%03i.jpg", file_number);
-                // printf("%s", filename);
                 img = fopen(filename, "w"); // เปิดและเขียนอันใหม่ เลขไฟล์ใหม่
                 fwrite(buffer, sizeof(BYTE) * 512, 1, img);
-                // printf("next img here !!!!\n");
             }
         }
         else
