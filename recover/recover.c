@@ -31,8 +31,7 @@ int main(int argc, char *argv[])
     for (int i = 0; i < 3; i++)
     {
         // Check dose the buffer signer match?
-        if (buffer[i] != signature[i])
-        {
+        if ( buffer[0] == 0xff & buffer[1] == 0xd8 & buffer[2] == 0xff) {
             printf("It's not jpeg.\n");
             return 0;
         }
@@ -40,7 +39,7 @@ int main(int argc, char *argv[])
         fclose(file); // ****** ถ้าไม่ close จะ leak memory ถ้า run valgrind ./pdf test.pdf ดู
         return 0;
     }
-    
+
     // open new jpeg file
     // write 512 bytes until a new jpeg is found
 }
