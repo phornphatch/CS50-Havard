@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     int file_number = 0;
     bool jpegStarted = false;
     FILE *img = NULL;
-    char *filename = malloc(4);
+    char filename[8];
 
     // Check buffer match with JPEG?
     while (fread(buffer, sizeof(BYTE) * 512, 1, raw_file) ==
@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
         fclose(img);
     }
     fclose(raw_file); // ****** ถ้าไม่ close จะ leak memory ถ้า run valgrind ./pdf test.pdf ดู
-    free(filename);
+  
 
     // --- end of check: JPEG? ---
 
