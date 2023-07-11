@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // 1. open memory card
+    // open memory card
     FILE *raw_file = fopen(argv[1], "r"); // r is reading mode
 
     // check if file exists./recover card.raw
@@ -36,37 +36,37 @@ int main(int argc, char *argv[])
     while (fread(buffer, sizeof(BYTE) * 512, 1, raw_file) ==
            1) // (location, size of block to read, how many block to read, location to read from)
     {
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0) // if buffer matched
         {
-            if (jpegStarted == true)
-            {
-                if (img != NULL)
-                {
-                    fclose(img);
-                }
-                // เปน jpeg แต่ไม่ใช่จุด start
-                file_number++;
-                // char *filename = malloc(4);
-                sprintf(filename, "%03i.jpg", file_number);
-                // printf("%s", filename);
-                img = fopen(filename, "w");
-                fwrite(buffer, sizeof(BYTE) * 512, 1, img);
-                // printf("next img here !!!!\n");
-            }
-            else
+            if (jpegStarted == false) // starting point of jpeg = First image
             {
                 // เปน jpeg และเป็นจุด start
-                jpegStarted = true;
+                jpegStarted = true; // set จุดเริ่มต้นรูป
                 sprintf(filename, "%03i.jpg", file_number);
                 img = fopen(filename, "w");
+                fwrite(buffer, sizeof(BYTE) * 512, 1, img);  // go to else ที่ if (jpegStarted)***
+            }
+            else // not starting point of jpeg = next image
+            {
+                // if (img != NULL) // ถ้าก่อนหน้ามีรูปให้ปิดก่อน
+                // {
+                //     fclose(img);
+                // }
+                fclose(img);
+                // เปน jpeg แต่ไม่ใช่จุด start
+                file_number++; // เพิ่มเลขในชื่อไฟล์
+                sprintf(filename, "%03i.jpg", file_number);
+                // printf("%s", filename);
+                img = fopen(filename, "w"); // เปิดและเขียนอันใหม่ เลขไฟล์ใหม่
                 fwrite(buffer, sizeof(BYTE) * 512, 1, img);
+                // printf("next img here !!!!\n");
             }
         }
         else
         {
-            if (jpegStarted)
+            if (jpegStarted) // *** ยังอยู่ในรูปเดียวดัน ไม่ได้่ขึ้นต้นด้วย buffer ที่ matched
             {
-                sprintf(filename, "%03i.jpg", file_number);
+                sprintf(filename, "%03i.jpg", file_number); // เขียนต่อๆๆ
                 fwrite(buffer, sizeof(BYTE) * 512, 1, img);
             }
         }
@@ -76,24 +76,4 @@ int main(int argc, char *argv[])
         fclose(img);
     }
     fclose(raw_file); // ****** ถ้าไม่ close จะ leak memory ถ้า run valgrind ./pdf test.pdf ดู
-  
-
-    // --- end of check: JPEG? ---
-
-    // open new jpeg file
-
-    // Create a new block of memory to store filename
-    // int filename_length = 3;
-    // char *filename = malloc(sizeof(char) * (filename_length + 1)); // ### + \0
-
-    // Copy argv[1] into block of memory for filename
-    // sprintf(filename, "%03i.jpg", 2);
-
-    // sprintf(filename, "%03i.jpg", 2);
-    // FILE *img = fopen(filename, "w");
-
-    // write 512 bytes until a new jpeg is found
-    // fwrite(data, size, number, outptr);
-
-    // find the end of the file
 }
