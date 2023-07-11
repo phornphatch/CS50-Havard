@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
     BYTE buffer[512];
 
     int file_number = 0;
+    bool jpegStarted = false;
 
     // Check buffer match with JPEG?
     while (fread(buffer, 512, 1, raw_file) == 1) // (location, size of block to read, how many block to read, location to read from)
@@ -33,13 +34,23 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff & buffer[1] == 0xd8 & buffer[2] == 0xff & (buffer[3] & 0xf0) == 0xe0)
         {
             printf("It's jpeg.\n");
-            // found begining of jpeg
-            char *filename = malloc(4));
-            sprintf(filename, "%03i.jpg", file_number);
-            FILE *img = fopen(filename, "w");
-            fwrite(buffer, 512, 1, img);
-            file_number++;
-            free(filename);
+
+            if (jpegStarted == true)
+            {
+                // เปน jpeg แต่ไม่ใช่จุด start
+            }
+            else
+            {
+                // เปน jpeg และเป็นจุด start
+                jpegStarted = true;
+                // found begining of jpeg
+                char *filename = malloc(4));
+                sprintf(filename, "%03i.jpg", file_number);
+                FILE *img = fopen(filename, "w");
+                fwrite(buffer, 512, 1, img);
+                file_number++;
+                free(filename);
+            }
         }
         else
         {
