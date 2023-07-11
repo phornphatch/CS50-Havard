@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
             FILE *img = fopen(filename, "w");
             fwrite(buffer, 512, 1, img);
             file_number++;
+            free(filename);
         }
         else
         {
@@ -46,6 +47,7 @@ int main(int argc, char *argv[])
         }
     }
     fclose(raw_file); // ****** ถ้าไม่ close จะ leak memory ถ้า run valgrind ./pdf test.pdf ดู
+
     // --- end of check: JPEG? ---
 
     // open new jpeg file
