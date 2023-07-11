@@ -22,29 +22,26 @@ int main(int argc, char *argv[])
     }
 
     // look for beginning of jpeg
-    uint8_t buffer[4];                        // actual 4
+    uint16_t buffer[4]; // actual 4
 
-    fread(buffer, 1, 4, file); // (location, size of block to read, how many block to read, location to read from)
+    fread(buffer, 4, 1, file); // (location, size of block to read, how many block to read, location to read from)
 
-    for (int i = 0; i < 3; i++)
+    // Check buffer match with JPEG?
+    if (buffer[0] == 0xff & buffer[1] == 0xd8 & buffer[2] == 0xff & (buffer[3] & 0xf0) == 0xe0)
     {
-        // Check buffer match with JPEG?
-        if (buffer[0] == 0xff & buffer[1] == 0xd8 & buffer[2] == 0xff & (buffer[3] & 0xf0) == 0xe0)
-        {
-            printf("It's jpeg.\n");
-            return 0;
-        }
-        printf("It's not a  jpeg !!!!\n");
-        fclose(file); // ****** ถ้าไม่ close จะ leak memory ถ้า run valgrind ./pdf test.pdf ดู
+        printf("It's jpeg.\n");
         return 0;
     }
+    printf("It's not a  jpeg !!!!\n");
+    fclose(file); // ****** ถ้าไม่ close จะ leak memory ถ้า run valgrind ./pdf test.pdf ดู
+    return 0;
 
     // open new jpeg file
     sprintf(filename, "%03i.jpg", 2);
     FILE *img = fopen(filename, "w");
 
     // write 512 bytes until a new jpeg is found
-     fwrite(data, size, number, outptr);
+    fwrite(data, size, number, outptr);
 
-     // find the end of the file
+    // find the end of the file
 }
