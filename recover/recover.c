@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     // 1. open memory card
     FILE *raw_file = fopen(argv[1], "r"); // r is reading mode
 
-    // check if file exists
+    // check if file exists./recover card.raw
     if (raw_file == NULL)
     {
         printf("No such file found.\n");
