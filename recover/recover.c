@@ -34,7 +34,6 @@ int main(int argc, char *argv[])
     // Check buffer match with JPEG?
     while (fread(buffer, 512, 1, raw_file) == 1) // (location, size of block to read, how many block to read, location to read from)
     {
-        printf("this is buffer %s\n",buffer);
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
             if (jpegStarted == true)
