@@ -38,6 +38,9 @@ int main(int argc, char *argv[])
             if (jpegStarted == true)
             {
                 // เปน jpeg แต่ไม่ใช่จุด start
+                 FILE *img = fopen(filename, "w");
+                fwrite(buffer, 512, 1, img);
+                free(filename);
             }
             else
             {
@@ -48,7 +51,6 @@ int main(int argc, char *argv[])
                 sprintf(filename, "%03i.jpg", file_number);
                 FILE *img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
-                file_number++;
                 free(filename);
             }
         }
