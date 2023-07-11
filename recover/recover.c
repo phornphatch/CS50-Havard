@@ -12,10 +12,10 @@ int main(int argc, char *argv[])
     }
 
     // 1. open memory card
-    FILE *file = fopen(argv[1], "r"); // r is reading mode
+    FILE *raw_file = fopen(argv[1], "r"); // r is reading mode
 
     // check if file exists
-    if (file == NULL)
+    if (raw_file == NULL)
     {
         printf("No such file found.\n");
         return 1;
@@ -26,8 +26,7 @@ int main(int argc, char *argv[])
     BYTE buffer[512];
 
     // Check buffer match with JPEG?
-    while (fread(buffer, 512, 1, raw_file) ==
-           BLOCK_SIZE) // (location, size of block to read, how many block to read, location to read from)
+    while (fread(buffer, 512, 1, raw_file) == 1) // (location, size of block to read, how many block to read, location to read from)
     {
         if (buffer[0] == 0xff & buffer[1] == 0xd8 & buffer[2] == 0xff & (buffer[3] & 0xf0) == 0xe0)
         {
@@ -40,7 +39,7 @@ int main(int argc, char *argv[])
         }
         return 0;
     }
-    fclose(file); // ****** ถ้าไม่ close จะ leak memory ถ้า run valgrind ./pdf test.pdf ดู
+    fclose(raw_file); // ****** ถ้าไม่ close จะ leak memory ถ้า run valgrind ./pdf test.pdf ดู
                   // --- end of check: JPEG? ---
 
     // open new jpeg file
