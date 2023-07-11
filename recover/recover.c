@@ -31,16 +31,14 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff & buffer[1] == 0xd8 & buffer[2] == 0xff & (buffer[3] & 0xf0) == 0xe0)
         {
             printf("It's jpeg.\n");
-            return 0;
         }
         else
         {
             printf("It's not a  jpeg !!!!\n");
         }
-        return 0;
     }
     fclose(raw_file); // ****** ถ้าไม่ close จะ leak memory ถ้า run valgrind ./pdf test.pdf ดู
-                  // --- end of check: JPEG? ---
+    // --- end of check: JPEG? ---
 
     // open new jpeg file
 
