@@ -22,11 +22,17 @@ int main(int argc, char *argv[])
     }
 
     // look for beginning of jpeg
-    uint16_t buffer[4]; // actual 4
+    typedef uint8_t BYTE;
+    BYTE buffer[512];
 
     fread(buffer, 4, 1, file); // (location, size of block to read, how many block to read, location to read from)
 
     // Check buffer match with JPEG?
+    while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
+{
+
+
+}
     if (buffer[0] == 0xff & buffer[1] == 0xd8 & buffer[2] == 0xff & (buffer[3] & 0xf0) == 0xe0)
     {
         printf("It's jpeg.\n");
