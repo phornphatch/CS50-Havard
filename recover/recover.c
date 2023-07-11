@@ -38,7 +38,10 @@ int main(int argc, char *argv[])
             if (jpegStarted == true)
             {
                 // เปน jpeg แต่ไม่ใช่จุด start
-                 FILE *img = fopen(filename, "w");
+                file_number++;
+                char *filename = malloc(4);
+                sprintf(filename, "%03i.jpg", file_number);
+                FILE *img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
                 free(filename);
             }
@@ -47,7 +50,7 @@ int main(int argc, char *argv[])
                 // เปน jpeg และเป็นจุด start
                 jpegStarted = true;
                 // found begining of jpeg
-                char *filename = malloc(4));
+                char *filename = malloc(4);
                 sprintf(filename, "%03i.jpg", file_number);
                 FILE *img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
