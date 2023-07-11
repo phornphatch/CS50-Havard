@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
     int file_number = 0;
     bool jpegStarted = false;
     FILE *img = NULL;
+    char *filename = malloc(4);
 
     // Check buffer match with JPEG?
     while (fread(buffer, 512, 1, raw_file) == 1) // (location, size of block to read, how many block to read, location to read from)
@@ -38,14 +39,13 @@ int main(int argc, char *argv[])
         {
             if (jpegStarted == true)
             {
-                // fclose(img);
+                fclose(img);
                 // เปน jpeg แต่ไม่ใช่จุด start
                 file_number++;
-                char *filename = malloc(4);
+                // char *filename = malloc(4);
                 sprintf(filename, "%03i.jpg", file_number);
                 img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
-                free(filename);
                 printf("next img here !!!!\n");
             }
             else
@@ -53,12 +53,11 @@ int main(int argc, char *argv[])
                 // เปน jpeg และเป็นจุด start
                 jpegStarted = true;
                 // found begining of jpeg
-                char *filename = malloc(4);
+                // char *filename = malloc(4);
                 sprintf(filename, "%03i.jpg", file_number);
                 img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
-                fclose(img);
-                free(filename);
+                // fclose(img);
                 printf("first img here !!!!\n");
             }
         }
@@ -66,18 +65,18 @@ int main(int argc, char *argv[])
         {
             if (jpegStarted)
             {
-                char *filename = malloc(4);
+
                 sprintf(filename, "%03i.jpg", file_number);
                 img = fopen(filename, "w");
                 fwrite(buffer, 512, 1, img);
-                fclose(img);
-                free(filename);
+                // fclose(img);
                 printf("add !!!!\n");
             }
 
         }
     }
     fclose(raw_file); // ****** ถ้าไม่ close จะ leak memory ถ้า run valgrind ./pdf test.pdf ดู
+    free(filename);
 
     // --- end of check: JPEG? ---
 
