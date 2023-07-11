@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
         {
             if (jpegStarted == true)
             {
-                fclose(img);
+                // fclose(img);
                 // เปน jpeg แต่ไม่ใช่จุด start
                 file_number++;
                 char *filename = malloc(4);
