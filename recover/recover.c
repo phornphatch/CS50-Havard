@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
                 sprintf(filename, "%03i.jpg", file_number);
                 printf("%s", filename);
                 img = fopen(filename, "w");
-                fwrite(buffer, 512, 1, img);
+                fwrite(buffer, 512*512, 1, img);
                 printf("next img here !!!!\n");
             }
             else
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
                 // char *filename = malloc(4);
                 sprintf(filename, "%03i.jpg", file_number);
                 img = fopen(filename, "w");
-                fwrite(buffer, 512, 1, img);
+                fwrite(buffer, 512*512, 1, img);
                 // fclose(img);
                 printf("first img here !!!!\n");
             }
@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
 
                 sprintf(filename, "%03i.jpg", file_number);
                 img = fopen(filename, "w");
-                fwrite(buffer, 512, 1, img);
+                fwrite(buffer, 512*512, 1, img);
                 // fclose(img);
             }
         }
