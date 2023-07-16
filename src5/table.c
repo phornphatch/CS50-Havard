@@ -29,4 +29,8 @@ int main(void)
 int hash(string phrase)
 {
     return toupper(phrase[0]) - 'A';
-}
+    // A = 65
+    // A - A = 0
+    // B - A = 1
+    // Z - A = 25
+ }
