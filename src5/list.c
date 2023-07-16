@@ -45,8 +45,8 @@ int main(void)
 
 void unload(node *list)
 {
-    // TODO: Free all allocated nodes ***** 
-    while (list != NULL)
+    // TODO: Free all allocated nodes ***** ถ้าไม่ unloading ตรงนี้ จะ memory leak
+    while (list != NULL) // ถ้าไม่รู้ว่าเมื่อไรถึงจะจบแน่นอน ใช้ while loop ซะ
     {
         node *ptr = list->next;
         free(list);
