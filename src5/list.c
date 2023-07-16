@@ -25,7 +25,7 @@ int main(void)
         string phrase = get_string("Enter a new phrase: ");
 
         // TODO: add phrase to new node in list ****
-        node *n = malloc(sizeof(node));
+        node *n = malloc(sizeof(node)); // create some space to new node 
         if (n == NULL)
         {
             printf("Couldn't allocate memory for node\n");
