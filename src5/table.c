@@ -11,7 +11,7 @@ typedef struct node
 }
 node;
 
-node *table[26];
+node *table[26]; // สร้าง
 
 int hash(string phrase);
 
