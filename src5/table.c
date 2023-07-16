@@ -11,9 +11,9 @@ typedef struct node
 }
 node;
 
-node *table[26]; // สร้าง
+node *table[26]; // new array named table ที่ pointer to node มี 26 ตัวอักษร
 
-int hash(string phrase);
+int hash(string phrase); // new phrase
 
 int main(void)
 {
