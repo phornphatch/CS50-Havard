@@ -125,6 +125,9 @@ bool check(char* word)
         if (cursor.is_word)
         {
             return true;
+        } else
+        {
+            cursor = cursor.children
         }
 
     }
