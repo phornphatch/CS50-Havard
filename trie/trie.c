@@ -130,7 +130,7 @@ bool check(char *word)
 
         if (cursor->children[index]->is_word)
         {
-            if (i + 1 == strlen(word)) {
+            if (i + 1 == strlen(word)) { // เช็คว่าใช่ตัวสุดท้ายในคำยัง
                 return true;
             } else {
                 cursor = cursor->children[index];
