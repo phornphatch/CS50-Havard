@@ -107,14 +107,20 @@ int main(int argc, char *argv[])
     fclose(infile);
 }
 
+int get_char_index(char c) {
+    return tolower(c) - 'a';
+}
+
 // TODO: Complete the check function, return true if found, false if not found
 bool check(char* word)
 {
     // printf("%s",word);
     node *cursor = root;
-    for (int i = 0; i <= strlen(word); i++)
+    for (int i = 0; i < strlen(word); i++)
     {
         // printf("%c", word[i]);
+        get_char_index(word[i]);
+        // printf("%i", get_char_index(word[i]));
         
     }
     return true;
