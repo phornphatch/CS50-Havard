@@ -130,7 +130,11 @@ bool check(char *word)
 
         if (cursor->children[index]->is_word)
         {
-            return true;
+            if (i + 1 == strlen(word)) {
+                return true;
+            } else {
+                cursor = cursor->children[index];
+            }
         }
         else
         {
@@ -138,7 +142,7 @@ bool check(char *word)
         }
         // printf("pass current node->is_word\n");
     }
-    return true;
+    return false;
 }
 
 // Unload trie from memory
