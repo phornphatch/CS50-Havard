@@ -121,20 +121,19 @@ bool check(char* word)
         // printf("%c", word[i]);
         int index = get_char_index(word[i]);
         printf("%i\n", get_char_index(word[i]));
-        node *current_node = cursor->children[index];
         printf("pass current node\n");
 
-        if (current_node == NULL)
+        if (cursor->children[index] == NULL)
         {
             return false;
         }
 
-        if (current_node->is_word)
+        if (cursor->children[index]->is_word)
         {
             return true;
         } else
         {
-            cursor = current_node->children[index];
+            cursor = cursor->children[index];
         }
         printf("pass current node->is_word\n");
 
