@@ -119,9 +119,13 @@ bool check(char* word)
     for (int i = 0; i < strlen(word); i++)
     {
         // printf("%c", word[i]);
-        get_char_index(word[i]);
+        int index = get_char_index(word[i]);
         // printf("%i", get_char_index(word[i]));
-        childern[]
+        cursor = childern[index];
+        if (cursor.is_word)
+        {
+            return true;
+        }
 
     }
     return true;
