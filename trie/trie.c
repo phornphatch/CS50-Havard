@@ -122,7 +122,7 @@ bool check(char* word)
         int index = get_char_index(word[i]);
         // printf("%i", get_char_index(word[i]));
         node *current_node = cursor->children[index];
-        if (current_node->children == NULL)
+        if (current_node->children[index] == NULL)
         {
             return false;
         }
