@@ -120,19 +120,20 @@ bool check(char* word)
     {
         // printf("%c", word[i]);
         int index = get_char_index(word[i]);
-        // printf("%i", get_char_index(word[i]));
+        printf("%i\n", get_char_index(word[i]));
         node *current_node = cursor->children[index];
-        if (current_node->children[index] == NULL)
+
+        if (current_node == NULL)
         {
             return false;
         }
 
-        if (current_node.is_word)
+        if (current_node->is_word)
         {
             return true;
         } else
         {
-            cursor = current_node->children
+            cursor = current_node->children[index];
         }
 
     }
