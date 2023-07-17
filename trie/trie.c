@@ -112,7 +112,11 @@ bool check(char* word)
 {
     // printf("%s",word);
     node *cursor = root;
-    
+    for (int i = 0; i <= strlen(word); i++)
+    {
+        // printf("%c", word[i]);
+        
+    }
     return true;
 }
 
