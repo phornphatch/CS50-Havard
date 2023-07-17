@@ -121,7 +121,8 @@ bool check(char* word)
         // printf("%c", word[i]);
         get_char_index(word[i]);
         // printf("%i", get_char_index(word[i]));
-        
+        childern[]
+
     }
     return true;
 }
