@@ -111,6 +111,7 @@ int main(int argc, char *argv[])
 bool check(char* word)
 {
     printf("%s",word);
+    for (int i=0; i<N; i++)
     return true;
 }
 
