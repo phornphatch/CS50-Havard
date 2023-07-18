@@ -75,8 +75,10 @@ void free_family(person *p)
         return;
     }
     // TODO: Free parents recursively
-free_family()
+    free_family(person->parent1);
+    
     // TODO: Free child
+    free(person);
 }
 
 // Print each family member and their alleles.
