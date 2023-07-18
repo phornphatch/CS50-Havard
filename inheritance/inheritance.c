@@ -27,7 +27,7 @@ int main(void)
     srand(time(0));
 
     // Create a new family with three generations
-    person *p = create_family(GENERATIONS); 
+    person *p = create_family(GENERATIONS);
 
     // Print family tree of blood types
     print_family(p, 0);
@@ -40,7 +40,7 @@ int main(void)
 person *create_family(int generations)
 {
     // TODO: Allocate memory for new person
-    person = malloc(sizeof(person));
+    person *new_person = malloc(sizeof(person));
 
     // If there are still generations left to create
     if (generations > 1)
