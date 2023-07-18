@@ -82,7 +82,7 @@ void free_family(person *p)
         return;
     }
     // TODO: Free parents recursively
-    for (int i = 0; i < GENERATIONS -1 ; i++)
+    for (int i = 0; i < GENERATIONS - 1; i++)
     {
         if (p != NULL)
         {
