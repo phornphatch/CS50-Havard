@@ -9,7 +9,7 @@
 typedef struct person
 {
     struct person *parents[2];
-    char alleles[2];
+    char alleles[2]; // A B O
 }
 person;
 
