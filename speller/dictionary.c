@@ -122,5 +122,9 @@ bool unload(void)
 {
     // TODO
     // อย่าลิมว่าต้องเปา tmp มารับก่อน แล้วเลื่อน cursor แล้วค่อยฟรีตัวนั้นไม่งี้จะเสียไป track of the rest of the linked list
+    for (int i = 0; i< N; i++)
+    {
+        
+    }
     return false;
 }
