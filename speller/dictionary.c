@@ -25,6 +25,11 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    // return true if the word is in the dictory
+    // case sensitive
+    // hash word to obtain a hash value
+    // access linked list at that index in the hash table
+    // Traverse linked list, looking for the word (strcasecmp)
     return false;
 }
 
@@ -64,7 +69,8 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
+    // TODO return number of word
+    // keep track number of word that you added
     return 0;
 }
 
