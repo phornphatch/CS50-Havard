@@ -25,7 +25,7 @@ const unsigned int N = 26;
 // Hash table
 node *table[N];
 
-char w_word[20];
+char w_word[100];
 int num_word = 0;
 
 // Returns true if word is in dictionary, else false
