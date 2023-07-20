@@ -108,7 +108,7 @@ bool load(const char *dictionary)
         {
             node *current_node = table[index];
             if(current_node == NULL) {
-                
+                continue;
             }
             while (current_node->next != NULL)
             {
