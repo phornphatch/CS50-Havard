@@ -27,6 +27,7 @@ node *table[N];
 
 char w_word[100];
 int num_word = 0;
+int num_free=0;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -141,7 +142,9 @@ bool unload(void)
             node *tmp = cursor;
             cursor = cursor->next;
             free(tmp);
+            num_free++;
         }
     }
+printf("word: %i free: %i \n", num_word, num_free);
     return true;
 }
