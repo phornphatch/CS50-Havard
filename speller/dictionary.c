@@ -112,11 +112,11 @@ bool load(const char *dictionary)
         else
         {
             node *current_node = table[index];
-            while (current_node->next != NULL)
+            while (current_node != NULL)
             {
                 current_node = current_node->next;
             }
-            current_node->next = new;
+            current_node = new;
         }
         free(new);
     }
