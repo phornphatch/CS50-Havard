@@ -30,8 +30,8 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    // take a word ad input
-    // output a number corresponding to which "bucket" to store the word in
+    // take a word and input withalphabetical characters and apostopphes
+    // output a number corresponding to which "bucket" to store the word in (numerical index between 0 and N -1)
     // each index inside hash table will be linked list (node : value + pointer to next node)
     return toupper(word[0]) - 'A';
 }
