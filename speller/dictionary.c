@@ -47,7 +47,7 @@ bool check(const char *word)
         return false;
     }
 
-    while (current_node->next != NULL)
+    while (current_node != NULL)
     {
         printf("%s - %s\n", current_node->word, word);
         if (strcasecmp(current_node->word, word) == 0)
