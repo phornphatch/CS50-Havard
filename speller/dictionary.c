@@ -107,14 +107,14 @@ bool load(const char *dictionary)
         else
         {
             node *current_node = table[index];
-            if(current_node == NULL) {
-                continue;
-            }
-            while (current_node->next != NULL)
+            if (current_node != NULL)
             {
-                current_node = current_node->next;
+                while (current_node->next != NULL)
+                {
+                    current_node = current_node->next;
+                }
+                current_node->next = new;
             }
-            current_node->next = new;
         }
     }
     fclose(file);
