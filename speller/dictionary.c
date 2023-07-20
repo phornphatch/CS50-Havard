@@ -21,6 +21,7 @@ const unsigned int N = 26;
 node *table[N];
 
 char word[20];
+int num_word = 0;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -31,6 +32,7 @@ bool check(const char *word)
     // hash word to obtain a hash value
     // access linked list at that index in the hash table
     // Traverse linked list, looking for the word (strcasecmp : campare to string with case sensitive)
+    
     // start with cursor set to first item in linked list
     // keep moving cursor untill you get NULL, checking each node for the word
     return false;
@@ -69,6 +71,7 @@ bool load(const char *dictionary)
         node *new = malloc(sizeof(node));
         if (word != NULL)
         {
+            num_word++;
             // remember to check if return value is null
             // copy the word into that node using strcpy function
             strcpy(new->word, word);
@@ -101,8 +104,8 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO return number of word
-    // keep track number of word that you added
-    return 0;
+    // keep track number of word that you added (เพิ่ม num_word++ ใน load function)
+    return num_word;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
