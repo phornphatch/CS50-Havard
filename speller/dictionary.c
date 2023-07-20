@@ -47,8 +47,15 @@ bool load(const char *dictionary)
        //  use fscanf(file, %s , word)
        // fscan will return EOF ince it reaches end of file
     // create a new node for each word
+       // use malloc
+       // remember to check if return value is null
+       // copy the word into that node using strcpy function
     // hash word using hash function to obtain a hash value
+       // use hash function
+       // function takes a string and return an index
     // insert node into hash table at the location
+       // recall that hash table is an array of linked list
+       // besure to set pointers in the correct order
     return false;
 }
 
