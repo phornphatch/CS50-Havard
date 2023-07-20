@@ -113,8 +113,6 @@ bool load(const char *dictionary)
             }
             current_node->next = new;
         }
-        free(new);
-        
     }
     fclose(file);
     // recall that hash table is an array of linked list
