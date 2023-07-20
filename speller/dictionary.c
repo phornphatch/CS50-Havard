@@ -114,6 +114,7 @@ bool load(const char *dictionary)
             current_node->next = new;
         }
     }
+    fclose(file);
     // recall that hash table is an array of linked list
     // besure to set pointers in the correct order
     return true;
