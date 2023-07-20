@@ -72,13 +72,13 @@ bool load(const char *dictionary)
             // remember to check if return value is null
             // copy the word into that node using strcpy function
             strcpy(new->word, word);
-            hash();
+            // hash word using hash function to obtain a hash value
+            // use hash function
+            // function takes a string and return an index
+            int index = hash(word);
         }
     }
 
-    // hash word using hash function to obtain a hash value
-    // use hash function
-    // function takes a string and return an index
     // insert node into hash table at the location
     // recall that hash table is an array of linked list
     // besure to set pointers in the correct order
