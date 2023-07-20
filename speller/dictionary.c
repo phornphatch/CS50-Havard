@@ -82,9 +82,11 @@ bool load(const char *dictionary)
                 table[index] = new;
             } else
             {
-                while (table[index]->next == NULL) {
-                    table[] = new;
+                node *current_node = table[index];
+                while (current_node->next != NULL) {
+                    current_node = current_node->next;
                 }
+                
             }
         }
     }
