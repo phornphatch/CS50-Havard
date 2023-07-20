@@ -91,6 +91,7 @@ bool load(const char *dictionary)
         // create a new node for each word
         // use malloc
         node *new = malloc(sizeof(node));
+        new->next = NULL;
 
         num_word++;
         // remember to check if return value is null
@@ -103,12 +104,12 @@ bool load(const char *dictionary)
         // insert node into hash table at the location
         if (table[index] == NULL)
         {
-            new->next = NULL;
             table[index] = new;
         }
         else
         {
             node *current_node = table[index];
+            current_node->next = table[index].next;
             while (current_node->next != NULL)
             {
                 current_node = current_node->next;
