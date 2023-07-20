@@ -72,6 +72,7 @@ bool load(const char *dictionary)
             // remember to check if return value is null
             // copy the word into that node using strcpy function
             strcpy(new->word, word);
+            hash();
         }
     }
 
