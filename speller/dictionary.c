@@ -1,8 +1,8 @@
 // Implements a dictionary's functionality
 
+#include <cs50.h>
 #include <ctype.h>
 #include <stdbool.h>
-#include <cs50.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -68,7 +68,7 @@ bool load(const char *dictionary)
     // TODO
     // open dictionary file
     // use fopen
-    FILE *file = fopen(argv[1], "r");
+    FILE *file = fopen(dictionary, "r");
     // remember to check if return value is null
     if (file == NULL)
     {
@@ -83,30 +83,28 @@ bool load(const char *dictionary)
         // create a new node for each word
         // use malloc
         node *new = malloc(sizeof(node));
-        if (w_word != NULL)
+
+        num_word++;
+        // remember to check if return value is null
+        // copy the word into that node using strcpy function
+        strcpy(new->word, w_word);
+        // hash word using hash function to obtain a hash value
+        // use hash function
+        // function takes a string and return an index
+        int index = hash(w_word);
+        // insert node into hash table at the location
+        if (table[index] == NULL)
         {
-            num_word++;
-            // remember to check if return value is null
-            // copy the word into that node using strcpy function
-            strcpy(new->word, w_word);
-            // hash word using hash function to obtain a hash value
-            // use hash function
-            // function takes a string and return an index
-            int index = hash(w_word);
-            // insert node into hash table at the location
-            if (table[index] == NULL)
+            table[index] = new;
+        }
+        else
+        {
+            node *current_node = table[index];
+            while (current_node->next != NULL)
             {
-                table[index] = new;
+                current_node = current_node->next;
             }
-            else
-            {
-                node *current_node = table[index];
-                while (current_node->next != NULL)
-                {
-                    current_node = current_node->next;
-                }
-                current_node->next = new;
-            }
+            current_node->next = new;
         }
     }
     // recall that hash table is an array of linked list
