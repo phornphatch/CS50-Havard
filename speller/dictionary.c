@@ -9,7 +9,7 @@
 typedef struct node
 {
     char word[LENGTH + 1];
-    struct node *next;
+    struct node *next; // pointer = address of the next node
 }
 node;
 
@@ -32,7 +32,7 @@ unsigned int hash(const char *word)
     // TODO: Improve this hash function
     // take a word ad input
     // output a number corresponding to which "bucket" to store the word in
-    // each index inside hash table should be ;inked list
+    // each index inside hash table will be linked list (node : value + pointer to next node)
     return toupper(word[0]) - 'A';
 }
 
