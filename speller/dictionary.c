@@ -103,6 +103,7 @@ bool load(const char *dictionary)
         // insert node into hash table at the location
         if (table[index] == NULL)
         {
+            new->next = NULL;
             table[index] = new;
         }
         else
