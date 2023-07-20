@@ -32,6 +32,7 @@ unsigned int hash(const char *word)
     // TODO: Improve this hash function
     // take a word ad input
     // output a number corresponding to which "bucket" to store the word in
+    // each index inside hash table should be ;inked list
     return toupper(word[0]) - 'A';
 }
 
