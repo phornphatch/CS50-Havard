@@ -71,7 +71,6 @@ int main(int argc, char *argv[])
     char c;
     while (fread(&c, sizeof(char), 1, file))
     {
-        printf("%c\n", c);
         // Allow only alphabetical characters and apostrophes
         if (isalpha(c) || (c == '\'' && index > 0))
         {
