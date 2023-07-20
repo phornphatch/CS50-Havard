@@ -42,7 +42,12 @@ bool check(const char *word)
     node *current_node = table[word_index];
     // printf("current_node->word : %s\n", current_node->next->word);
     // keep moving cursor untill you get NULL, checking each node for the word
-    while (current_node != NULL && current_node->next != NULL)
+    if (current_node != NULL)
+    {
+        return false;
+    }
+
+    while (current_node->next != NULL)
     {
         printf("%s - %s", current_node->word, word);
         if (strcasecmp(current_node->word, word) == 0)
