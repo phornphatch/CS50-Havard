@@ -146,6 +146,6 @@ bool unload(void)
             num_free++;
         }
     }
-    printf("word: %i free: %i \n", num_word, num_free);
+    // printf("word: %i free: %i \n", num_word, num_free);
     return true;
 }
