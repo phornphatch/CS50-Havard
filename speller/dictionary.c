@@ -40,6 +40,15 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+    // open dictionary file
+       // use fopen
+       // remember to check if return value is null
+    // read strings from file one at a time
+       //  use fscanf(file, %s , word)
+       // fscan will return EOF ince it reaches end of file
+    // create a new node for each word
+    // hash word using hash function to obtain a hash value
+    // insert node into hash table at the location
     return false;
 }
 
