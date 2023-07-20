@@ -111,20 +111,12 @@ bool load(const char *dictionary)
         }
         else
         {
-            node *current_node = malloc(sizeof(node));
-            if (current_node == NULL)
-            {
-                return false;
-            }
-            current_node = table[index];
+            node *current_node = table[index];
             while (current_node != NULL)
             {
-                if (current_node->next != NULL)
-                {
-                    current_node = current_node->next;
-                }
+                current_node = current_node->next;
             }
-            current_node->next = new;
+            current_node = new;
         }
     }
     fclose(file);
