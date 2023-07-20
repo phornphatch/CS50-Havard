@@ -15,6 +15,8 @@ node;
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
+// larger N means more buckets.
+// if your function ends up with a value > N, you can take the value % N toget a value in the appropriate range
 
 // Hash table
 node *table[N];
