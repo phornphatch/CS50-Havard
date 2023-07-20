@@ -82,7 +82,7 @@ bool load(const char *dictionary)
                 table[index] = new;
             } else
             {
-                while (next != NULL) {
+                while (table[index]->next == NULL) {
                     table[] = new;
                 }
             }
