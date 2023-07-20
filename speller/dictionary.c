@@ -58,8 +58,7 @@ bool load(const char *dictionary)
         return 1;
     }
     // read strings from file one at a time
-     while (fread(buffer, 1, 7, infile) == 7) // อ่านไลฟล์ทีละ 7 ตัว
-    {
+     fread(buffer, 1, 4, file); 
     //  use fscanf(file, %s , word)
     // fscan will return EOF ince it reaches end of file
     // create a new node for each word
