@@ -25,11 +25,11 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
-    // return true if the word is in the dictory
+    // return true if the word is in the dictory, otherwise false
     // case sensitive
     // hash word to obtain a hash value
     // access linked list at that index in the hash table
-    // Traverse linked list, looking for the word (strcasecmp)
+    // Traverse linked list, looking for the word (strcasecmp : campare to string with case sensitive)
     return false;
 }
 
