@@ -73,7 +73,7 @@ bool load(const char *dictionary)
     if (file == NULL)
     {
         printf("No such file found.\n");
-        return 1;
+        return false;
     }
     // read strings from file one at a time
     //  use fscanf(file, %s , word)
@@ -109,7 +109,7 @@ bool load(const char *dictionary)
     }
     // recall that hash table is an array of linked list
     // besure to set pointers in the correct order
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
