@@ -80,10 +80,12 @@ bool load(const char *dictionary)
             if (table[index] == NULL)
             {
                 table[index] = new;
-            } else
+            }
+            else
             {
                 node *current_node = table[index];
-                while (current_node->next != NULL) {
+                while (current_node->next != NULL)
+                {
                     current_node = current_node->next;
                 }
                 current_node->next = new;
