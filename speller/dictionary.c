@@ -33,13 +33,17 @@ bool check(const char *word)
     // access linked list at that index in the hash table
     // Traverse linked list, looking for the word (strcasecmp : campare to string with case sensitive)
     int word_index = hash(word);
-    node *current_node = table[word_index];
-    if (strcasecmp(current_node->word, word)) {
-        return true;
-    }
-    current
     // start with cursor set to first item in linked list
+    node *current_node = table[word_index];
     // keep moving cursor untill you get NULL, checking each node for the word
+    while (current_node->next != NULL)
+    {
+        if (strcasecmp(current_node->word, word))
+        {
+            return true;
+        }
+        current_node = current_node->next; // moooooove
+    }
     return false;
 }
 
