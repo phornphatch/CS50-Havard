@@ -20,7 +20,7 @@ const unsigned int N = 26;
 // Hash table
 node *table[N];
 
-char word[20];
+char w_word[20];
 int num_word = 0;
 
 // Returns true if word is in dictionary, else false
@@ -73,21 +73,21 @@ bool load(const char *dictionary)
     // read strings from file one at a time
     //  use fscanf(file, %s , word)
     // fscan will return EOF once it reaches end of file
-    while (fscanf(file, "%s", word) == 1)
+    while (fscanf(file, "%s", w_word) == 1)
     {
         // create a new node for each word
         // use malloc
         node *new = malloc(sizeof(node));
-        if (word != NULL)
+        if (w_word != NULL)
         {
             num_word++;
             // remember to check if return value is null
             // copy the word into that node using strcpy function
-            strcpy(new->word, word);
+            strcpy(new->word, w_word);
             // hash word using hash function to obtain a hash value
             // use hash function
             // function takes a string and return an index
-            int index = hash(word);
+            int index = hash(w_word);
             // insert node into hash table at the location
             if (table[index] == NULL)
             {
