@@ -30,6 +30,8 @@ bool check(const char *word)
     // hash word to obtain a hash value
     // access linked list at that index in the hash table
     // Traverse linked list, looking for the word (strcasecmp : campare to string with case sensitive)
+        // start with cursor set to first item in linked list
+        // keep moving cursor untill you get NULL, checking each node for the word
     return false;
 }
 
