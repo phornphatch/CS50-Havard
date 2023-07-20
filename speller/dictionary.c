@@ -90,11 +90,6 @@ bool load(const char *dictionary)
         // create a new node for each word
         // use malloc
         node *new = malloc(sizeof(node));
-        if (new == NULL)
-        {
-            printf("Couldn't allocate memory for new\n");
-            return false;
-        }
 
         num_word++;
         // remember to check if return value is null
@@ -112,13 +107,14 @@ bool load(const char *dictionary)
         else
         {
             node *current_node = table[index];
-            while (current_node != NULL)
+            while (current_node->next != NULL)
             {
                 current_node = current_node->next;
             }
-            current_node = new;
+            current_node->next = new;
         }
         free(new);
+        
     }
     fclose(file);
     // recall that hash table is an array of linked list
