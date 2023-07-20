@@ -77,7 +77,10 @@ bool load(const char *dictionary)
             // function takes a string and return an index
             int index = hash(word);
             // insert node into hash table at the location
-            table[index] = new;
+            if (table[index] == NULL)
+            {
+                table[index] = new;
+            }
         }
     }
 
