@@ -42,7 +42,7 @@ bool check(const char *word)
     node *current_node = table[word_index];
     // printf("current_node->word : %s\n", current_node->next->word);
     // keep moving cursor untill you get NULL, checking each node for the word
-    if (current_node != NULL)
+    if (current_node == NULL)
     {
         return false;
     }
