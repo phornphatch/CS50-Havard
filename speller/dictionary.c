@@ -86,11 +86,10 @@ bool load(const char *dictionary)
                 while (current_node->next != NULL) {
                     current_node = current_node->next;
                 }
-                
+                current_node->next = new;
             }
         }
     }
-
     // recall that hash table is an array of linked list
     // besure to set pointers in the correct order
     return false;
