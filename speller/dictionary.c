@@ -30,6 +30,8 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
+    // take a word ad input
+    // output a number corresponding to which "bucket" to store the word in
     return toupper(word[0]) - 'A';
 }
 
