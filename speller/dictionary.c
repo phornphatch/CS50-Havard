@@ -91,7 +91,6 @@ bool load(const char *dictionary)
         // create a new node for each word
         // use malloc
         node *new = malloc(sizeof(node));
-        new->next = NULL;
 
         num_word++;
         // remember to check if return value is null
