@@ -40,7 +40,7 @@ bool check(const char *word)
     int word_index = hash(word);
     // start with cursor set to first item in linked list
     node *current_node = table[word_index];
-    printf("current_node->word : %s\n",current_node->word);
+    printf("current_node->word : %s\n",current_node->next->word);
     // keep moving cursor untill you get NULL, checking each node for the word
     while (current_node->next != NULL)
     {
