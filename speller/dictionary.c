@@ -80,6 +80,11 @@ bool load(const char *dictionary)
             if (table[index] == NULL)
             {
                 table[index] = new;
+            } else
+            {
+                while (next != NULL) {
+                    table[] = new;
+                }
             }
         }
     }
