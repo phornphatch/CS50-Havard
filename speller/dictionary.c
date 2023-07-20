@@ -57,8 +57,10 @@ bool load(const char *dictionary)
         printf("No such file found.\n");
         return 1;
     }
+    // allowcate memory
+    
     // read strings from file one at a time
-     fread(buffer, 1, 4, file); 
+     fread(buffer, 1, 4, file);
     //  use fscanf(file, %s , word)
     // fscan will return EOF ince it reaches end of file
     // create a new node for each word
