@@ -6,7 +6,7 @@ books = []
 with open("books.csv") as file: # หมายความว่า open csv นั้น แล้วเรียกว่า file
     file_reader = csv.DictReader(file)
     for book in file_reader:
-        books.append(book)
+        books.append(book) # append คือ 
 
 # Print titles of books
 for book in books:
