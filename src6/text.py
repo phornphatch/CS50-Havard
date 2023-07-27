@@ -64,7 +64,7 @@ print()
 
 # Round 5
 print("Round 5")
-for word in words:
+for word in words: # จะเปลี่ยนเปน for _ in words: ก้ได้
     print("Goodnight Moon")
 print()
 # Goodnight Moon
