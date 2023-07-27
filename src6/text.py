@@ -51,6 +51,10 @@ for word in words[2:]: # slice 2 ตัวแรกออก
     print(word)
 print()
 # ['great', 'green', 'room']
+# print ออกมาเปน
+# great
+# green
+# room
 
 print("Round 4")
 for word in words[2:4]: # slice 2 ตัวแรกออก และเอาถึงแค่ตัวที่ 4 (the first number is inclusive and the last number is exclusive)
