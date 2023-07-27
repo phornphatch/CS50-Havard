@@ -3,7 +3,7 @@ import csv
 books = []
 
 # Add books to your shelf by reading from books.csv
-with open("books.csv") as file: # 
+with open("books.csv") as file: # หมายความว่า open csv นั้น แล้วเรียกว่า file
     file_reader = csv.DictReader(file)
     for book in file_reader:
         books.append(book)
