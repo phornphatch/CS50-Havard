@@ -6,7 +6,8 @@ for i in range(3):
     book["title"] = input("Title: ")
     book["author"] = input("Author: ")
 
-    books.append(book)
+    books.append(book) # insert book in the lists
+    print(book)
 
 # Print book titles
 for book in books:
