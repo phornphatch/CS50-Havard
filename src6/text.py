@@ -1,5 +1,5 @@
 text = "In the great green room"
-words = text.split()
+words = text.split() # split by word
 
 # Round 1
 print("Round 1")
