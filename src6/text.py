@@ -36,7 +36,8 @@ for word in words:
     if "g" in word:
         print(word)
 print()
-# 
+# great
+# green
 
 # Round 4
 print("Round 4")
