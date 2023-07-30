@@ -20,7 +20,7 @@ def main():
                 total += menus.get(item)
                 print(f"${total}")
         except EOFError:
-            print("\n")
-            return False
-    sys.exit(1)
+           return False
+           print("\n")
+           sys.exit(1)
 main()
