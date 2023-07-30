@@ -20,6 +20,7 @@ def main():
             # print(menus)
             if item in menus:
                 # print(f"{item}")
+                # print(f"{menus.get(item)}")
                 total += menus.get(item)
                 print(f"${total}")
             else:
