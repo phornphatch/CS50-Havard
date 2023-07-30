@@ -1,4 +1,6 @@
+im
+
 try:
-    item = input()
+    item = input("Item: ")
 except EOFError:
     ...
