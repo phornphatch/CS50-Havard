@@ -19,11 +19,12 @@ def main():
     with open(sys.argv[1]) as file:
         file_reader = csv.DictReader(file)
         for team in file_reader:
-            teams.append(team)
+            team["rating"] = int(team["rating"])  # specify rating to integer ปกติจะเอาเข้าเปน string หมด
+            teams.append(team) # หมายถึง เขียน all teams
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
-    
+
 
 
     # Print each team's chances of winning, according to simulation
