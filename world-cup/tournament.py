@@ -16,9 +16,14 @@ def main():
 
     teams = []
     # TODO: Read teams into memory from file (which will eventually be a list of teams)
+    with open(sys.argv[1]) as file:
+        file_reader = csv.DictReader(file)
+        for team in file_reader:
+            teams.append(team)
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
+
 
     # Print each team's chances of winning, according to simulation
     # sort the teams in descending order of how many times they won simulations (according to counts)
