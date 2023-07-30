@@ -9,7 +9,7 @@ if len(argv) > 0:
         font = argv[2]
         text = get_string("Input: ")
         print("Output: ")
-        figlet.setFont(font)
+        figlet.setFont(font=font)
         print(figlet.renderText(text))
     else:
         print("Invalid usage")
