@@ -75,8 +75,12 @@ def comparative_averages(new_cases, states):
 
         # เผื่อไว้ในเคสที่หารด้วย 0
         try:
-            numerator / denominator
+            # numerator / denominator
+            division = diff / avg_last_week
+            percent = division * 100
         except ZeroDivisionError:
-        ...
+            raise ZeroDivisionError
+
+        print(f"{state} had a 7-day average of {avg_recent} and an {msg} of {percent}%.")
 
 main()
