@@ -51,7 +51,7 @@ def calculate(reader):
             if state not in new_cases:
                 new_cases[state] = []
             if len(new_cases[state]) >= 14:
-                new_cases[state].pop(0)
+                new_cases[state].pop(0) # .pop(0) คือเอาตัว 0 ออกก่อน ในที่นี้คือถ้าเกิน 14 เอาตัวตำแหน่งที่ 0 ออกก่อน
             new_cases[state].append(new_case)
     return new_cases
 
