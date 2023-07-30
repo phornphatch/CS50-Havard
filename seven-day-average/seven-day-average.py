@@ -73,4 +73,10 @@ def comparative_averages(new_cases, states):
         else diff < 0:
             msg = "decrease"
 
+        # เผื่อไว้ในเคสที่หารด้วย 0
+        try:
+            numerator / denominator
+        except ZeroDivisionError:
+        ...
+
 main()
