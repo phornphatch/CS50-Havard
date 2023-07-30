@@ -6,12 +6,14 @@ figlet = Figlet()
 
 if len(argv) > 0:
     if argv[1] == '-f' or argv[1] == '--font':
-        if argv[2]:
+        if argv[2] in figlet.getFonts():
             font = argv[2]
             text = get_string("Input: ")
             print("Output: ")
             figlet.setFont(font=font)
             print(figlet.renderText(text))
+        else:
+            print("Invalid usage")
     else:
         print("Invalid usage")
 else:
