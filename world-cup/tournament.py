@@ -11,11 +11,11 @@ N = 1000
 def main():
 
     # Ensure correct usage
-    if len(sys.argv) != 2: # the number of command-line arguments 
+    if len(sys.argv) != 2: # the number of command-line arguments
         sys.exit("Usage: python tournament.py FILENAME")
 
     teams = []
-    # TODO: Read teams into memory from file
+    # TODO: Read teams into memory from file (which will eventually be a list of teams)
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
