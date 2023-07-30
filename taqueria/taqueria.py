@@ -18,7 +18,7 @@ def main():
             item = input("Item: ").capitalize()
             if item in menus:
                 total += menus.get(item)
-                print(f"Totals: ${total}")
+                print(f"${total}")
         except EOFError:
             print("\n")
             return False
