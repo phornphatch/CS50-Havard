@@ -50,8 +50,7 @@ def calculate(reader):
             previous_cases[state] = cases
 
             if state not in new_cases:
-                
-
+                new_cases[state] = []
 
 
 # TODO: Calculate and print out seven day average for given state
