@@ -62,7 +62,7 @@ def comparative_averages(new_cases, states):
     for state in states:
         recent_cases = new_cases[state][7:]
         last_week_cases = new_cases[state][:7]
-        avg_recent = sum(recent_cases) / 7
+        avg_recent = round(sum(recent_cases) / 7, 0)
         avg_last_week = sum(last_week_cases) / 7
         diff = avg_recent - avg_last_week
 
@@ -76,6 +76,7 @@ def comparative_averages(new_cases, states):
             # numerator / denominator
             division = diff / avg_last_week
             percent = round(division * 100, 2)
+
         except ZeroDivisionError:
             raise ZeroDivisionError
 
