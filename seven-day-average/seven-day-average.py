@@ -75,7 +75,7 @@ def comparative_averages(new_cases, states):
             # numerator / denominator
             division = diff / avg_last_week
             percent = abs(
-                round(division * 100, 2)
+                round(division * 100)
             )  # abs() is converting a negative number to positive?
 
         except ZeroDivisionError:
