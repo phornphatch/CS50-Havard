@@ -12,7 +12,9 @@ menus = {
 
 try:
     item = input("Item: ")
-    if item in d
-        total =
+    if item in d:
+        for menu, price in menus.itrms():
+        total += price
+    print(f"Totals: ${total}")
 except EOFError:
     print("\n")
