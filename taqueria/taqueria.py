@@ -27,5 +27,5 @@ def main():
         except EOFError:
             print("\n")
             return False
-            sys.exit(1)
+            raise EOFError
 main()
