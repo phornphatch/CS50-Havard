@@ -23,7 +23,7 @@ def main():
                 total += menus.get(item)
                 print(f"${total}")
             else:
-                print("noitem in menu")
+                print("no item in menu")
         except EOFError:
             print("\n")
             return False
