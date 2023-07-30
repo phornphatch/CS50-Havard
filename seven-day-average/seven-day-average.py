@@ -40,7 +40,7 @@ def calculate(reader):
     for row in reader:
         state = row["state"]
         date = row["date"]
-        cases = int(row["cases"]
+        cases = int(row["cases"])
 
 
 # TODO: Calculate and print out seven day average for given state
