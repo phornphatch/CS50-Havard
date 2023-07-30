@@ -7,10 +7,10 @@ import random
 # Number of simluations to run
 N = 1000
 
-def main():
 
+def main():
     # Ensure correct usage
-    if len(sys.argv) != 2: # the number of command-line arguments
+    if len(sys.argv) != 2:  # the number of command-line arguments
         sys.exit("Usage: python tournament.py FILENAME")
 
     teams = []
@@ -18,18 +18,19 @@ def main():
     with open(sys.argv[1]) as file:
         file_reader = csv.DictReader(file)
         for team in file_reader:
-            team["rating"] = int(team["rating"])  # specify rating to integer ปกติจะเอาเข้าเปน string หมด
-            teams.append(team) # หมายถึง เขียน all teams
+            team["rating"] = int(
+                team["rating"]
+            )  # specify rating to integer ปกติจะเอาเข้าเปน string หมด
+            teams.append(team)  # หมายถึง เขียน all teams
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
-    for i in range(N): # N is 1000
+    for i in range(N):  # N is 1000
         winner = simulate_tournament(teams)
         if winner in counts:
             counts[winner] += 1
         else:
             counts[winner] = 1
-
 
     # Print each team's chances of winning, according to simulation
     # sort the teams in descending order of how many times they won simulations (according to counts)
@@ -67,7 +68,7 @@ def simulate_tournament(teams):
     # return name of winning team
     while len(teams) > 1:
         teams = simulate_round(teams)
-    return teams[0]["team"] # เข้าไปที่ first element เข้าไปหาชื่อ team
+    return teams[0]["team"]  # เข้าไปที่ first element เข้าไปหาชื่อ team
 
 
 if __name__ == "__main__":
