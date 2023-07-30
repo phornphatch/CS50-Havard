@@ -20,6 +20,8 @@ def main():
                 print(f"{item}")
                 total += menus.get(item)
                 print(f"${total}")
+            else:
+                print("noitem in menu")
         except EOFError:
             return False
             print("\n")
