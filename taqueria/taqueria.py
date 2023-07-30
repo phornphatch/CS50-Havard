@@ -10,11 +10,15 @@ menus = {
     "Tortilla Salad": 8.00
 }
 
-try:
-    item = input("Item: ")
-    if item in d:
-        for menu, price in menus.itrms():
-        total += price
-    print(f"Totals: ${total}")
-except EOFError:
-    print("\n")
+def main():
+    try:
+        item = input("Item: ")
+        total = 0
+        if item in menus:
+            for menu, price in menus.items():
+                total += price
+            print(f"Totals: ${total}")
+    except EOFError:
+        print("\n")
+
+main()
