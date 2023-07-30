@@ -25,7 +25,6 @@ def main():
             else:
                 print("no item in menu")
         except EOFError:
-            print("\n")
             return False
             raise EOFError
 main()
