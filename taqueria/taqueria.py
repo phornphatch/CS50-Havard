@@ -15,8 +15,7 @@ def main():
         item = input("Item: ")
         total = 0
         if item in menus:
-            for menu, price in menus.items():
-                total += price
+            total += menus.get(item)
             print(f"Totals: ${total}")
     except EOFError:
         print("\n")
