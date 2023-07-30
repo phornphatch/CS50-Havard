@@ -15,8 +15,9 @@ def main():
 
     while True:
         try:
-            item = input("Item: ").capitalize()
+            item = input("Item: ")
             print(item)
+            print(menus)
             if item in menus:
                 print(f"{item}")
                 total += menus.get(item)
