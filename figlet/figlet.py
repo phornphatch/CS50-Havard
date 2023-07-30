@@ -14,8 +14,11 @@ if len(argv) > 0:
             print(figlet.renderText(text))
         else:
             print("Invalid usage")
+            sys.exit(1)
     else:
         print("Invalid usage")
+        sys.exit(1)
 else:
      print("Invalid usage")
+     sys.exit(1)
 
