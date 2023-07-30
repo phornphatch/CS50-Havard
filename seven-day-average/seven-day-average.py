@@ -67,20 +67,18 @@ def comparative_averages(new_cases, states):
         diff = avg_recent - avg_last_week
 
         if diff > 0:
-            msg = "increase"
-        elif diff == 0:
-            msg = "equal"
-        else diff < 0:
-            msg = "decrease"
+            msg = "an increase"
+        else:
+            msg = "a decrease"
 
         # เผื่อไว้ในเคสที่หารด้วย 0
         try:
             # numerator / denominator
             division = diff / avg_last_week
-            percent = division * 100
+            percent = round(division * 100, 2)
         except ZeroDivisionError:
             raise ZeroDivisionError
 
-        print(f"{state} had a 7-day average of {avg_recent} and an {msg} of {percent}%.")
+        print(f"{state} had a 7-day average of {avg_recent} and {msg} of {percent}%.")
 
 main()
