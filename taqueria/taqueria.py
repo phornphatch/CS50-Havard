@@ -17,10 +17,11 @@ def main():
         try:
             item = input("Item: ").capitalize()
             if item in menus:
+                print(f"{item}")
                 total += menus.get(item)
                 print(f"${total}")
         except EOFError:
-           return False
-           print("\n")
-           sys.exit(1)
+            return False
+            print("\n")
+            sys.exit(1)
 main()
