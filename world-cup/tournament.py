@@ -23,6 +23,7 @@ def main():
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
+    
 
 
     # Print each team's chances of winning, according to simulation
@@ -58,6 +59,7 @@ def simulate_tournament(teams):
     # TODO
     # use simulate_round function, which accepts a list of teams and returns a list of winners
     # repeatedly sumulate rounds intil one team is left
+    # return name of winning team
 
 
 
