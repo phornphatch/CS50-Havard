@@ -22,10 +22,10 @@ def main():
                 # print(f"{item}")
                 # print(f"{menus.get(item)}")
                 total += menus.get(item)
-                print(f"${total}")
+                print(f"${total:.2f}") # ทศนิยม 2 ตำแหน่ง
             else:
                 print("no item in menu")
         except EOFError:
             return False
-            raise EOFError
+
 main()
