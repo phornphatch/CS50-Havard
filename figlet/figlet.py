@@ -12,8 +12,6 @@ if len(argv) > 0:
             print("Output: ")
             figlet.setFont(font=font)
             print(figlet.renderText(text))
-        else:
-            font = random
     else:
         print("Invalid usage")
 else:
