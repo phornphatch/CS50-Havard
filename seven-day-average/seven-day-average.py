@@ -39,7 +39,6 @@ def calculate(reader):
 
     for row in reader:
         state = row["state"]
-        date = row["date"]
         cases = int(row["cases"])
 
         if state not in previous_cases:
@@ -75,11 +74,14 @@ def comparative_averages(new_cases, states):
         try:
             # numerator / denominator
             division = diff / avg_last_week
-            percent = abs(round(division * 100, 2)) # abs() is converting a negative number to positive?
+            percent = abs(
+                round(division * 100, 2)
+            )  # abs() is converting a negative number to positive?
 
         except ZeroDivisionError:
             raise ZeroDivisionError
 
         print(f"{state} had a 7-day average of {avg_recent} and {msg} of {percent}%.")
+
 
 main()
