@@ -62,8 +62,8 @@ def comparative_averages(new_cases, states):
     for state in states:
         recent_cases = new_cases[state][7:]
         last_week_cases = new_cases[state][:7]
-        avg_recent = round(sum(recent_cases) / 7, 0)
-        avg_last_week = sum(last_week_cases) / 7
+        avg_recent = round(sum(recent_cases) / 7)
+        avg_last_week = round(sum(last_week_cases) / 7)
         diff = avg_recent - avg_last_week
 
         if diff > 0:
