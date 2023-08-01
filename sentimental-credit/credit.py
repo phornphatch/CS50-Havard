@@ -8,9 +8,15 @@ sum_odd = 0
 sum = 0
 two_first_number = int(credit_card_string[0:2])
 first_number = int(credit_card_string[0])
+start = 0
+end = 0
 
+if number_length % 2 == 0:
+    end = -1
+else:
+    end = 0
 
-for i in range(number_length -2, -1, -2):
+for i in range(number_length -2, end, -2):
     multiply = int(credit_card_string[i])*2
     # print(int(credit_card_string[i]))
     # print(multiply)
@@ -21,7 +27,7 @@ for i in range(number_length -2, -1, -2):
         sum_even += (int(multiply[0]) + int(multiply[1]))
     # print(sum_even)
 
-for j in range(number_length -1 , 0, -2):
+for j in range(number_length -1 , end, -2):
     # print(int(credit_card_string[j]))
     sum_odd += int(credit_card_string[j])
     # print(sum_odd)
