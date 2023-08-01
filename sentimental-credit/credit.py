@@ -14,7 +14,7 @@ for i in range(0, number_length, 2):
         sum_even += multiply
     else:
         multiply = str(multiply)
-        sum_even += (int(multiply[0]) + int(multiply[2]))
+        sum_even += (int(multiply[0]) + int(multiply[1]))
 
 
 for j in range(0, number_length, 2):
