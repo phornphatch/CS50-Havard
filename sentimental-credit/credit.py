@@ -19,18 +19,18 @@ else:
     end_odd = -1
     end_even = 0
 
-for i in range(number_length -2, end_even, -2):
-    multiply = int(credit_card_string[i])*2
+for i in range(number_length - 2, end_even, -2):
+    multiply = int(credit_card_string[i]) * 2
     # print(int(credit_card_string[i]))
     # print(multiply)
     if multiply < 10:
         sum_even += multiply
     else:
         multiply = str(multiply)
-        sum_even += (int(multiply[0]) + int(multiply[1]))
+        sum_even += int(multiply[0]) + int(multiply[1])
     # print(sum_even)
 
-for j in range(number_length -1 , end_odd, -2):
+for j in range(number_length - 1, end_odd, -2):
     # print(int(credit_card_string[j]))
     sum_odd += int(credit_card_string[j])
     # print(sum_odd)
