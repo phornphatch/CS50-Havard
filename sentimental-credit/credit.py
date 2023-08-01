@@ -11,6 +11,7 @@ j = 0
 
 for i in range(1, number_length, 2):
     multiply = int(credit_card_string[i])*2
+    print(int(credit_card_string[i]))
     if multiply < 10:
         sum_even += multiply
     else:
