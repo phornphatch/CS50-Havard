@@ -6,10 +6,8 @@ number_length = len(credit_card_string)
 sum_even = 0
 sum_odd = 0
 sum = 0
-i = 1
-j = 0
 
-for i in range(1, number_length, 2):
+for i in range(0, number_length, 2):
     multiply = int(credit_card_string[i])*2
     print(int(credit_card_string[i]))
     if multiply < 10:
