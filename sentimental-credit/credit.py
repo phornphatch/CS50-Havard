@@ -19,25 +19,24 @@ for i in range(number_length-2, -1, -2):
     # print(sum_even)
 
 for j in range(number_length -1 , 0, -2):
-    print(int(credit_card_string[j]))
+    # print(int(credit_card_string[j]))
     sum_odd += int(credit_card_string[j])
-# print(sum_odd)
+    # print(sum_odd)
 
 sum = sum_even + sum_odd
-
-# print(sum)
+print(sum)
 
 # Check checksum is valid according to Luhn's Algorithm or not
 if sum % 10 != 0:
     print("INVALID")
 # Check card length and two first number
-elif loop_count == 15 and (two_first_number == 34 or two_first_number == 37):
+elif number_length == 15 and (two_first_number == 34 or two_first_number == 37):
     print("AMEX")
-elif loop_count == 16 and (50 < two_first_number < 56):
+elif number_length == 16 and (50 < two_first_number < 56):
     print("MASTERCARD")
-elif loop_count == 16 and first_number == 4:
+elif number_length == 16 and first_number == 4:
     print("VISA")
-elif loop_count == 13 and first_number == 4:
+elif number_length == 13 and first_number == 4:
     print("VISA")
 else:
     print("INVALID")
