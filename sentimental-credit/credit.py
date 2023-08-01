@@ -38,7 +38,8 @@ if loop_count % 2 == 0:
 else:
     sum = sum + number
 
-two_first_number = (credit_card_number - (credit_card_number % pow(10, loop_count - 2))) / (pow(10, loop_count - 2));
+# find 2 first digits
+two_first_number = (credit_card_number - (credit_card_number % (10 ** (loop_count - 2)))) // (10 ** (loop_count - 2))
 
 # Check checksum is valid according to Luhn's Algorithm or not
 if sum % 10 != 0:
