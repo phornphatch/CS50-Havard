@@ -2,14 +2,19 @@ from cs50 import get_int
 
 height = get_int("Height: ")
 
-while height > 1 or height < 8:
-    for i in range(height):
-        print("")
+while height < 1 or height > 8:
+    try:
+        height = get_int("Height: ")
+    except ValueError:
+        pass
 
-        for j in range(i):
-            print("#")
+for i in range(1, height, 1):
+    print("")
 
-        print(" ")
+    for j in range(i, 1):
+        print("#")
 
-        for k in range(i):
-            print("#")
+    print(" ")
+
+    for k in range(i, 1):
+        print("#")
