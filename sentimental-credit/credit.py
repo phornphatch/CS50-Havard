@@ -7,23 +7,25 @@ sum_even = 0
 sum_odd = 0
 sum = 0
 
-for i in range(0, number_length, 2):
+for i in range(number_length-2, -1, -2):
     multiply = int(credit_card_string[i])*2
-    print(int(credit_card_string[i]))
+    # print(int(credit_card_string[i]))
+    # print(multiply)
     if multiply < 10:
         sum_even += multiply
     else:
         multiply = str(multiply)
         sum_even += (int(multiply[0]) + int(multiply[1]))
+    # print(sum_even)
 
-
-for j in range(0, number_length, 2):
+for j in range(number_length -1 , 0, -2):
+    print(int(credit_card_string[i]))
     sum_odd += int(credit_card_string[i])
-print(sum_odd)
+# print(sum_odd)
 
 sum = sum_even + sum_odd
 
-print(sum)
+# print(sum)
 
 # Check checksum is valid according to Luhn's Algorithm or not
 if sum % 10 != 0:
