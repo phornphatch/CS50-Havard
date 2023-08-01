@@ -3,10 +3,21 @@ from cs50 import get_int
 credit_card_number = get_int("Number: ")
 credis_card_string = str(credit_card_number)
 number_length = len(credit_card_string)
+sum_even = 0
+sum_odd = 0
 sum = 0
+i = 1
+j = 0
 
-for range(i, number_length, 2)
-    
+for i range(1, number_length, 2):
+    sum_even += int(credit_card_string[i])*2
+
+for j range(0, number_length, 2):
+    sum_odd += int(credit_card_string[i])
+
+sum = sum_even + sum_odd
+
+print(sum)
 
 # Check checksum is valid according to Luhn's Algorithm or not
 if sum % 10 != 0:
