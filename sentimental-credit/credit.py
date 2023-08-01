@@ -16,7 +16,7 @@ while number % 10 < number:
         product_last_number = last_number * 2
         if product_last_number > 10:
             last_digit_of_product_last_number = product_last_number % 10
-            first_digit_of_product_last_number = (product_last_number ) // 10
+            first_digit_of_product_last_number = (product_last_number - last_digit_of_product_last_number) // 10
             sum = sum + last_digit_of_product_last_number + first_digit_of_product_last_number
         elif product_last_number == 10:
             sum = sum + 1
