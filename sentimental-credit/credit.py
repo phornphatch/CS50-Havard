@@ -18,7 +18,7 @@ while number % 10 < number:
             last_digit_of_product_last_number = product_last_number % 10
             first_digit_of_product_last_number = (product_last_number - last_digit_of_product_last_number) // 10
             sum = sum + last_digit_of_product_last_number + first_digit_of_product_last_number
-        elif product_last_number == 0:
+        elif product_last_number == 10:
             sum = sum + 1
         else:
             sum = sum + product_last_number
@@ -44,7 +44,7 @@ else:
 # find 2 first digits
 two_first_number = (credit_card_number - (credit_card_number % (10 ** (loop_count - 2)))) // (10 ** (loop_count - 2))
 
-print(sum)
+# print(sum)
 # Check checksum is valid according to Luhn's Algorithm or not
 if sum % 10 != 0:
     print("INVALID")
