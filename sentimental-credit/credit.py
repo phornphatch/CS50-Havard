@@ -42,7 +42,7 @@ else:
     sum = sum + number
 
 # find 2 first digits
-two_first_number = (credit_card_number - (credit_card_number % (10 ** (loop_count - 2)))) // (10 ** (loop_count - 2))
+two_first_number = int(str(credit_card_number)[:2])
 
 print(sum)
 # Check checksum is valid according to Luhn's Algorithm or not
