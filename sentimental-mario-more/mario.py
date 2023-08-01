@@ -11,12 +11,12 @@ while height < 1 or height > 8:
 # range(start, stop, step)
 for i in range(1, height, 1):
     for j in range(1, height - i, 1):
-        print(" ")
+        print(" ", end="")
 
     for k in range(1, i, 1):
-        print("#")
+        print("#", end="")
 
-    print("  ")
+    print("  ", end="")
 
     for z in range(1, i, 1):
         print("#")
