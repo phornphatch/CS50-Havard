@@ -19,7 +19,7 @@ while number % 10 < number:
         else:
             sum = sum + product_last_number
     else:
-        sum = sum + last_number
+        sum += int(last_number)
 
     first_number = number
 
