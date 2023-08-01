@@ -10,7 +10,7 @@ two_first_number = int(credit_card_string[0:2])
 first_number = int(credit_card_string[0])
 
 
-for i in range(number_length-2, -1, -2):
+for i in range(number_length -2, -1, -2):
     multiply = int(credit_card_string[i])*2
     # print(int(credit_card_string[i]))
     # print(multiply)
