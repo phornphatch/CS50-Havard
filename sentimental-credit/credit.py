@@ -20,5 +20,18 @@ while number % 10 < number:
             sum = sum + product_last_number
     else
         sum = sum + last_number
-        
+
     first_number = number
+
+    if len(number) % 2 == 0:
+        product_last_number = last_number * 2
+        if product_last_number > 10
+            last_digit_of_product_last_number = product_last_number % 10
+            first_digit_of_product_last_number = (product_last_number - last_digit_of_product_last_number) / 10
+            sum = sum + last_digit_of_product_last_number + first_digit_of_product_last_number
+        elif product_lat_number == 0
+            sum = sum + 1
+        else
+            sum = sum + product_last_number
+    else
+        sum = sum + last_number
