@@ -9,10 +9,10 @@ sum = 0
 i = 1
 j = 0
 
-for i range(1, number_length, 2):
+for i in range(1, number_length, 2):
     sum_even += int(credit_card_string[i])*2
 
-for j range(0, number_length, 2):
+for j in range(0, number_length, 2):
     sum_odd += int(credit_card_string[i])
 
 sum = sum_even + sum_odd
