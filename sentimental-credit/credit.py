@@ -19,8 +19,8 @@ for i in range(number_length-2, -1, -2):
     # print(sum_even)
 
 for j in range(number_length -1 , 0, -2):
-    print(int(credit_card_string[i]))
-    sum_odd += int(credit_card_string[i])
+    print(int(credit_card_string[j]))
+    sum_odd += int(credit_card_string[j])
 # print(sum_odd)
 
 sum = sum_even + sum_odd
