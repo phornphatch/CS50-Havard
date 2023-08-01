@@ -1,14 +1,14 @@
 from cs50 import get_int
 
 credit_card_number = get_int("Number: ")
-number = credit_card_number
+number = int(credit_card_number)
 
 while number % 10 < number:
     last_number = number % 10
     if last_number < 10:
         number = number / 10
 
-    if len(number) % 2 == 0:
+    if len(str(number)) % 2 == 0:
         product_last_number = last_number * 2
         if product_last_number > 10:
             last_digit_of_product_last_number = product_last_number % 10
@@ -23,7 +23,7 @@ while number % 10 < number:
 
     first_number = number
 
-    if len(number) % 2 == 0:
+    if len(str(number)) % 2 == 0:
         product_last_number = last_number * 2
         if product_last_number > 10:
             last_digit_of_product_last_number = product_last_number % 10
