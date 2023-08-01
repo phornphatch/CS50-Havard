@@ -6,6 +6,9 @@ number_length = len(credit_card_string)
 sum_even = 0
 sum_odd = 0
 sum = 0
+two_first_number = int(credit_card_string[0:2])
+first_number = int(credit_card_string[0])
+
 
 for i in range(number_length-2, -1, -2):
     multiply = int(credit_card_string[i])*2
@@ -30,7 +33,7 @@ print(sum)
 if sum % 10 != 0:
     print("INVALID")
 # Check card length and two first number
-elif number_length == 15 and (credit_card_string.slice([:2]) == 34 or two_first_number == 37):
+elif number_length == 15 and (two_first_number == 34 or two_first_number == 37):
     print("AMEX")
 elif number_length == 16 and (50 < two_first_number < 56):
     print("MASTERCARD")
