@@ -29,9 +29,9 @@ for i in range(len(text)):
 L = total_letter // (total_word - total_comma) * 100
 S = total_sentence // (total_word - total_comma) * 100
 actual_grade = (0.0588 * L) - (0.296 * S) - 15.8
-# print(total_letter)
-# print(total_sentence)
-# print(total_word)
+print(total_letter)
+print(total_sentence)
+print(total_word)
 # print(total_comma)
 # print(L)
 print(S)
