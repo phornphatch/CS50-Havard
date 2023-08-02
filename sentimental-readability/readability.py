@@ -19,9 +19,9 @@ for character in text:
     elif character != "'":
         total_letter += 1
 
-L = (total_letter // (total_word - total_comma)) * 100
-S = (total_sentence // (total_word - total_comma)) * 100
-grade = (0.0588 * L) - (0.296 * S) - 15.8
+L = (total_letter / (total_word - total_comma)) * 100
+S = (total_sentence / (total_word - total_comma)) * 100
+actual_grade = int(round((0.0588 * L) - (0.296 * S) - 15.8))
 
 # print(total_letter)
 # print(total_word)
@@ -30,7 +30,6 @@ grade = (0.0588 * L) - (0.296 * S) - 15.8
 # # print(L)
 # print(S)
 # print(actual_grade)
-actual_grade = int(round(actual_grade))
 
 if actual_grade > 16:
     print("Grade 16+")
