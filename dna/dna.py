@@ -2,7 +2,7 @@ import csv
 import sys
 
 data = []
-list_of_column_names = []
+list_of_str = []
 
 def main():
 
@@ -15,7 +15,9 @@ def main():
         file_reader = csv.DictReader(file)
         dict_from_csv = dict(list(file_reader)[0])
         list_of_column_names = list(dict_from_csv.keys())
-        print(list_of_column_names)
+        # print(list_of_column_names)
+        list_of_str = list_of_column_names[1:]
+        print(list_of_str)
 
         for d in file_reader:
             data.append(d)
@@ -34,7 +36,7 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
     # len(s)
     # s[i : j] in Python takes the string s, and returns the substring with all characters from the ith character up to (but not including) the jth.
-
+    for i 
     agat = longest_match(dna, 'AGAT')
     print(agat)
     aatg = longest_match(dna, 'AATG')
