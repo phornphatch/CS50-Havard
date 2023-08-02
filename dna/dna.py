@@ -6,18 +6,18 @@ data = []
 def main():
 
     # TODO: Check for command-line usage
-    if len(sys.argv) < 4:  # need 4 command-line arguments
+    if len(sys.argv) < 3:  # need 4 command-line arguments
         sys.exit("Usage: python dna.py data.csv sequence.txt")
 
     # TODO: Read database file into a variable
-    with open(sys.argv[2]) as file:
+    with open(sys.argv[1]) as file:
         file_reader = csv.DictReader(file)
 
 
     # TODO: Read DNA sequence file into a variable
     # once you open a text file f using open(filename), you can read its contents using f.read()
-    f = open(sys.argv[3], "r")
-        dna = f.read()
+    f = open(sys.argv[2], "r")
+    dna = f.read()
     print(dna)
 
     # TODO: Find longest match of each STR in DNA sequence
