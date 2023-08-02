@@ -19,8 +19,9 @@ for i in range(len(text)):
     if character == ",":
         total_comma += 1
 
-    if character == ',' or character == ' ':
-        total_word += 1
+    if character == ','
+        if text[i+1] == ' ':
+            total_word += 1
     elif character == "." or character == "!" or character == ":" or character == "?":
         total_sentence += 1
     elif character != "'":
