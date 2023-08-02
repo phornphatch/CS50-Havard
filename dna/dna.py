@@ -5,10 +5,12 @@ import sys
 def main():
 
     # TODO: Check for command-line usage
-    if len(argv) < 2:
+    if len(argv) < 4:
+        print("Usage: python dna.py data.csv sequence.txt")
         sys.exit(1)
     else:
-        file_name = argv[1]
+        csv_file = argv[2]
+        txt_file = argv[3]
 
     # TODO: Read database file into a variable
 
