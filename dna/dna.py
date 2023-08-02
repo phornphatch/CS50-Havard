@@ -50,6 +50,7 @@ def main():
     for d in data:
          for i in list_of_str:
             print(d[i])
+            length = longest_match(dna, i)
 
 
     return
