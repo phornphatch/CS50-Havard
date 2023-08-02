@@ -12,8 +12,9 @@ def main():
     # TODO: Read database file into a variable
     with open(sys.argv[1]) as file:
         file_reader = csv.DictReader(file)
-        csv_reader = csv.reader(file, delimiter = ",")
-        
+        dict_from_csv = dict(list(file_reader)[0])
+        list_of_column_names = list(dict_from_csv.keys())
+
         for d in file_reader:
             data.append(d)
     # for d in data:
