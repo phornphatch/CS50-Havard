@@ -17,12 +17,12 @@ def main():
         list_of_column_names = list(dict_from_csv.keys())
         # print(list_of_column_names)
         list_of_str = list_of_column_names[1:]
-        print(list_of_str)
+        # print(list_of_str)
 
         for d in file_reader:
             data.append(d)
-    # for d in data:
-    #     print(d["name"])
+    for d in data:
+        print(d["name"])
     # print(data[0])
 
 
@@ -46,7 +46,7 @@ def main():
 
     # TODO: Check database for matching profiles
     for d in data:
-         print(data[0])
+         print(d[list_of_str[0]])
 
 
     return
