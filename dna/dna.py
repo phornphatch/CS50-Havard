@@ -5,10 +5,10 @@ import sys
 def main():
 
     # TODO: Check for command-line usage
-    if len(argv) == 2:
-        print(f"hello, {argv[1]}")
+    if len(argv) < 2:
+        sys.exit(1)
     else:
-        print("hello, world")
+        file_name = argv[1]
 
     # TODO: Read database file into a variable
 
