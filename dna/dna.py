@@ -6,11 +6,11 @@ def main():
 
     # TODO: Check for command-line usage
     if len(sys.argv) < 4:  # need 4 command-line arguments
-    sys.exit("Usage: python dna.py data.csv sequence.txt")
+        sys.exit("Usage: python dna.py data.csv sequence.txt")
 
     # TODO: Read database file into a variable
-    with open(sys.argv[1]) as csv_file:
-    file_reader = csv.DictReader(file)
+    with open(sys.argv[1]) as file:
+        database_file = csv.DictReader(file)
 
     # TODO: Read DNA sequence file into a variable
 
