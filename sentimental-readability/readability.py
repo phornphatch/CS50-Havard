@@ -34,7 +34,7 @@ print(total_sentence)
 print(total_word)
 print(total_comma)
 # print(L)
-print(S)
+print(total_sentence // (total_word - total_comma) * 100)
 # print(actual_grade)
 
 if actual_grade > 16:
