@@ -17,6 +17,7 @@ def main():
     # for d in data:
     #     print(d["name"])
     print(data[0])
+    sys.argv[1].
 
 
     # TODO: Read DNA sequence file into a variable
