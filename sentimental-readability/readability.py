@@ -34,6 +34,7 @@ print(total_comma)
 # print(L)
 print(S)
 # print(actual_grade)
+actual_grade = round(actual_grade)
 
 if actual_grade > 16:
     print("Grade 16+")
