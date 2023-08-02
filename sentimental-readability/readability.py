@@ -11,7 +11,7 @@ total_word = 1     # count by space + 1 ot start with 1
 total_sentence = 0 # count by . or !
 
 #find grade
-for i in range(len(text)):
+for i in range(len(text)-1):
     character = text[i]
 
     if i == ",":
@@ -27,6 +27,7 @@ for i in range(len(text)):
 L = total_letter // (total_word - total_comma) * 100
 S = total_sentence // (total_word - total_comma) * 100
 actual_grade = (0.0588 * L) - (0.296 * S) - 15.8
+print(total_letter)
 print(L)
 print(S)
 print(actual_grade)
