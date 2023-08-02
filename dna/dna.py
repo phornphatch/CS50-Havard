@@ -10,13 +10,14 @@ def main():
         sys.exit("Usage: python dna.py data.csv sequence.txt")
 
     # TODO: Read database file into a variable
-    with open(sys.argv[1]) as file:
+    with open(sys.argv[2]) as file:
         file_reader = csv.DictReader(file)
 
 
     # TODO: Read DNA sequence file into a variable
     # once you open a text file f using open(filename), you can read its contents using f.read()
-    wh
+    with open(sys.argv[3]) as file:
+        dna = 
 
     # TODO: Find longest match of each STR in DNA sequence
 
