@@ -3,6 +3,7 @@ import sys
 
 data = []
 list_of_str = []
+result = None
 
 
 def main():
@@ -47,7 +48,13 @@ def main():
                 match_all = False
                 break
         if match_all:
-            print(d["name"])
+            result = d["name"]
+            break
+
+    if result:
+        print(result)
+    else:
+        print("No match")
 
     return
 
