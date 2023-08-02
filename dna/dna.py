@@ -2,6 +2,7 @@ import csv
 import sys
 
 data = []
+list_of_column_names = []
 
 def main():
 
@@ -14,6 +15,7 @@ def main():
         file_reader = csv.DictReader(file)
         dict_from_csv = dict(list(file_reader)[0])
         list_of_column_names = list(dict_from_csv.keys())
+        print(list_of_column_names)
 
         for d in file_reader:
             data.append(d)
