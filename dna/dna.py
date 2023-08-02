@@ -16,6 +16,7 @@ def main():
             data.append(d)
     # for d in data:
     #     print(d["name"])
+    print(data[0])
 
 
     # TODO: Read DNA sequence file into a variable
@@ -36,8 +37,8 @@ def main():
     print(tatc)
 
     # TODO: Check database for matching profiles
-    for d in data:
-        if d['AGAT']
+    # for d in data:
+    #     if d['AGAT']
 
     return
 
