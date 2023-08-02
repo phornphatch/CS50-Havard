@@ -7,7 +7,7 @@ actual_grade = 0
 grade = 0
 total_letter = 0
 total_comma = 0
-total_word = 1     # count by space + 1 ot start with 1
+total_word = 0     # count by space + 1 ot start with 1
 total_sentence = 0 # count by . or !
 
 #find grade
