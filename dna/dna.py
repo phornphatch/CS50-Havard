@@ -1,7 +1,6 @@
 import csv
 import sys
 
-database = []
 def main():
 
     # TODO: Check for command-line usage
