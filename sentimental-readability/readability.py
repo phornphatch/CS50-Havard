@@ -19,7 +19,7 @@ for i in range(len(text)):
         total_word += 1
     elif character == "." or character == "!" or character == ":" or character == "?":
         total_sentence += 1
-    elif character != "'" and character != "," and character != ";" and character != "-":
+    elif character != "'" and character != "," and character != ";" and character != "-" and character != "?" and character != '"':
         total_letter += 1
 
 total_word = len(text.split(" "))
