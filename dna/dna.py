@@ -29,12 +29,13 @@ def main():
     # s[i : j] in Python takes the string s, and returns the substring with all characters from the ith character up to (but not including) the jth.
     agat = longest_match(dna, 'AGAT')
     print(agat)
-        agat = longest_match(dna, 'AGAT')
-    print(agat)
-        agat = longest_match(dna, 'AGAT')
-    print(agat)
+    aatg = longest_match(dna, 'AATG')
+    print(aatg)
+    tatc = longest_match(dna, 'TATC')
+    print(tatc)
 
     # TODO: Check database for matching profiles
+    
 
     return
 
