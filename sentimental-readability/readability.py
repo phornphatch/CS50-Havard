@@ -30,6 +30,7 @@ actual_grade = (0.0588 * L) - (0.296 * S) - 15.8
 print(total_letter)
 print(total_sentence)
 print(total_word)
+print(total_comma)
 print(L)
 print(S)
 print(actual_grade)
