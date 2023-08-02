@@ -19,14 +19,14 @@ for i in range(len(text)):
     if character == ",":
         total_comma += 1
 
-    if text[i] == ", " and text[i+1] == " ":
+    if text[i] == "," and text[i+1] == " ":
         total_word += 1
     elif character == "." or character == "!" or character == ":" or character == "?":
         total_sentence += 1
     else:
         total_letter += 1
 
-# L = total_letter // (total_word - total_comma) * 100
+L = total_letter // (total_word - total_comma) * 100
 S = total_sentence // (total_word - total_comma) * 100
 actual_grade = (0.0588 * L) - (0.296 * S) - 15.8
 print(total_letter)
