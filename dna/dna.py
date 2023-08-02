@@ -3,8 +3,6 @@ import sys
 
 data = []
 list_of_str = []
-result = None
-
 
 def main():
     # TODO: Check for command-line usage
@@ -37,7 +35,7 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
     # len(s)
     # s[i : j] in Python takes the string s, and returns the substring with all characters from the ith character up to (but not including) the jth.
-
+    result = None
     # TODO: Check database for matching profiles
     for d in data:
         match_all = True
