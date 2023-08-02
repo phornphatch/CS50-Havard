@@ -36,7 +36,7 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
     # len(s)
     # s[i : j] in Python takes the string s, and returns the substring with all characters from the ith character up to (but not including) the jth.
-    for i
+
     agat = longest_match(dna, 'AGAT')
     print(agat)
     aatg = longest_match(dna, 'AATG')
@@ -46,7 +46,8 @@ def main():
 
     # TODO: Check database for matching profiles
     for d in data:
-        
+         print(data[0])
+
 
     return
 
