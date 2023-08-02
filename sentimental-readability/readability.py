@@ -9,12 +9,12 @@ total_word = 1  # count by space + 1 ot start with 1
 total_sentence = 0  # count by . or !
 
 for character in text:
-    if character == ',':
+    if character == ",":
         total_comma += 1
 
-    if character == ',' or character == ' ':
+    if character == "," or character == " ":
         total_word += 1
-    elif character == '.' or character == '!' or character == ':' or character == '?':
+    elif character == "." or character == "!" or character == ":" or character == "?":
         total_sentence += 1
     elif character != "'":
         total_letter += 1
