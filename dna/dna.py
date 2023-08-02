@@ -21,6 +21,8 @@ def main():
     print(dna)
 
     # TODO: Find longest match of each STR in DNA sequence
+    # len(s)
+    # s[i : j] in Python takes the string s, and returns the substring with all characters from the ith character up to (but not including) the jth.
 
     # TODO: Check database for matching profiles
 
