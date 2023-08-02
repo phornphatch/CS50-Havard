@@ -8,7 +8,6 @@ total_comma = 0
 total_word = 1  # count by space + 1 ot start with 1
 total_sentence = 0  # count by . or !
 
-
 # find grade
 for i in range(len(text)):
     character = text[i]
@@ -26,7 +25,7 @@ for i in range(len(text)):
 
 total_word = len(text.split(" "))
 L = (total_letter // (total_word - total_comma)) * 100
-S = total_sentence // (total_word - total_comma) * 100
+S = (total_letter // (total_word - total_comma)) * 100
 actual_grade = (0.0588 * L) - (0.296 * S) - 15.8
 
 print(total_sentence)
