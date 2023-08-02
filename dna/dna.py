@@ -4,6 +4,7 @@ import sys
 data = []
 list_of_str = []
 
+
 def main():
     # TODO: Check for command-line usage
     if len(sys.argv) < 3:  # need 4 command-line arguments
