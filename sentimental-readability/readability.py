@@ -1,8 +1,6 @@
 from cs50 import get_string
 
 text = get_string("Text: ")
-L = 0
-S = 0
 actual_grade = 0
 grade = 0
 total_letter = 0
@@ -26,9 +24,10 @@ for i in range(len(text)):
     elif character != "'":
         total_letter += 1
 
-L = total_letter // (total_word - total_comma) * 100
+L = (total_letter // (total_word - total_comma)) * 100
 S = total_sentence // (total_word - total_comma) * 100
 actual_grade = (0.0588 * L) - (0.296 * S) - 15.8
+
 print(total_sentence)
 print(total_word)
 print(total_comma)
