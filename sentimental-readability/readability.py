@@ -19,11 +19,11 @@ for i in range(len(text)):
     if character == ",":
         total_comma += 1
 
-    if (text[i] == "," and text[i + 1] == " "):
+    if character == ',' or character == ' ':
         total_word += 1
     elif character == "." or character == "!" or character == ":" or character == "?":
         total_sentence += 1
-    else:
+    elif character != "'":
         total_letter += 1
 
 L = total_letter // (total_word - total_comma) * 100
