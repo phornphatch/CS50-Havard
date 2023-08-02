@@ -35,7 +35,8 @@ def main():
     print(tatc)
 
     # TODO: Check database for matching profiles
-    
+    for d in data:
+        if d['AGAT']
 
     return
 
