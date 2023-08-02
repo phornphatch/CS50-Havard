@@ -18,9 +18,11 @@ def main():
         # print(list_of_column_names)
         list_of_str = list_of_column_names[1:]
         # print(list_of_str)
-
+    with open(sys.argv[1]) as file:
+        file_reader = csv.DictReader(file)
         for d in file_reader:
             data.append(d)
+            
     for d in data:
         print(d["name"])
     # print(data[0])
