@@ -18,7 +18,7 @@ def main():
     # once you open a text file f using open(filename), you can read its contents using f.read()
     f = open(sys.argv[2], "r")
     dna = f.read()
-    print(dna)
+    # print(dna)
 
     # TODO: Find longest match of each STR in DNA sequence
     # len(s)
