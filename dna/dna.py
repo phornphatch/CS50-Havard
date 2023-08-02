@@ -22,7 +22,7 @@ def main():
         file_reader = csv.DictReader(file)
         for d in file_reader:
             data.append(d)
-            
+
     for d in data:
         print(d["name"])
     # print(data[0])
@@ -48,7 +48,8 @@ def main():
 
     # TODO: Check database for matching profiles
     for d in data:
-         print(d[list_of_str[0]])
+         for i in list_of_str:
+            print(d[i])
 
 
     return
