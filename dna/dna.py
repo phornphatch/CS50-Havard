@@ -12,6 +12,10 @@ def main():
     # TODO: Read database file into a variable
     with open(sys.argv[1]) as file:
         file_reader = csv.DictReader(file)
+        for d in file_reader:
+            data.append(d)
+    # for d in data:
+    #     print(d["name"])
 
 
     # TODO: Read DNA sequence file into a variable
@@ -23,6 +27,12 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
     # len(s)
     # s[i : j] in Python takes the string s, and returns the substring with all characters from the ith character up to (but not including) the jth.
+    agat = longest_match(dna, 'AGAT')
+    print(agat)
+        agat = longest_match(dna, 'AGAT')
+    print(agat)
+        agat = longest_match(dna, 'AGAT')
+    print(agat)
 
     # TODO: Check database for matching profiles
 
