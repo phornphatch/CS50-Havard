@@ -19,7 +19,7 @@ for i in range(len(text)):
     if character == ",":
         total_comma += 1
 
-    if character == "," or character == " ":
+    if character == ", ":
         total_word += 1
     elif character == "." or character == "!" or character == ":" or character == "?":
         total_sentence += 1
