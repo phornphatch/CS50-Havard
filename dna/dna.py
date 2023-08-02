@@ -51,6 +51,7 @@ def main():
          for i in list_of_str:
             print(d[i])
             length = longest_match(dna, i)
+            
 
 
     return
