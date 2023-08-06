@@ -7,6 +7,6 @@ CREATE TABLE houses (
 CREATE TABLE house_assignments (
     student_id INTEGER,
     house_id INTEGER
-)
+);
 
-SELECT 
+INSERT INTO houses (house) VALUES (SELECT house FROM students);
