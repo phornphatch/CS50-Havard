@@ -9,4 +9,7 @@ CREATE TABLE house_assignments (
     house_id INTEGER
 );
 
-INSERT INTO houses (house) VALUES (SELECT house FROM students);
+INSERT INTO houses (house) SELECT DISTINCT(house) FROM students;
+
+SELECT * FROM houses;
+
