@@ -1,1 +1,1 @@
-ELECT name from songs;
+SELECT name FROM songs;
