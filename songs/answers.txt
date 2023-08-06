@@ -1,4 +1,5 @@
 If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
-
+Purple
 
 Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
+This method does not take the number of listening count. The better way is to add weight to each song according to the number of time it is played.
