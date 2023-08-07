@@ -64,4 +64,5 @@ SELECT name AS receiver_name FROM phone_calls
 -- According to Raymond interviews
 -- `In the call, I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow. The thief then asked the person on the other end of the phone to purchase the flight ticket.`
 SELECT * FROM flights
-    WHERE month = 7 AND day = 29 AND year = 2021;
+    JOIN airports ON flights.origin_airport_id = airports.id
+    WHERE month = 7 AND day = 29 AND year = 2021 AND airports.full_name LIKE "%Fiftyville%";
