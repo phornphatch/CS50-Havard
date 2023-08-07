@@ -85,7 +85,7 @@ SELECT * FROM flights
 -- Bruce 8:00 /
 
 -- find Bruce distination
-SELECT * FROM flights
+SELECT destination_airport_id FROM flights
     JOIN airports ON flights.destination_airport_id = airports.id
     JOIN passengers ON passengers.flight_id = flights.id
     JOIN people ON people.passport_number = passengers.passport_number
