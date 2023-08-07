@@ -11,5 +11,22 @@ SELECT * FROM interviews WHERE month = 7 AND day = 28 AND year = 2021 AND transc
 
 -- According to Ruth interviews `the thief get into a car in the bakery parking lot and drive away`
 -- after 10:15am, exit
-SELECT * FROM bakery_security_logs WHERE month = 7 AND day = 28 AND year = 2021 AND hour = 10 AND minute > 15 AND minute < 25 AND activity =
-"exit";
+SELECT * FROM bakery_security_logs
+    JOIN people ON bakery_security_logs.license_plate = people.license_plate
+    WHERE month = 7 AND day = 28 AND year = 2021 AND hour = 10 AND minute > 15 AND minute < 25 AND activity = "exit";
+-- +-----+------+-------+-----+------+--------+----------+---------------+--------+---------+----------------+-----------------+---------------+
+-- | id  | year | month | day | hour | minute | activity | license_plate |   id   |  name   |  phone_number  | passport_number | license_plate |
+-- +-----+------+-------+-----+------+--------+----------+---------------+--------+---------+----------------+-----------------+---------------+
+-- | 260 | 2021 | 7     | 28  | 10   | 16     | exit     | 5P2BI95       | 221103 | Vanessa | (725) 555-4692 | 2963008352      | 5P2BI95       |
+-- | 261 | 2021 | 7     | 28  | 10   | 18     | exit     | 94KL13X       | 686048 | Bruce   | (367) 555-5533 | 5773159633      | 94KL13X       |
+-- | 262 | 2021 | 7     | 28  | 10   | 18     | exit     | 6P58WS2       | 243696 | Barry   | (301) 555-4174 | 7526138472      | 6P58WS2       |
+-- | 263 | 2021 | 7     | 28  | 10   | 19     | exit     | 4328GD8       | 467400 | Luca    | (389) 555-5198 | 8496433585      | 4328GD8       |
+-- | 264 | 2021 | 7     | 28  | 10   | 20     | exit     | G412CB7       | 398010 | Sofia   | (130) 555-0289 | 1695452385      | G412CB7       |
+-- | 265 | 2021 | 7     | 28  | 10   | 21     | exit     | L93JTIZ       | 396669 | Iman    | (829) 555-5269 | 7049073643      | L93JTIZ       |
+-- | 266 | 2021 | 7     | 28  | 10   | 23     | exit     | 322W7JE       | 514354 | Diana   | (770) 555-1861 | 3592750733      | 322W7JE       |
+-- | 267 | 2021 | 7     | 28  | 10   | 23     | exit     | 0NTHK55       | 560886 | Kelsey  | (499) 555-9472 | 8294398571      | 0NTHK55       |
+-- +-----+------+-------+-----+------+--------+----------+---------------+--------+---------+----------------+-----------------+---------------+
+
+
+-- According to Eugene interviews `Earlier this morning, before I arrived at Emma's bakery, I was walking by the ATM on Leggett Street and saw the thief there withdrawing some money.`
+--
