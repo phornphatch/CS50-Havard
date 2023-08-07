@@ -86,7 +86,11 @@ SELECT * FROM flights
 
 -- find Bruce distination
 SELECT destination_airport_id FROM flights
-    JOIN airports ON flights.destination_airport_id = airports.id
+    JOIN airports ON flights.origin_airport_id = airports.id
     JOIN passengers ON passengers.flight_id = flights.id
     JOIN people ON people.passport_number = passengers.passport_number
     WHERE month = 7 AND day = 29 AND year = 2021 AND airports.full_name LIKE "%Fiftyville%" AND name = "Bruce";
+-- 4
+SELECT full_name FROM airports
+    WHERE id = 4;
+-- LaGuardia Airport
