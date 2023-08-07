@@ -67,8 +67,26 @@ SELECT * FROM flights
     JOIN airports ON flights.origin_airport_id = airports.id
     JOIN passengers ON passengers.flight_id = flights.id
     JOIN people ON people.passport_number = passengers.passport_number
-    WHERE month = 7 AND day = 29 AND year = 2021 AND airports.full_name LIKE "%Fiftyville%";
---  Gloria  | Kristina| Douglas | Diana   | Christian |Michael | Ethan   | Charles | Dennis  | Jose
--- | Jennifer  |Brandon   |Matthew   |Emily     |Douglas   |Jordan    |Doris     |Sofia     |Bruce
+    WHERE month = 7 AND day = 29 AND year = 2021 AND airports.full_name LIKE "%Fiftyville%" AND name = "Diana"
+    ORDER BY flights.hour AND flights.minute;
+--  Gloria  | Kristina| Douglas | Diana /  | Christian |Michael | Ethan   | Charles | Dennis  | Jose
+-- | Jennifer  |Brandon   |Matthew   |Emily     |Douglas   |Jordan    |Doris     |Sofia     |Bruce /
 -- |Edward    |Kelsey    |Taylor    |Kenny     |Luca      |Daniel    |Carol     |Rebecca   |Sophia
 --  |Heather   |Marilyn   |Richard   |Thomas    |Brooke    |Larry     |Steven    |John      |Pamela    |Melissa
+
+-- Diana 16:00
+
+SELECT * FROM flights
+    JOIN airports ON flights.origin_airport_id = airports.id
+    JOIN passengers ON passengers.flight_id = flights.id
+    JOIN people ON people.passport_number = passengers.passport_number
+    WHERE month = 7 AND day = 29 AND year = 2021 AND airports.full_name LIKE "%Fiftyville%" AND name = "Bruce"
+    ORDER BY flights.hour AND flights.minute;
+-- Bruce 8:00 /
+
+-- find Bruce distination
+SELECT * FROM flights
+    JOIN airports ON flights.destination_airport_id = airports.id
+    JOIN passengers ON passengers.flight_id = flights.id
+    JOIN people ON people.passport_number = passengers.passport_number
+    WHERE month = 7 AND day = 29 AND year = 2021 AND airports.full_name LIKE "%Fiftyville%" AND name = "Bruce";
