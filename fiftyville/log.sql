@@ -63,7 +63,7 @@ SELECT name AS receiver_name FROM phone_calls
 
 -- According to Raymond interviews
 -- `In the call, I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow. The thief then asked the person on the other end of the phone to purchase the flight ticket.`
-SELECT name FROM flights
+SELECT * FROM flights
     JOIN airports ON flights.origin_airport_id = airports.id
     JOIN passengers ON passengers.flight_id = flights.id
     JOIN people ON people.passport_number = passengers.passport_number
