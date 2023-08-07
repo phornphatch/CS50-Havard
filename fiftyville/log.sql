@@ -59,12 +59,16 @@ SELECT name AS caller_name FROM phone_calls
 SELECT name AS receiver_name FROM phone_calls
     JOIN people ON people.phone_number = phone_calls.receiver
     WHERE month = 7 AND day = 28 AND year = 2021 AND duration < 60;
--- Caller_name: Jack   | Larry  | Robin  | Melissa| James  | Philip | Jacqueline    |Doris  | Anna
+-- receiver_name: Jack   | Larry  | Robin  | Melissa| James  | Philip | Jacqueline    |Doris  | Anna
 
 -- According to Raymond interviews
 -- `In the call, I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow. The thief then asked the person on the other end of the phone to purchase the flight ticket.`
-SELECT * FROM flights
+SELECT name FROM flights
     JOIN airports ON flights.origin_airport_id = airports.id
     JOIN passengers ON passengers.flight_id = flights.id
     JOIN people ON people.passport_number = passengers.passport_number
     WHERE month = 7 AND day = 29 AND year = 2021 AND airports.full_name LIKE "%Fiftyville%";
+--  Gloria  | Kristina| Douglas | Diana   | Christian |Michael | Ethan   | Charles | Dennis  | Jose
+-- | Jennifer  |Brandon   |Matthew   |Emily     |Douglas   |Jordan    |Doris     |Sofia     |Bruce
+-- |Edward    |Kelsey    |Taylor    |Kenny     |Luca      |Daniel    |Carol     |Rebecca   |Sophia
+--  |Heather   |Marilyn   |Richard   |Thomas    |Brooke    |Larry     |Steven    |John      |Pamela    |Melissa
