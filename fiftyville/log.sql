@@ -9,4 +9,5 @@ SELECT * FROM interviews WHERE month = 7 AND day = 28 AND year = 2021 AND transc
 -- | 162 | Eugene  | 2021 | 7     | 28  | I don't know the thief's name, but it was someone I recognized. Earlier this morning, before I arrived at Emma's bakery, I was walking by the ATM on Leggett Street and saw the thief there withdrawing some money.                                                                                                 |
 -- | 163 | Raymond | 2021 | 7     | 28  | As the thief was leaving the bakery, they called someone who talked to them for less than a minute. In the call, I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow. The thief then asked the person on the other end of the phone to purchase the flight ticket. |
 
--- According to Ruth interviews 
+-- According to Ruth interviews `the thief get into a car in the bakery parking lot and drive away`
+
