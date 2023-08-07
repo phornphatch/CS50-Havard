@@ -94,3 +94,12 @@ SELECT destination_airport_id FROM flights
 SELECT full_name FROM airports
     WHERE id = 4;
 -- LaGuardia Airport
+
+-- find accomplish
+SELECT * FROM phone_calls
+    JOIN people ON people.phone_number = phone_calls.caller
+    WHERE month = 7 AND day = 28 AND year = 2021 AND duration < 60 AND name = "Bruce";
+-- receiver number : (375) 555-8161
+SELECT name FROM people
+    WHERE phone_number LIKE "%8161";
+-- Robin
