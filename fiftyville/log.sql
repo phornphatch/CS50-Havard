@@ -66,4 +66,5 @@ SELECT name AS receiver_name FROM phone_calls
 SELECT * FROM flights
     JOIN airports ON flights.origin_airport_id = airports.id
     JOIN passengers ON passengers.flight_id = flights.id
+    JOIN people ON people.passport_number = passengers.passport_number
     WHERE month = 7 AND day = 29 AND year = 2021 AND airports.full_name LIKE "%Fiftyville%";
