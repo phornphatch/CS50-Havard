@@ -32,4 +32,4 @@ SELECT * FROM bakery_security_logs
 -- `Earlier this morning, before I arrived at Emma's bakery, I was walking by the ATM on Leggett Street and saw the thief there withdrawing some money.`
 SELECT * FROM atm_transactions
     JOIN bank_accounts ON atm_transactions.account_number = bank_accounts.account_number
-    WHERE month = 7 AND day = 28 AND year = 2021 AND hour = 10 AND minute > 15 AND minute < 25 AND activity = "exit";
+    WHERE month = 7 AND day = 28 AND year = 2021 AND atm_location = "Leggett Street" AND transaction_type = "withdraw";
