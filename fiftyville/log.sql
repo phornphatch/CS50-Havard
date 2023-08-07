@@ -91,8 +91,10 @@ SELECT destination_airport_id FROM flights
     JOIN people ON people.passport_number = passengers.passport_number
     WHERE month = 7 AND day = 29 AND year = 2021 AND airports.full_name LIKE "%Fiftyville%" AND name = "Bruce";
 -- 4
-
+SELECT city FROM airports
+    WHERE id = 4;
 -- LaGuardia Airport
+-- New York City
 
 -- find accomplish
 SELECT * FROM phone_calls
