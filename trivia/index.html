@@ -7,11 +7,13 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-            let incorrect = document.querySelector('#incorrect')
+            document.addEventListener('DOMContentLoaded', function () {
+            let incorrect = document.querySelector('.incorrect')
             incorrect.addEventListener('click', function() {
                 incorrect.style.backgroundColor = 'red';
                 alert('Incorrect')
             })
+        } )
         </script>
     </head>
 
@@ -25,11 +27,11 @@
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
                 <h3>Guess My Nickname ?</h3>
-                <button id="incorrect">David</button>
-                <button id="incorrect">Bella</button>
-                <button id="correct">Sumo</button>
-                <button id="incorrect">Tino</button>
-                <button id="incorrect">Brian</button>
+                <button class="incorrect">David</button>
+                <button class="incorrect">Bella</button>
+                <button class="correct">Sumo</button>
+                <button class="incorrect">Tino</button>
+                <button class="incorrect">Brian</button>
             </div>
 
             <div class="section">
