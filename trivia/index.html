@@ -7,9 +7,9 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-            let multiple = document.querySelector('#multiple-choice')
-            multiple.querySelector('#incorrect").addEventListener('click', function() {
-                button
+            let incorrect = document.querySelector('#incorrect')
+            incorrect.addEventListener('click', function() {
+                incorrect.style.backgroundColor = 'red';
                 alert('Incorrect')
             })
         </script>
