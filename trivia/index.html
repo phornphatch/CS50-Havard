@@ -23,6 +23,7 @@
                 }
 
                 function check(e) {
+                    console.log("Yoo")
                     e.preventDefault();
                     let country = document.querySelector("#country").value;
                     if (country == "Finland") {
@@ -62,7 +63,7 @@
                 <h3>
                     What's the most happiest country in the world ?
                 </h3>
-                <form onsubmit="check">
+                <form onsubmit="check()">
                     <input type="text" id="country" placeholder="Country Name" />
                     <button type="submit">Check Answer</button>
                 </form>
