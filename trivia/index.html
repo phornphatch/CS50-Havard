@@ -22,7 +22,8 @@
                     })
                 }
 
-                function check() {
+                function check(e) {
+                    e.preventDefault();
                     let country = document.querySelector("#country").value;
                     if (country == "Finland") {
                         country.style.backgroundColor = 'green';
@@ -61,7 +62,7 @@
                 <h3>
                     What's the most happiest country in the world ?
                 </h3>
-                <form onsubmit="check(); return false;">
+                <form onsubmit="check">
                     <input type="text" id="country" placeholder="Country Name" />
                     <button type="submit">Check Answer</button>
                 </form>
