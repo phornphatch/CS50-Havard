@@ -8,20 +8,31 @@
         <title>Trivia!</title>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
+                console.log("connect")
                 let incorrects = document.querySelectorAll('.incorrect');
                 for (let i = 0; i < incorrects.length; i++) {
                     incorrects.addEventListener('click', function() {
                         incorrects[i].style.backgroundColor = 'red';
-                        document.querySelector("#answer").innerHtml = "Incorrect";
-
+                        document.querySelector("#answer1").innerHtml = "Incorrect";
                     })
                 }
 
                 let correct = document.querySelector('.correct');
                 correct.addEventListener('click', function() {
                     correct.style.backgroundColor = 'green';
-                    document.querySelector("#answer").innerHtml = "Correct!";
+                    document.querySelector("#answer1").innerHtml = "Correct!";
                 })
+
+                function check() {
+                    let country = document.querySelector("#country").value;
+                    if country == "Finland" {
+                        country.style.backgroundColor = 'green';
+                        document.querySelector("#answer2").innerHtml = "Correct!";
+                    } else {
+                        country.style.backgroundColor = 'red';
+                        document.querySelector("#answer2").innerHtml = "Inorrect";
+                    }
+                }
             })
         </script>
     </head>
@@ -42,7 +53,7 @@
                 <button class="incorrect">Tino</button>
                 <button class="incorrect">Brian</button>
                 <button class="incorrect">Carter</button>
-                <p id="answer">Answer is </p>
+                <p id="answer1">Answer is </p>
             </div>
 
             <div class="section">
@@ -51,8 +62,11 @@
                 <h3>
                     What's the most happiest country in the world ?
                 </h3>
-                <input type="text" />
-                <button>Check Answer</button>
+                <form onsubmit="check(); return false;">
+                    <input type="text" id="country" placeholder="Country Name" />
+                    <button type="submit">Check Answer</button>
+                </form>
+                <p id="answer2">Answer is </p>
             </div>
         </div>
     </body>
