@@ -7,9 +7,7 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                console.log("connect")
-                let incorrects = document.querySelectorAll('.incorrect');
+           let incorrects = document.querySelectorAll('.incorrect');
                 for (let i = 0; i < incorrects.length; i++) {
                     incorrects.addEventListener('click', function() {
                         incorrects[i].style.backgroundColor = 'red';
@@ -33,7 +31,6 @@
                         document.querySelector("#answer2").innerHtml = "Inorrect";
                     }
                 }
-            })
         </script>
     </head>
 
