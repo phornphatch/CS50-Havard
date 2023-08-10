@@ -7,30 +7,32 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-           let incorrects = document.querySelectorAll('.incorrect');
-                for (let i = 0; i < incorrects.length; i++) {
-                    incorrects.addEventListener('click', function() {
-                        incorrects[i].style.backgroundColor = 'red';
-                        document.querySelector("#answer1").innerHtml = "Incorrect";
-                    })
-                }
-
+            document.addEventListener('DOMContentLoaded', function() {
                 let correct = document.querySelector('.correct');
                 correct.addEventListener('click', function() {
                     correct.style.backgroundColor = 'green';
-                    document.querySelector("#answer1").innerHtml = "Correct!";
+                    document.querySelector("#answer1").innerHTML = "Correct!";
                 })
+
+                let incorrects = document.querySelectorAll('.incorrect');
+                for (let i = 0; i < incorrects.length; i++) {
+                    incorrects[i].addEventListener('click', function() {
+                        incorrects[i].style.backgroundColor = 'red';
+                        document.querySelector("#answer1").innerHTML = "Incorrect";
+                    })
+                }
 
                 function check() {
                     let country = document.querySelector("#country").value;
-                    if country == "Finland" {
+                    if (country == "Finland") {
                         country.style.backgroundColor = 'green';
-                        document.querySelector("#answer2").innerHtml = "Correct!";
+                        document.querySelector("#answer2").innerHTML = "Correct!";
                     } else {
                         country.style.backgroundColor = 'red';
-                        document.querySelector("#answer2").innerHtml = "Inorrect";
+                        document.querySelector("#answer2").innerHTML = "Incorrect";
                     }
                 }
+            })
         </script>
     </head>
 
