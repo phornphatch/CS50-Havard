@@ -8,19 +8,19 @@
         <title>Trivia!</title>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                let incorrects = document.querySelectorAll('.incorrect')
+                let incorrects = document.querySelectorAll('.incorrect');
                 for (let i = 0; i < incorrects.length; i++) {
                     incorrects.addEventListener('click', function() {
                         incorrects[i].style.backgroundColor = 'red';
-                        alert('Incorrect');
+                        document.querySelector("#answer").innerHtml = "Incorrect";
 
                     })
                 }
 
-                let correct = document.querySelector('.correct')
+                let correct = document.querySelector('.correct');
                 correct.addEventListener('click', function() {
                     correct.style.backgroundColor = 'green';
-                    alert('Correct!');
+                    document.querySelector("#answer").innerHtml = "Correct!";
                 })
             })
         </script>
@@ -41,7 +41,7 @@
                 <button class="correct">Sumo</button>
                 <button class="incorrect">Tino</button>
                 <button class="incorrect">Brian</button>
-                <p id="answer"></p>
+                <p id="answer">Answer is </p>
             </div>
 
             <div class="section">
