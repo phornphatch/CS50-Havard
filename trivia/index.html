@@ -13,6 +13,12 @@
                 incorrect.style.backgroundColor = 'red';
                 alert('Incorrect')
             })
+
+            let correct = document.querySelector('.correct')
+            incorrect.addEventListener('click', function() {
+                incorrect.style.backgroundColor = 'green';
+                alert('Correct!')
+            })
         } )
         </script>
     </head>
