@@ -24,9 +24,9 @@
 
                 function check(e) {
                     console.log("Yoo")
-      
-                    let country = document.querySelector("#country").value;
-                    if (country == "Finland") {
+                    e.preventDefault();
+                    let country = document.querySelector("#country")
+                    if (country.value == "Finland") {
                         country.style.backgroundColor = 'green';
                         document.querySelector("#answer2").innerHTML = "Correct!";
                     } else {
@@ -34,6 +34,9 @@
                         document.querySelector("#answer2").innerHTML = "Incorrect";
                     }
                 }
+
+                let form = document.querySelector("form")
+                form.addEventListener("submit", check);
             })
         </script>
     </head>
@@ -63,7 +66,7 @@
                 <h3>
                     What's the most happiest country in the world ?
                 </h3>
-                <form onsubmit="return check(event)">
+                <form>
                     <input type="text" id="country" placeholder="Country Name" />
                     <button type="submit">Check Answer</button>
                 </form>
