@@ -26,6 +26,9 @@
 .zumo {
     font-size: 100px;
     font-weight: 500;
+}
+
+.text-gradient {
     background: #FF479D;
     background: linear-gradient(to right, #FF479D 0%, #36D0FF 40%, #FFC21C 60%);
     -webkit-background-clip: text;
