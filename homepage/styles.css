@@ -61,3 +61,10 @@
     color: black;
     font-weight: 500;
 }
+
+.contact-page {
+    max-width: 700px;
+    margin: auto;
+    padding-top: 80px;
+    text-align: center;
+}
