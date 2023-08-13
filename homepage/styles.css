@@ -42,3 +42,8 @@
     max-width: 700px;
     margin: auto;
 }
+
+.carousel-caption {
+    background-color: rgba(0,0,0, 0.7);
+    border-radius: 30px;
+}
