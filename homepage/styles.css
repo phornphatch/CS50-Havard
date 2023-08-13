@@ -12,8 +12,9 @@
     font-size: 100px;
     font-weight: 500px;
     background: #FF479D;
-background: repeating-linear-gradient(to right, #FF479D 0%, #36D0FF 50%, #FFC21C 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+    background: #FF479D;
+    background: repeating-linear-gradient(to right, #FF479D 0%, #36D0FF 34%, #FFC21C 51%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
 }
