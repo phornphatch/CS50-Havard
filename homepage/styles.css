@@ -37,3 +37,8 @@
     padding-top: 20px;
     margin: auto;
 }
+
+.galleries-page {
+    max-width: 700px;
+    margin: auto;
+}
