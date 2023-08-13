@@ -13,6 +13,8 @@
              document.addEventListener('DOMContentLoaded', function() {
                 document.querySelector('form').addEventListener('submit', function(event) {
                     let name = document.querySelector('#name').value;
+                    document.querySelector("#visitor-name").innerHTML = name;
+                    event.preventDefault
                 })
               })
         </script>
