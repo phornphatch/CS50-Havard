@@ -8,13 +8,26 @@
     height: 100vh;
 }
 
+.banner-container {
+    max-width: 900px;
+    margin:
+}
+
+.question {
+    background: white;
+    color: black;
+    width: 250px;
+}
+
+.shakehand-button {
+    background-color: #212529;
+}
+
 .zumo {
     font-size: 100px;
-    font-weight: 500px;
+    font-weight: 500;
     background: #FF479D;
-    background: #FF479D;
-    background: repeating-linear-gradient(to right, #FF479D 0%, #36D0FF 34%, #FFC21C 51%);
+    background: linear-gradient(to right, #FF479D 0%, #36D0FF 12%, #FFC21C 22%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
 }
