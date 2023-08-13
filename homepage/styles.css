@@ -41,9 +41,18 @@
 .galleries-page {
     max-width: 700px;
     margin: auto;
+    padding-top: 80px;
+    text-align: center;
 }
 
 .carousel-caption {
     background-color: rgba(0,0,0, 0.7);
     border-radius: 30px;
+}
+
+.portfolio-page {
+    max-width: 700px;
+    margin: auto;
+    padding-top: 80px;
+    text-align: center;
 }
