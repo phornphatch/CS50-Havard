@@ -31,3 +31,9 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.emoji {
+    max-width: 180px;
+    padding-top: 20px;
+    margin: auto;
+}
