@@ -11,5 +11,9 @@
 .zumo {
     font-size: 100px;
     font-weight: 500px;
-    color: 
+    background: #FF479D;
+background: repeating-linear-gradient(to right, #FF479D 0%, #36D0FF 50%, #FFC21C 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
 }
