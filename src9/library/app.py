@@ -5,7 +5,7 @@ import random
 
 app = Flask(__name__) # สร้าง flask app on this file // __name__ is current file
 
-db = SQL("sqlite:///history.db")
+db = SQL("sqlite:///history.db") # connect bd by using sqlite
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
