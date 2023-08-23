@@ -12,4 +12,5 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 @app.route("/", methods=["GET"]) # / is rootfolder, homepage, main page
 def index():
-    return render_template("index.html")
+    string = random_string(1000)
+    return render_template("index.html", placeholder = string)
