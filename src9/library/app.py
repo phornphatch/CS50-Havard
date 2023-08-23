@@ -3,13 +3,13 @@ from flask import Flask, render_template, request
 from helpers import random_string
 import random
 
-app = Flask(__name__)
+app = Flask(__name__) # สร้าง flask app on this file // __name__ is current file
 
 db = SQL("sqlite:///history.db")
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 
-@app.route("/", methods=["GET"])
+@app.route("/", methods=["GET"]) # / is rootfolder, homepage, main page
 def index():
     return render_template("index.html")
