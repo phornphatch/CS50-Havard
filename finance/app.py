@@ -110,7 +110,7 @@ def quote():
         # submitted via post, lookup the stock symbol by calling the lookup function and display the result
         symbol = request.form.get("symbol")
         if lookup(symbol):
-            return render_template("quoted.html", symbol = symbol)
+            return render_template("quoted.html", symbol = symbol, price = price)
         else:
             return apology("symbol do not match", 404)
     else:
