@@ -23,13 +23,13 @@
                 <td>{{ item.symbol }}</td>
                 <td>{{ item.name }}</td>
                 <td>{{ item.shares }}</td>
-                <td>{{ item.price }}</td>
-                <td>{{ item.total }}</td>
+                <td>${{ item.price }}</td>
+                <td>${{ item.total }}</td>
             </tr>
             {% endfor %}
 
         </tbody>
     </table>
-    <div>Cash {{valid_cash}}</div>
-    <div>TOTAL </div>
+    <div>Cash ${{cash}}</div>
+    <div>TOTAL ${{total}}</div>
 {% endblock %}

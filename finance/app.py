@@ -38,9 +38,12 @@ def round_total(history):
 @login_required
 def index():
     """Show portfolio of stocks"""
+    current_user_id = session["user_id"]
     buy_histories = db.execute("SELECT symbol, name, price, SUM(total) as total, SUM(shares) as shares FROM buy_histories GROUP BY symbol, name, price")
-
-    cash = 
+    total_buy = db.execute("SELECT SUM(total) as total FROM buy_histories WHERE user_id = ?", current_user_id)
+    cash = round((10000 - total_buy[0]["total"]), 2)
+    total = 10000
+    
     return render_template("index.html", buy_histories = map(round_total , buy_histories), cash = cash, total = total)
 
 
@@ -72,7 +75,6 @@ def buy():
         cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
 
         #real valid cash
-        total_buy = db.execute("SELECT SUM(total) FROM buy_histories WHERE user_id = ?", current_user_id)
         valid_cash = cash[0]["cash"]
 
 
