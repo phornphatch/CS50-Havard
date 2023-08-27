@@ -70,6 +70,8 @@ def buy():
             return apology("can not afford", 400)
 
         if result:
+             # Add one or more new tables to finance.db via which to keep track of the purchase.
+             
             return render_template(
                 "index.html",
                 symbol=symbol,
@@ -80,6 +82,7 @@ def buy():
                 valid_cash=valid_cash,
                 total_cash=total_cash,
             )
+
         else:
             return apology("invalid symbol", 400)
 
