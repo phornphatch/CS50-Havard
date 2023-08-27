@@ -114,7 +114,23 @@ def register():
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
 
-        return apology("TODO")
+        # Ensure username not empty
+        if not username:
+            return apology("must provide username", 403)
+
+        # Ensure password not empty
+        elif not password:
+            return apology("must provide password", 403)
+
+         # Ensure confirmation not empty
+        elif not confirmation:
+            return apology("must provide password confirmation", 403)
+
+          # Ensure confirmation not empty
+        elif not password == confirmation:
+            return apology("passwords do not match", 403)
+
+        # db.execute("INSERT INTO users VALUES(username, password)")
     else:
         return render_template("register.html")
 
