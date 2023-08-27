@@ -6,9 +6,27 @@
 
 {% block main %}
     <h2 class="mb-3">Index Page</h2>
-    <h2 class="mb-3">portfolio of stocks (comming soon)</h2>
-    <p>stock symbol {{symbol}}</p>
-    <p>stock name {{name}}</p>
-    <p>stock total price {{total_price}}</p>
-    <p>Valid cash {{valid_cash}}</p>
+    <h2 class="mb-3">portfolio of stocks (in progess)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ symbol }}</td>
+                <td>{{ name }}</td>
+                <td>{{ shares }}</td>
+                <td>{{ current_price }}</td>
+                <td>{{ total_price }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>Cash {{valid_cash}}</div>
+    <div>TOTAL </div>
 {% endblock %}
