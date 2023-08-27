@@ -54,15 +54,20 @@ def buy():
         if not shares:
             return apology("must provide shares", 400)
 
+        current_user_id = session["user_id"]
         result = lookup(symbol)
         symbol = result["symbol"]
         name = result["name"]
         current_price = float(result["price"])
         total_price = current_price * float(shares)
-        total_cash = 10000
-        current_user_id = session["user_id"]
+        total_cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
         cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
+
+        #real valid cash
         valid_cash = cash[0]["cash"]
+
+        if valid_cash < total_price:
+            return apology("can not afford", 400)
 
         if result:
             return render_template(
