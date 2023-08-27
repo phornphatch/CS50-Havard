@@ -113,7 +113,7 @@ def quote():
 
         return
     else:
-    return render_template("quote.html")
+    return render_template("quote.html", )
     # return apology("TODO")
 
 
