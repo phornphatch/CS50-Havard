@@ -42,7 +42,7 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    if request.method = "POST":
+    if request.method == "POST":
         # submitted via post, lookup the stock symbol by calling the lookup function and display the result
         symbol = request.form.get("symbol")
 
@@ -54,10 +54,14 @@ def buy():
             return apology("must provide shares", 400)
 
         result = lookup(symbol)
-        current_price = symbol("price")
-        valid_cash = db.execute("SELECT cash FROM users WHERE username = ?", username")
+        symbol = result["symbol"]
+        name = result["name"]
+        current_price = result["price"]
+        current_user_id = session["user_id"]
+        valid_cash = db.execute("SELECT cash FROM users WHERE user_id = ?", current_user_id)
+
         if result:
-            return render_template("index.html")
+            return render_template("index.html", symbol = symbol, name = name, valid_cash = valid_cash, current_price = current_price )
         else:
             return apology("invalid symbol", 400)
 
