@@ -6,6 +6,6 @@ CREATE TABLE
         shares NUMERIC,
         price NUMERIC,
         total NUMERIC,
+        user_id INTEGER,
+        FOREIGN KEY (user_id) REFERENCES users(id)
     );
-
-ALTER TABLE buy_histories ADD user_id INTEGER, ADD CONSTRAINT FOREIGN KEY(user_id) REFERENCES users(id);
