@@ -61,7 +61,6 @@ def login():
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
-
         # Ensure username was submitted
         if not request.form.get("username"):
             return apology("must provide username", 403)
@@ -71,10 +70,14 @@ def login():
             return apology("must provide password", 403)
 
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        rows = db.execute(
+            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+        )
 
         # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
+        if len(rows) != 1 or not check_password_hash(
+            rows[0]["hash"], request.form.get("password")
+        ):
             return apology("invalid username and/or password", 403)
 
         # Remember which user has logged in
@@ -122,23 +125,29 @@ def register():
         elif not password:
             return apology("must provide password", 400)
 
-         # Ensure confirmation not empty
+        # Ensure confirmation not empty
         elif not confirmation:
             return apology("must provide password confirmation", 400)
 
-          # Ensure confirmation not empty
+        # Ensure confirmation not empty
         elif not password == confirmation:
             return apology("passwords do not match", 400)
 
-                # Ensure username already exist
+            # Ensure username already exist
         elif username:
-            checkUsername = db.execute("SELECT username FROM users WHERE username = ?", username)
+            checkUsername = db.execute(
+                "SELECT username FROM users WHERE username = ?", username
+            )
             if checkUsername:
                 return apology("username already exist", 400)
             else:
                 print("Unique usename")
 
-        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, generate_password_hash(password))
+        db.execute(
+            "INSERT INTO users (username, hash) VALUES(?, ?)",
+            username,
+            generate_password_hash(password),
+        )
         print("Successful Register !")
         return redirect("/")
 
