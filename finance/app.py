@@ -55,12 +55,12 @@ def buy():
 
         result = lookup(symbol)
         if result:
-            return render_template("quoted.html", symbol = result["symbol"], price = result["price"])
+            return render_template("index.html")
         else:
             return apology("invalid symbol", 400)
 
     else:
-        return render_template("quote.html")
+        return render_template("buy.html")
 
 
 @app.route("/history")
