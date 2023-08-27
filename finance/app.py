@@ -58,11 +58,12 @@ def buy():
         symbol = result["symbol"]
         name = result["name"]
         current_price = result["price"]
+        total_price = 10
         current_user_id = session["user_id"]
         valid_cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
 
         if result:
-            return render_template("index.html", symbol = symbol, name = name, valid_cash = valid_cash, current_price = current_price )
+            return render_template("index.html", symbol = symbol, name = name, valid_cash = valid_cash, total_price = current_price )
         else:
             return apology("invalid symbol", 400)
 
