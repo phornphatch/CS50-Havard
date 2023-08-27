@@ -55,7 +55,7 @@ def buy():
 
         result = lookup(symbol)
         current_price = symbol("price")
-        valid_cash = db.execute("SELECT cash FROM users WHERE username = ?", request.form.get("username")")
+        valid_cash = db.execute("SELECT cash FROM users WHERE username = ?", username")
         if result:
             return render_template("index.html")
         else:
