@@ -31,6 +31,7 @@ def index():
 
 
         # TODO: Add the user's entry into the database
+        # insert data to birthdays.db
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
         print("Add Birthday Successful!")
         return redirect("/")
