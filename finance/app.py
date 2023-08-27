@@ -64,7 +64,7 @@ def buy():
         cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
 
         #real valid cash
-        total_buy = db.execute("SELECT SUM(total) FROM buy_histories ")
+        total_buy = db.execute("SELECT SUM(total) FROM buy_histories WHERE user_id = ?", current_user_id)
         valid_cash = cash[0]["cash"]
 
 
