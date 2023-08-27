@@ -130,7 +130,7 @@ def register():
         elif not password == confirmation:
             return apology("passwords do not match", 403)
 
-        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, werkzeug.security.generate_password_hash(password, method='pbkdf2', salt_length=16))
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, generate_password_hash(password))
         print("Successful Register !")
         return redirect("/")
 
