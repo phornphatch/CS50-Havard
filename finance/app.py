@@ -61,7 +61,8 @@ def buy():
 
         current_user_id = session["user_id"]
         result = lookup(symbol)
-        if 
+        if not result:
+            return apology("invalid symbol", 400)
         symbol = result["symbol"]
         name = result["name"]
         current_price = result["price"]
