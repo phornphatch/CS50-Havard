@@ -42,7 +42,25 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    return apology("TODO")
+    if request.method = "POST":
+        # submitted via post, lookup the stock symbol by calling the lookup function and display the result
+        symbol = request.form.get("symbol")
+
+        # Ensure symbol not empty
+        if not symbol:
+            return apology("must provide symbol", 400)
+         # Ensure shares not empty
+        if not shares:
+            return apology("must provide shares", 400)
+
+        result = lookup(symbol)
+        if result:
+            return render_template("quoted.html", symbol = result["symbol"], price = result["price"])
+        else:
+            return apology("invalid symbol", 400)
+
+    else:
+        return render_template("quote.html")
 
 
 @app.route("/history")
