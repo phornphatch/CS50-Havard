@@ -35,7 +35,8 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return render_template("index.html")
+    buy_histories = db.execute("SELECT * FROM buy_histories")
+    return render_template("index.html", buy_histories = buy_histories)
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -59,7 +60,7 @@ def buy():
         symbol = result["symbol"]
         name = result["name"]
         current_price = float(result["price"])
-        total_price = current_price * float(shares)
+        total_price = round(current_price * float(shares)
         total_cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
         cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
 
@@ -73,9 +74,8 @@ def buy():
 
         if result:
             # Add one or more new tables to finance.db via which to keep track of the purchase.
-            db.execute("INSERT INTO buy_histories (symbol, name, shares, price, total) VALUES(?, ?, ?, ?, ?)", symbol, name, shares, current_price, total_price)
-            buy_histories = db.execute("SELECT * FROM buy_histories")
-            return render_template("index.html", buy_histories= buy_histories, valid_cash=valid_cash, total_cash=total_cash)
+            db.execute("INSERT INTO buy_histories (symbol, name, shares, price, total, user_id) VALUES(?, ?, ?, ?, ?, ?)", symbol, name, shares, current_price, total_price, current_user_id)
+            return redirect("/")
         else:
             return apology("invalid symbol", 400)
 
