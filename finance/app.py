@@ -109,10 +109,13 @@ def quote():
     if request.method == "POST":
         # submitted via post, lookup the stock symbol by calling the lookup function and display the result
         symbol = request.form.get("symbol")
-        lookup(symbol)
-        return render_template("quoted.html", symbol )
+        price = db.execute("SELECT price FROM users WHERE username = ?", username")
+        if lookup(symbol):
+            return render_template("quoted.html", symbol = symbol, price = price)
+        else:
+            return apology("symbol do not match", 404)
     else:
-        return render_template("quote.html", )
+        return render_template("quote.html")
     # # return apology("TODO")
 
 
