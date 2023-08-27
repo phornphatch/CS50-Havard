@@ -30,14 +30,16 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+def round_total(history):
+    history["total"] = round(history["total"], 2)
+    return history
 
 @app.route("/")
 @login_required
 def index():
     """Show portfolio of stocks"""
     buy_histories = db.execute("SELECT * FROM buy_histories")
-    buy_histories.map()
-    return render_template("index.html", buy_histories = buy_histories)
+    return render_template("index.html", buy_histories = map(round_total , buy_histories))
 
 
 @app.route("/buy", methods=["GET", "POST"])
