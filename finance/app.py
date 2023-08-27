@@ -118,6 +118,12 @@ def register():
         if not username:
             return apology("must provide username", 403)
 
+        # Ensure username already exist
+        checkUsername = db.execute('SELECT username FROM users WHERE username = %(username)s', (username,))
+
+        elif checkUsername != 0:
+            return apology("username already exist", 403)
+
         # Ensure password not empty
         elif not password:
             return apology("must provide password", 403)
