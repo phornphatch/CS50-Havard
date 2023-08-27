@@ -23,7 +23,7 @@
                     <input autocomplete="off" name="month" placeholder="Month" type="month">
 
                     <input autocomplete="off" name="day" placeholder="Day" type="day">
-                    
+
                     <button type="submit">Add Birthday</button>
                 </form>
             </div>
@@ -40,11 +40,11 @@
                     </thead>
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
-                        {% for row in birthdays %}
+                        {% for item in birthdays %}
                         <tr>
-                            <td>
-                                {{ row["page"] }}
-                            </td>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.month }}/
+                            {{ item.day }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
