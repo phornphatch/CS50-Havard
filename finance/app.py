@@ -72,7 +72,8 @@ def buy():
         if result:
             # Add one or more new tables to finance.db via which to keep track of the purchase.
             db.execute("INSERT INTO buy_histories (symbol, name, shares, price, total) VALUES(?, ?, ?, ?, ?)", symbol, name, shares, current_price, total_price)
-            return render_template("index.html", symbol=symbol, name=name, shares=shares, current_price=current_price, total_price=round(total_price, 2), valid_cash=valid_cash, total_cash=total_cash)
+            buy_histories = db.execute("SELECT * FROM buy_histories")
+            return render_template("index.html", buy_histories= buy_histories, valid_cash=valid_cash, total_cash=total_cash)
         else:
             return apology("invalid symbol", 400)
 

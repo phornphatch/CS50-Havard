@@ -18,13 +18,16 @@
             </tr>
         </thead>
         <tbody>
+            {% for item in buy_histories %}
             <tr>
-                <td>{{ symbol }}</td>
-                <td>{{ name }}</td>
-                <td>{{ shares }}</td>
-                <td>{{ current_price }}</td>
-                <td>{{ total_price }}</td>
+                <td>{{ item.symbol }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.shares }}</td>
+                <td>{{ item.current_price }}</td>
+                <td>{{ item.total_price }}</td>
             </tr>
+            {% endfor %}
+
         </tbody>
     </table>
     <div>Cash {{valid_cash}}</div>
