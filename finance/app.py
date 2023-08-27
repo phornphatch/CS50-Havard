@@ -50,7 +50,7 @@ def buy():
         # Ensure symbol not empty
         if not symbol:
             return apology("must provide symbol", 400)
-         # Ensure shares not empty
+        # Ensure shares not empty
         if not shares:
             return apology("must provide shares", 400)
 
@@ -58,14 +58,22 @@ def buy():
         symbol = result["symbol"]
         name = result["name"]
         current_price = float(result["price"])
-        total_price = current_price * int(shares)
+        total_price = current_price * float(shares)
         total_cash = 10000
         current_user_id = session["user_id"]
         valid_cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
 
         if result:
-            return render_template("index.html", symbol = symbol, name = name, shares = shares,
-                                   current_price = current_price, total_price = total_price, valid_cash = valid_cash, total_cash = total_cash )
+            return render_template(
+                "index.html",
+                symbol=symbol,
+                name=name,
+                shares=shares,
+                current_price=current_price,
+                total_price=round(total_price, 2),
+                valid_cash=valid_cash,
+                total_cash=total_cash,
+            )
         else:
             return apology("invalid symbol", 400)
 
@@ -145,7 +153,9 @@ def quote():
         result = lookup(symbol)
 
         if result:
-            return render_template("quoted.html", symbol = result["symbol"], price = result["price"])
+            return render_template(
+                "quoted.html", symbol=result["symbol"], price=result["price"]
+            )
         else:
             return apology("invalid symbol", 400)
     else:
