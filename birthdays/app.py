@@ -29,8 +29,6 @@ def index():
         month = request.form.get("month")
         day = request.form.get("day")
 
-        if not name:
-            return render_template("error.html", message="Missing name")
 
         # TODO: Add the user's entry into the database
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
