@@ -61,7 +61,8 @@ def buy():
         total_price = current_price * float(shares)
         total_cash = 10000
         current_user_id = session["user_id"]
-        valid_cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
+        valid_cash = cash[0]["cash"]
 
         if result:
             return render_template(
