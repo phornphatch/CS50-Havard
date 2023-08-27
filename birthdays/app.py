@@ -28,6 +28,8 @@ def index():
         name = request.form.get("name")
         month = request.form.get("month")
         day = request.form.get("day")
+
+        if 
         # TODO: Add the user's entry into the database
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
         print("Add Birthday Successful!")
