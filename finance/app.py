@@ -40,7 +40,8 @@ def index():
     """Show portfolio of stocks"""
     buy_histories = db.execute("SELECT symbol, name, price, SUM(total) as total, SUM(shares) as shares FROM buy_histories GROUP BY symbol, name, price")
 
-    return render_template("index.html", buy_histories = map(round_total , buy_histories))
+    cash = 
+    return render_template("index.html", buy_histories = map(round_total , buy_histories), cash = cash, total = total)
 
 
 @app.route("/buy", methods=["GET", "POST"])
