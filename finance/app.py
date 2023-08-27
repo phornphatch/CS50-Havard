@@ -106,14 +106,13 @@ def logout():
 @login_required
 def quote():
     """Get stock quote."""
-    # if request.method == "POST":
-    #     # submitted via post, lookup the stock symbol by calling the lookup function and display the result
-    #     lookup(symbol)
-
-
-    #     return
-    # else:
-    return render_template("quote.html", )
+    if request.method == "POST":
+        # submitted via post, lookup the stock symbol by calling the lookup function and display the result
+        symbol = request.form.get("symbol")
+        lookup(symbol)
+        return render_template("quoted.html", symbol )
+    else:
+        return render_template("quote.html", )
     # # return apology("TODO")
 
 
