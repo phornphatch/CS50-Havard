@@ -1,0 +1,1 @@
+CREATE TABLE buy_histories (id INT, symbol TEXT, name TEXT, shares NUMERIC, price NUMERIC, total NUMERIC)
