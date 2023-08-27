@@ -54,6 +54,8 @@ def buy():
             return apology("must provide shares", 400)
 
         result = lookup(symbol)
+        current_price = symbol("price")
+        valid_cash = db.execute("SELECT cash FROM users WHERE username = ?", request.form.get("username")")
         if result:
             return render_template("index.html")
         else:
