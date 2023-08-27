@@ -27,14 +27,14 @@ def index():
     if request.method == "POST":
 
         # TODO: Add the user's entry into the database
-        db.execute("INSERT INTO history (page) VALUES (?)", page)
-         print("Add Birthday Successful!")
+
+        print("Add Birthday Successful!")
         return redirect("/")
 
     else:
 
         # TODO: Display the entries in the database on index.html (Person name and Person birthday)
-        birthdays = db.execute("SELECT * FROM birthdays)
+        birthdays = db.execute("SELECT * FROM birthdays")
         return render_template("index.html")
 
 
