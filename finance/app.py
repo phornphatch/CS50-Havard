@@ -45,6 +45,7 @@ def buy():
     if request.method == "POST":
         # submitted via post, lookup the stock symbol by calling the lookup function and display the result
         symbol = request.form.get("symbol")
+        shares = request.form.get("shares")
 
         # Ensure symbol not empty
         if not symbol:
@@ -58,7 +59,7 @@ def buy():
         name = result["name"]
         current_price = result["price"]
         current_user_id = session["user_id"]
-        valid_cash = db.execute("SELECT cash FROM users WHERE user_id = ?", current_user_id)
+        valid_cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
 
         if result:
             return render_template("index.html", symbol = symbol, name = name, valid_cash = valid_cash, current_price = current_price )
