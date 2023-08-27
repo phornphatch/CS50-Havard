@@ -130,8 +130,10 @@ def register():
         elif not password == confirmation:
             return apology("passwords do not match", 403)
 
-        # db.execute("INSERT INTO users (username, password) VALUES(?, ?)", username, password)
+        db.execute("INSERT INTO users (username, password) VALUES(?, ?)", username, password)
         print("Successful Register !")
+        return redirect("/")
+    
     else:
         return render_template("register.html")
 
