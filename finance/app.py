@@ -71,7 +71,8 @@ def buy():
 
         if result:
              # Add one or more new tables to finance.db via which to keep track of the purchase.
-             db.execute("CREATE TABLE buy_history (id INT, symbol TEXT, name TEXT, shares NUMERIC, price NUMERIC, total NUMERIC)")
+             sql_create_table = "CREATE TABLE buy_history (id INT, symbol TEXT, name TEXT, shares NUMERIC, price NUMERIC, total NUMERIC)"
+             db.execute(sql_create_table)
 
             return render_template(
                 "index.html",
