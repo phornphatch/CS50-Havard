@@ -59,8 +59,8 @@ def buy():
         result = lookup(symbol)
         symbol = result["symbol"]
         name = result["name"]
-        current_price = float(result["price"])
-        total_price = round(current_price * float(shares)
+        current_price = result["price"]
+        total_price = current_price * float(shares)
         total_cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
         cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
 
