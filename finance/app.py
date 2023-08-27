@@ -36,6 +36,7 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     buy_histories = db.execute("SELECT * FROM buy_histories")
+    buy_histories.map()
     return render_template("index.html", buy_histories = buy_histories)
 
 
