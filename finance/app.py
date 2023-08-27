@@ -118,12 +118,6 @@ def register():
         if not username:
             return apology("must provide username", 403)
 
-        # Ensure username already exist
-        elif username:
-            checkUsername = db.execute("SELECT username FROM users WHERE username = ?", username)
-            if checkUsername != 0:
-                return apology("username already exist", 403)
-
         # Ensure password not empty
         elif not password:
             return apology("must provide password", 403)
@@ -135,6 +129,14 @@ def register():
           # Ensure confirmation not empty
         elif not password == confirmation:
             return apology("passwords do not match", 403)
+
+                # Ensure username already exist
+        elif username:
+            checkUsername = db.execute("SELECT username FROM users WHERE username = ?", username)
+            if checkUsername:
+                return apology("username already exist", 403)
+            else:
+                print("Unique usename")
 
         db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, generate_password_hash(password))
         print("Successful Register !")
