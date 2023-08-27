@@ -61,6 +61,7 @@ def buy():
 
         current_user_id = session["user_id"]
         result = lookup(symbol)
+        if 
         symbol = result["symbol"]
         name = result["name"]
         current_price = result["price"]
