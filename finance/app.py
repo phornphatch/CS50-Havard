@@ -120,7 +120,7 @@ def register():
 
         # Ensure username already exist
         elif username:
-            checkUsername = db.execute('SELECT username FROM users WHERE username = %', username)
+            checkUsername = db.execute("SELECT username FROM users WHERE username = ?", username)
             if checkUsername != 0:
                 return apology("username already exist", 403)
 
