@@ -64,7 +64,9 @@ def buy():
         cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
 
         #real valid cash
+        total_buy = db.execute("SELECT SUM(total) FROM buy_histories ")
         valid_cash = cash[0]["cash"]
+
 
         if valid_cash < total_price:
             return apology("can not afford", 400)
