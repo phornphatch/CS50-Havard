@@ -62,10 +62,14 @@ def index():
 
     if total_buy[0]["total"] != None:
         cash = "%.2f" % round((10000 - total_buy[0]["total"]), 2)
-        cash_with_deposite = "%.2f" % round((10000 - total_buy[0]["total"] + total_added_cash), 2)
+        cash_with_deposite = "%.2f" % round(
+            (10000 - total_buy[0]["total"] + total_added_cash), 2
+        )
     else:
         cash = "%.2f" % round((10000 - sum_amount[0]["amount"]), 2)
-        cash_with_deposite = "%.2f" % round((10000 - sum_amount[0]["amount"] + total_added_cash), 2)
+        cash_with_deposite = "%.2f" % round(
+            (10000 - sum_amount[0]["amount"] + total_added_cash), 2
+        )
 
     return render_template(
         "index.html",
