@@ -337,7 +337,7 @@ def add_cash():
         db.execute(
             "INSERT INTO cash_histories (amount, user_id) VALUES(?, ?)",
             amount,
-            current_user_id
+            current_user_id,
         )
         return redirect("/")
     else:
