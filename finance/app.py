@@ -30,21 +30,39 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+
 def round_total(history):
     history["total"] = round(history["total"], 2)
     return history
+
 
 @app.route("/")
 @login_required
 def index():
     """Show portfolio of stocks"""
     current_user_id = session["user_id"]
-    buy_histories = db.execute("SELECT symbol, name, price, SUM(total) as total, SUM(shares) as shares FROM buy_histories GROUP BY symbol, name, price")
-    total_buy = db.execute("SELECT SUM(total) as total FROM buy_histories WHERE user_id = ?", current_user_id)
-    cash = round((10000 - total_buy[0]["total"]), 2)
-    total = 10000
-    
-    return render_template("index.html", buy_histories = map(round_total , buy_histories), cash = cash, total = total)
+    buy_histories = db.execute(
+        "SELECT symbol, name, AVG(price) as price, SUM(total) as total, SUM(shares) as shares FROM buy_histories GROUP BY symbol, name"
+    )
+    total_buy = db.execute(
+        "SELECT SUM(total) as total FROM buy_histories WHERE user_id = ?",
+        current_user_id,
+    )
+    total = "%.2f" % 10000
+
+    print(total_buy)
+
+    if total_buy[0]["total"] != None:
+        cash = "%.2f" % round((10000 - total_buy[0]["total"]), 2)
+    else:
+        cash = "%.2f" % 10000
+
+    return render_template(
+        "index.html",
+        buy_histories=map(round_total, buy_histories),
+        cash=cash,
+        total=total,
+    )
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -62,6 +80,13 @@ def buy():
         # Ensure shares not empty
         if not shares:
             return apology("must provide shares", 400)
+        else:
+            if not shares.isnumeric():
+                return apology("Invalid shares", 400)
+            elif float(shares) < 0:
+                return apology("Invalid shares", 400)
+            elif not str(shares).replace(".", "").isdigit():
+                return apology("Invalid shares", 400)
 
         current_user_id = session["user_id"]
         result = lookup(symbol)
@@ -74,16 +99,23 @@ def buy():
         total_cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
         cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
 
-        #real valid cash
+        # real valid cash
         valid_cash = cash[0]["cash"]
-
 
         if valid_cash < total_price:
             return apology("can not afford", 400)
 
         if result:
             # Add one or more new tables to finance.db via which to keep track of the purchase.
-            db.execute("INSERT INTO buy_histories (symbol, name, shares, price, total, user_id) VALUES(?, ?, ?, ?, ?, ?)", symbol, name, shares, current_price, total_price, current_user_id)
+            db.execute(
+                "INSERT INTO buy_histories (symbol, name, shares, price, total, user_id) VALUES(?, ?, ?, ?, ?, ?)",
+                symbol,
+                name,
+                shares,
+                current_price,
+                total_price,
+                current_user_id,
+            )
             return redirect("/")
         else:
             return apology("invalid symbol", 400)
@@ -95,8 +127,8 @@ def buy():
 @app.route("/history")
 @login_required
 def history():
-    """Show history of transactions"""
-    return apology("TODO")
+    history = db.execute("SELECT * FROM buy_histories")
+    return render_template("history.html", history = history)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -223,4 +255,63 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    return apology("TODO")
+
+    if request.method == "POST":
+        shares_request = request.form.get("shares")
+        selected_symbol = request.form.get("symbol")
+
+        if not selected_symbol:
+            return apology("must provide symbol", 400)
+
+        # Ensure shares not empty
+        if not shares_request:
+            return apology("must provide shares", 400)
+        else:
+            if not shares_request.isnumeric():
+                return apology("Invalid shares", 400)
+            elif float(shares_request) < 0:
+                return apology("Invalid shares", 400)
+            elif not str(shares_request).replace(".", "").isdigit():
+                return apology("Invalid shares", 400)
+
+        # sum shares of selected symbol
+        sum_shares = db.execute("SELECT SUM(shares) as shares FROM buy_histories WHERE symbol = ?", selected_symbol)
+        valid_shares = sum_shares[0]["shares"]
+        print(valid_shares)
+
+        if valid_shares < float(shares_request):
+            return apology("Not enough shares", 400)
+
+        remaining_shares = valid_shares - float(shares_request)
+        print("Successful Register !")
+        # update shares in buy_histories
+        # db.execute(
+         #   "UPDATE buy_histories SET shares = ? WHERE symbol = ?", remaining_shares, selected_symbol)
+
+
+        current_user_id = session["user_id"]
+        name = db.execute("SELECT name FROM buy_histories WHERE symbol = ?", selected_symbol)
+        selected_name = name[0]["name"]
+        current_price = db.execute("SELECT price FROM buy_histories WHERE symbol = ?", selected_symbol)
+        current_price_sell = current_price[0]["price"]
+        total_price_sell = current_price_sell * float(shares_request)
+        db.execute(
+                "INSERT INTO buy_histories (symbol, name, shares, price, total, user_id) VALUES(?, ?, ? * -1, ?, ? * -1, ?)",
+                selected_symbol,
+                selected_name,
+                shares_request,
+                current_price_sell,
+                total_price_sell,
+                current_user_id,
+            )
+        return redirect("/")
+
+    else:
+        symbols = db.execute("SELECT symbol FROM buy_histories GROUP BY symbol")
+        return render_template("sell.html", symbols = symbols)
+
+@app.route("/add_cash")
+@login_required
+def add_cash():
+    cash = db.execute("SELECT * FROM buy_histories")
+    return render_template("add_cash.html")

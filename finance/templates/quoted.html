@@ -6,5 +6,6 @@
 
 {% block main %}
     <h2 class="mb-3">Quoted Page</h2>
-    <p>A share of {{ symbol }}({{symbol}}) costs ${{price}}.</p>
+    <p>A share of {{ symbol }}({{symbol}}) costs ${{ '{:.2f}'.format(price)}} .</p>
+
 {% endblock %}

@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Index
+History
 {% endblock %}
 
 {% block main %}
+<h2 class="mb-3">History Page</h2>
 <h2 class="mb-3">Portfolio of stocks</h2>
 <table style="width: 100%">
     <thead>
@@ -17,7 +18,7 @@ Index
         </tr>
     </thead>
     <tbody>
-        {% for item in buy_histories %}
+        {% for item in history %}
         <tr>
             <td>{{ item.symbol }}</td>
             <td>{{ item.name }}</td>
@@ -28,8 +29,4 @@ Index
         {% endfor %}
     </tbody>
 </table>
-<div style="display: grid; width: 100%; padding: 20px 50px; justify-items: right; font-weight: 700;">
-    <div>Cash ${{cash}}</div>
-    <div>TOTAL ${{total}}</div>
-</div>
 {% endblock %}
