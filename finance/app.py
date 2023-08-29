@@ -53,12 +53,15 @@ def index():
     total_added_cash = sum_amount[0]["amount"]
     total = "%.2f" % 10000
 
+    if not total_added_cash:
+        total_added_cash = 0
+
     print(total_buy)
 
     if total_buy[0]["total"] != None:
-        cash = "%.2f" % round((10000 - total_buy[0]["total"]), 2)
+        cash = "%.2f" % round((10000 - total_buy[0]["total"] + total_added_cash), 2)
     else:
-        cash = "%.2f" % 10000
+        cash = "%.2f" % round((10000 - sum_amount[0]["amount"] + total_added_cash), 2)
 
     return render_template(
         "index.html",
@@ -132,7 +135,7 @@ def buy():
 @login_required
 def history():
     history = db.execute("SELECT * FROM buy_histories")
-    return render_template("history.html", history = history)
+    return render_template("history.html", history=history)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -279,7 +282,10 @@ def sell():
                 return apology("Invalid shares", 400)
 
         # sum shares of selected symbol
-        sum_shares = db.execute("SELECT SUM(shares) as shares FROM buy_histories WHERE symbol = ?", selected_symbol)
+        sum_shares = db.execute(
+            "SELECT SUM(shares) as shares FROM buy_histories WHERE symbol = ?",
+            selected_symbol,
+        )
         valid_shares = sum_shares[0]["shares"]
         print(valid_shares)
 
@@ -290,37 +296,54 @@ def sell():
         print("Successful Register !")
         # update shares in buy_histories
         # db.execute(
-         #   "UPDATE buy_histories SET shares = ? WHERE symbol = ?", remaining_shares, selected_symbol)
-
+        #   "UPDATE buy_histories SET shares = ? WHERE symbol = ?", remaining_shares, selected_symbol)
 
         current_user_id = session["user_id"]
-        name = db.execute("SELECT name FROM buy_histories WHERE symbol = ?", selected_symbol)
+        name = db.execute(
+            "SELECT name FROM buy_histories WHERE symbol = ?", selected_symbol
+        )
         selected_name = name[0]["name"]
-        current_price = db.execute("SELECT price FROM buy_histories WHERE symbol = ?", selected_symbol)
+        current_price = db.execute(
+            "SELECT price FROM buy_histories WHERE symbol = ?", selected_symbol
+        )
         current_price_sell = current_price[0]["price"]
         total_price_sell = current_price_sell * float(shares_request)
         db.execute(
-                "INSERT INTO buy_histories (symbol, name, shares, price, total, user_id) VALUES(?, ?, ? * -1, ?, ? * -1, ?)",
-                selected_symbol,
-                selected_name,
-                shares_request,
-                current_price_sell,
-                total_price_sell,
-                current_user_id,
-            )
+            "INSERT INTO buy_histories (symbol, name, shares, price, total, user_id) VALUES(?, ?, ? * -1, ?, ? * -1, ?)",
+            selected_symbol,
+            selected_name,
+            shares_request,
+            current_price_sell,
+            total_price_sell,
+            current_user_id,
+        )
         return redirect("/")
 
     else:
         symbols = db.execute("SELECT symbol FROM buy_histories GROUP BY symbol")
-        return render_template("sell.html", symbols = symbols)
+        return render_template("sell.html", symbols=symbols)
+
 
 @app.route("/add_cash")
 @login_required
 def add_cash():
-    sum_amount = db.execute("SELECT SUM(amount) as amount FROM cash_histories")
+    if request.method == "POST":
+        amount = request.form.get("amount")
+        # Ensure amount not empty
+        if not amount:
+            return apology("must provide amount", 400)
 
-    if sum_amount[0]["amount"]:
-        total_deposite = 10000 + sum_amount[0]["amount"]
+        current_user_id = session["user_id"]
+        db.execute(
+            "INSERT INTO cash_histories (amount), user_id) VALUES(?, ?)",
+            amount,
+            current_user_id,
+        )
+        return redirect("/")
     else:
-        total_deposite = 10000
-    return render_template("add_cash.html", total_deposite = total_deposite)
+        sum_amount = db.execute("SELECT SUM(amount) as amount FROM cash_histories")
+        if sum_amount[0]["amount"]:
+            total_deposite = 10000 + sum_amount[0]["amount"]
+        else:
+            total_deposite = 10000
+        return render_template("add_cash.html", total_deposite=total_deposite)
