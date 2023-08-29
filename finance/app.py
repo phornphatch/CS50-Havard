@@ -22,8 +22,6 @@ Session(app)
 db = SQL("sqlite:///finance.db")
 
 
-
-
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
