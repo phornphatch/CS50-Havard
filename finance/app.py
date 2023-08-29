@@ -313,5 +313,6 @@ def sell():
 @app.route("/add_cash")
 @login_required
 def add_cash():
-    cash = db.execute("SELECT * FROM buy_histories")
-    return render_template("add_cash.html")
+    sum_amount = db.execute("SELECT SUM(amount) as amount FROM cash_histories")
+    total_deposite = sum_amount[0]["amount"]
+    return render_template("add_cash.html", total_deposite = total_deposite)
