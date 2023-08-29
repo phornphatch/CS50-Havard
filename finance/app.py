@@ -72,8 +72,8 @@ def index():
         buy_histories=map(round_total, buy_histories),
         cash=cash,
         total=total,
-        cash_with_deposite = cash_with_deposite,
-        total_with_deposite = total_with_deposite
+        cash_with_deposite=cash_with_deposite,
+        total_with_deposite=total_with_deposite,
     )
 
 
