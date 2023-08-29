@@ -48,6 +48,9 @@ def index():
         "SELECT SUM(total) as total FROM buy_histories WHERE user_id = ?",
         current_user_id,
     )
+
+    sum_amount = db.execute("SELECT SUM(amount) as amount FROM cash_histories")
+    total_added_cash = sum_amount[0]["amount"]
     total = "%.2f" % 10000
 
     print(total_buy)
@@ -96,13 +99,12 @@ def buy():
         name = result["name"]
         current_price = result["price"]
         total_price = current_price * float(shares)
-        total_cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
         sum_amount = db.execute("SELECT SUM(amount) as amount FROM cash_histories")
         total_added_cash = sum_amount[0]["amount"]
         cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user_id)
 
         # real valid cash
-        valid_cash = cash[0]["cash"]
+        valid_cash = cash[0]["cash"] + total_added_cash
 
         if valid_cash < total_price:
             return apology("can not afford", 400)
