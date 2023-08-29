@@ -6,10 +6,10 @@
 
 {% block main %}
     <h2 class="mb-3">Add Cash<h2>
-    <h2 class="mb-3">Total Deposite : {{ total_deposite }}<h2>
+    <h3 class="mb-3">Total Deposite : {{ total_deposite }}<h3>
     <form action="/add_cash" method="post">
         <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="symbol" name="symbol" placeholder="Symbol" type="number"  min="1">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="amount" name="amount" placeholder="amount" type="number"  min="1">
         </div>
         <button class="btn btn-primary" type="submit">Add</button>
     </form>
