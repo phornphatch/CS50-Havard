@@ -314,5 +314,9 @@ def sell():
 @login_required
 def add_cash():
     sum_amount = db.execute("SELECT SUM(amount) as amount FROM cash_histories")
-    total_deposite = sum_amount[0]["amount"]
+
+    if sum_amount[0]["amount"]:
+        total_deposite = 10000 + sum_amount[0]["amount"]
+    else:
+        total_deposite = 10000
     return render_template("add_cash.html", total_deposite = total_deposite)
