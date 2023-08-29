@@ -56,18 +56,24 @@ def index():
     if not total_added_cash:
         total_added_cash = 0
 
+    total_with_deposite = 10000 + total_added_cash
+
     print(total_buy)
 
     if total_buy[0]["total"] != None:
-        cash = "%.2f" % round((10000 - total_buy[0]["total"] + total_added_cash), 2)
+        cash = "%.2f" % round((10000 - total_buy[0]["total"]), 2)
+        cash_with_deposite = "%.2f" % round((10000 - total_buy[0]["total"] + total_added_cash), 2)
     else:
-        cash = "%.2f" % round((10000 - sum_amount[0]["amount"] + total_added_cash), 2)
+        cash = "%.2f" % round((10000 - sum_amount[0]["amount"]), 2)
+        cash_with_deposite = "%.2f" % round((10000 - sum_amount[0]["amount"] + total_added_cash), 2)
 
     return render_template(
         "index.html",
         buy_histories=map(round_total, buy_histories),
         cash=cash,
         total=total,
+        cash_with_deposite = cash_with_deposite,
+        total_with_deposite = total_with_deposite
     )
 
 
