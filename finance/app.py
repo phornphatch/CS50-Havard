@@ -324,7 +324,7 @@ def sell():
         return render_template("sell.html", symbols=symbols)
 
 
-@app.route("/add_cash")
+@app.route("/add_cash", methods=["GET", "POST"])
 @login_required
 def add_cash():
     if request.method == "POST":
@@ -335,9 +335,9 @@ def add_cash():
 
         current_user_id = session["user_id"]
         db.execute(
-            "INSERT INTO cash_histories (amount), user_id) VALUES(?, ?)",
+            "INSERT INTO cash_histories (amount, user_id) VALUES(?, ?)",
             amount,
-            current_user_id,
+            current_user_id
         )
         return redirect("/")
     else:
